@@ -31,7 +31,7 @@ jobs:
     displayName: Run npm test
     inputs:
       command: 'custom'
-      customCommand: 'npm run test'
+      customCommand: 'run test'
 
   # Publishes npm package
   - task: Npm@1
