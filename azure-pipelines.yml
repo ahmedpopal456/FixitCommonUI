@@ -4,36 +4,55 @@ trigger:
       - development
       - master
 
-jobs:
+stages:
+  - stage:
+    displayName: 'Build Fixit Mobile Component Lib'
+    jobs:
+    - job: BuildFixitMobileComponentLib
 
-- job: BuildFixitMobileComponentLib
+      pool:
+        vmImage: 'windows-2019'
+        displayName: 'Run Main Build and Test Pipeline'
+        
+      steps:
 
-  pool:
-    vmImage: 'windows-2019'
-    displayName: 'Run Main Build and Test Pipeline'
-    
-  steps:
+      # Install
+      - task: Npm@1
+        displayName: 'Install Dependencies'
+        inputs:
+          command: 'install'
+      
+      # Test
+      - task: Npm@1
+        displayName: 'Run Unit Tests'
+        inputs:
+          command: 'custom'
+          customCommand: 'run test'
 
-  # Install
-  - task: Npm@1
-    displayName: 'Install Dependencies'
-    inputs:
-      command: 'install'
-  
-  # Test
-  - task: Npm@1
-    displayName: 'Run Unit Tests'
-    inputs:
-      command: 'custom'
-      customCommand: 'run test'
+      # Bump Package Version Patch
+      - task: Npm@1
+        displayName: 'Bump Package Version'
+        inputs:
+          command: 'custom'
+          customCommand: 'version patch'
+        condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
+      
+      # Bump Package Version Minor
+      - task: Npm@1
+        displayName: 'Bump Package Version'
+        inputs:
+          command: 'custom'
+          customCommand: 'version minor'
+        condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
-  # Publishes npm package
-  - task: Npm@1
-    displayName: 'Publish Artifact'
-    inputs:
-      command: 'publish'
-      publishRegistry: 'useFeed'
-      publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
+      # Publishes npm package
+      - task: Npm@1
+        displayName: 'Publish Artifact'
+        inputs:
+          command: 'publish'
+          publishRegistry: 'useFeed'
+          # publishFeed: projectName/feedName
+          publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
   
 
 
