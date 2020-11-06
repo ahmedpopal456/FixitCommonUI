@@ -34,7 +34,7 @@ stages:
         displayName: 'Bump Package Version'
         inputs:
           command: 'custom'
-          customCommand: 'version patch'
+          customCommand: 'version patch --force'
         condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
       
       # Bump Package Version Minor
@@ -42,7 +42,7 @@ stages:
         displayName: 'Bump Package Version'
         inputs:
           command: 'custom'
-          customCommand: 'version minor'
+          customCommand: 'version minor --force'
         condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
       # Publishes npm package
