@@ -29,6 +29,15 @@ stages:
           command: 'custom'
           customCommand: 'run test'
 
+      # Add Git User
+      - task: Bash@3
+        displayName: 'Add Git User'
+        inputs:
+          targetType: 'inline'
+          script: |
+            git config --global user.email "Admin@FixIt148.onmicrosoft.com"
+            git config --global user.name "Fixit"
+
       # Bump Package Version Patch
       - task: Npm@1
         displayName: 'Bump Package Version'
