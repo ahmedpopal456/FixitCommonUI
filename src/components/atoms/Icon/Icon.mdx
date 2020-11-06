@@ -1,0 +1,69 @@
+---
+name: Icon
+menu: Atoms
+---
+
+import { Props, Playground } from "docz";
+import { Icon } from "./Icon.tsx";
+
+# Icon
+
+A Icon is a clickable view to carry out actions such as clearing user input or submitting the form.
+
+# Usage
+
+```tsx
+import { Icon } from "fixit-mobile-components";
+
+<Icon />;
+```
+
+## Props
+
+<Props of={Icon}></Props>
+
+## Default
+
+<Playground>
+  <Icon name="emoticon-kiss" />
+</Playground>
+
+## Size
+
+The default size is 24.
+
+<Playground>
+  <Icon name="format-size" size={10} />
+  <Icon name="format-size" size={20} />
+  <Icon name="format-size" size={30} />
+  <Icon name="format-size" size={40} />
+  <Icon name="format-size" size={50} />
+  <Icon name="format-size" size={60} />
+  <Icon name="format-size" size={70} />
+</Playground>
+
+## Color
+
+The colors must be from the Fixit color pallette.
+
+<Playground>
+  <Icon name="palette-swatch" color="primary" />
+  <Icon name="palette-swatch" color="accent" />
+  <Icon name="palette-swatch" color="grey" />
+  <Icon name="palette-swatch" color="light" />
+  <Icon name="palette-swatch" color="dark" />
+  <Icon name="palette-swatch" color="red" />
+  <Icon name="palette-swatch" color="orange" />
+  <Icon name="palette-swatch" color="yellow" />
+  <Icon name="palette-swatch" color="blue" />
+  <Icon name="palette-swatch" color="green" />
+  <Icon name="palette-swatch" color="notification" />
+  <Icon name="palette-swatch" color="error" />
+  <Icon name="palette-swatch" color="success" />
+</Playground>
+
+## Icon Library
+
+<Playground>
+  <Icon library="Entypo" name="github" />
+</Playground>
