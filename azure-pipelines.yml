@@ -1,0 +1,46 @@
+trigger:
+  branches:
+    include:
+      - development
+      - master
+
+variables:
+
+  # Fixit
+  projectName: '08d378fd-be72-4c80-9ce4-1a7c754efb98'
+  # fixit-mobile-components
+  feedName: '7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
+
+jobs:
+
+- job: BuildFixitMobileComponentLib
+
+  pool:
+    vmImage: 'windows-2019'
+    displayName: Run Main Build and Test Pipeline
+    
+  steps:
+
+  # Install
+  - task: Npm@1
+    inputs:
+      command: 'install'
+  
+  # Test
+  - task: Npm@1
+    displayName: Run npm test
+    inputs:
+      command: 'custom'
+      customCommand: 'npm run test'
+
+  # Publishes npm package
+  - task: Npm@1
+    displayName: 'Publish Artifact'
+    inputs:
+      command: 'publish'
+      publishRegistry: 'useFeed'
+      publishFeed: ${projectName}/${feedName}
+  
+
+
+
