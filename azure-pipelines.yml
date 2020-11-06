@@ -39,7 +39,7 @@ jobs:
     inputs:
       command: 'publish'
       publishRegistry: 'useFeed'
-      publishFeed: ${projectName}/${feedName}
+      publishFeed: '${projectName}/${feedName}'
   
 
 
