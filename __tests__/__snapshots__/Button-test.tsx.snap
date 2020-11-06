@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#33343E",
+      "borderColor": "#33343E",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "verticalAlign": "top",
+    }
+  }
+>
+  <Text
+    color="primary"
+    disabled={false}
+    onPress={[Function]}
+    outline={false}
+    position="left"
+    shape="square"
+    style={
+      Array [
+        Object {
+          "color": "#FFD14A",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "height": "100%",
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    Button
+  </Text>
+</View>
+`;
