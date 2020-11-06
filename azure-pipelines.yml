@@ -4,31 +4,25 @@ trigger:
       - development
       - master
 
-variables:
-
-  # Fixit
-  projectName: '08d378fd-be72-4c80-9ce4-1a7c754efb98'
-  # fixit-mobile-components
-  feedName: '7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
-
 jobs:
 
 - job: BuildFixitMobileComponentLib
 
   pool:
     vmImage: 'windows-2019'
-    displayName: Run Main Build and Test Pipeline
+    displayName: 'Run Main Build and Test Pipeline'
     
   steps:
 
   # Install
   - task: Npm@1
+    displayName: 'Install Dependencies'
     inputs:
       command: 'install'
   
   # Test
   - task: Npm@1
-    displayName: Run npm test
+    displayName: 'Run Unit Tests'
     inputs:
       command: 'custom'
       customCommand: 'run test'
@@ -39,7 +33,7 @@ jobs:
     inputs:
       command: 'publish'
       publishRegistry: 'useFeed'
-      publishFeed: '${projectName}/${feedName}'
+      publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
   
 
 
