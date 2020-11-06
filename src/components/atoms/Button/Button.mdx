@@ -1,0 +1,101 @@
+---
+name: Button
+menu: Atoms
+---
+
+import { Props, Playground } from 'docz';
+import { Button } from './Button.tsx';
+import { Icon } from '../Icon/Icon.tsx';
+import { View } from 'react-native';
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
+
+# Button
+A Button is a clickable view to carry out actions such as clearing user input or submitting the form.
+
+# Usage
+```tsx
+import { Button } from 'fixit-mobile-components';
+
+<Button onPress={() => this.doSomething()}>
+  Press Me
+</Button>
+```
+## Props
+
+<Props of={Button}></Props>
+
+## Examples
+
+<Playground>
+  <DoczContainer>
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Button onPress={() => void 0} color="accent">Press Me</Button>
+    <Button onPress={() => void 0} outline>Press Me</Button>
+    <Button onPress={() => void 0} outline color="accent">Press Me</Button>
+  </DoczContainer>
+</Playground>
+
+## Disabled
+
+<Playground>
+  <DoczContainer>
+    <Button onPress={() => void 0} disabled>
+      Press Me
+    </Button>
+  </DoczContainer>
+</Playground>
+
+## Block
+
+<Playground>
+  <DoczContainer>
+    <Button onPress={() => void 0} block>
+      Press Me
+    </Button>
+  </DoczContainer>
+</Playground>
+
+## Width
+
+<Playground>
+  <DoczContainer>
+    <Button onPress={() => void 0} width={100}>
+      Press Me
+    </Button>
+    <Button onPress={() => void 0} width={200}>
+      Press Me
+    </Button>
+    <Button onPress={() => void 0} width={300}>
+      Press Me
+    </Button>
+  </DoczContainer>
+</Playground>
+
+## Icon
+<Playground>
+  <DoczContainer>
+
+    <Button onPress={() => void 0}>
+      <Icon library="AntDesign" name="left" color="accent"/>
+      Prev Page
+    </Button>
+
+    <Button onPress={() => void 0} color="primary">
+      Next Page
+      <Icon library="AntDesign" name="right" color="accent"/>
+    </Button>
+
+    <Button onPress={() => void 0} color="accent">
+      <Icon library="AntDesign" name="barschart" color="primary"/>
+    </Button>
+
+    <Button onPress={() => void 0} color="green" shape="circle">
+      <Icon library="AntDesign" name="plus" color="white"/>
+    </Button>
+
+    <Button onPress={() => void 0} color="transparent">
+      <Icon library="AntDesign" name="heart" color="red"/>
+    </Button>
+    
+  </DoczContainer>
+</Playground>
