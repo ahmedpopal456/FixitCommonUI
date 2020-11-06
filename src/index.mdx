@@ -1,0 +1,123 @@
+---
+name: Getting Started
+route: /
+order: 1
+---
+
+# Getting Started
+
+Design systems enable teams to build better products faster by making design reusable—reusability makes scale possible. This is the heart and primary value of design systems. A design system is a collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications.
+
+Regardless of the technologies and tools behind them, a successful design system follows these guiding principles:
+
+- **It’s consistent**. The way components are built and managed follows a predictable pattern.
+- **It’s self-contained**. Your design system is treated as a standalone dependency.
+- **It’s reusable**. You’ve built components so they can be reused in many contexts.
+- **It’s accessible**. Applications built with your design system are usable by as many people as possible, no matter how they access the web.
+- **It’s robust**. No matter the product or platform to which your design system is applied, it should perform with grace and minimal bugs.
+
+> We will use [react-native-web](https://github.com/necolas/react-native-web) to make this integration possible.
+> So you might face some issues if you use other react-native modules. 
+> Usually, many react-native modules have a web alternative, make sure to alias them too.
+
+# How to contribute
+## How can I see the components?
+Start by installing the dependencies of the project.
+```bash
+yarn
+```
+
+Once that is done, you should be able to run docz.
+```bash
+yarn dev
+```
+This will open docz at [this address](http://localhost:3000). Now you can edit components,
+and as soon as you save, you should see the changes in the browser.
+
+## How can I create a new component?
+Each component should include at least 3 files. A starting point for the components can be copied 
+from below. My suggestion would be to start by writting the documentation so that you can see 
+the changes as you implement the component.
+
+#### Component.tsx
+This file consists of the code for the component.
+```tsx
+import React from "react";
+import styled from "styled-components/native";
+
+import colors from "../../../theme/colors";
+
+/** PROPS */
+interface Props {
+  /**  Example of an optional prop */
+  optional?: string;
+  /** Example of a required prop*/
+  required: number;
+}
+
+/** Building the Component */
+export const Component: React.FC<Props> = (props) => {
+  return (
+    <StyledView>
+        // TODO: implement the component
+    </StyledView>
+  );
+};
+
+/** Setting the defaults for the props*/
+Button.defaultProps = {
+  optional: "default",
+};
+
+/** 
+ * Styled Components
+ * 
+ * Here you can add css to react native components to create a styled version of it
+ */
+const StyledView = styled.View`
+    color: red;
+`;
+```
+
+#### Component.mdx
+This file consists of the documentation for the component.
+```md
+---
+name: Component
+menu: Atoms
+---
+
+import { Props, Playground } from "docz";
+import { Component } from "./Component.tsx";
+
+# Component
+
+A description of the component
+
+# Usage
+
+<!-- ```tsx
+import { Component } from "fixit-mobile-components";
+
+// TODO: write how the component is used and uncomment this block
+``` -->
+
+## Props
+
+<Props of={Component}></Props>
+
+## Default
+
+<Playground>
+  <Component/>
+</Playground>
+
+```
+
+#### index.ts
+This file is used to export all the components in the Component directory.
+```ts
+import { Button } from './Button';
+
+export { Button };
+```
