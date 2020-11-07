@@ -4,11 +4,12 @@ trigger:
       - development
       - master
 
+
 stages:
-  - stage:
-    displayName: 'Build Fixit Mobile Component Lib'
+  - stage: InstallDependencies
+    displayName: 'Install Dependencies'
     jobs:
-    - job: BuildFixitMobileComponentLib
+    - job: InstallDependencies
 
       pool:
         vmImage: 'windows-2019'
@@ -21,28 +22,80 @@ stages:
         displayName: 'Install Dependencies'
         inputs:
           command: 'install'
-      
-      # Test
-      - task: Npm@1
-        displayName: 'Run Unit Tests'
-        inputs:
-          command: 'custom'
-          customCommand: 'run test:ci'
-      
-      # Publish Test Results
-      - task: PublishTestResults@2
-        displayName: 'Publish Test Results'
-        inputs:
-          testResultsFormat: 'JUnit'
-          testResultsFiles: 'test/junit.xml'
-          failTaskOnFailedTests: true
 
-      # Publish Code Coverage Results
-      - task: PublishCodeCoverageResults@1
-        inputs:
-          codeCoverageTool: 'Cobertura'
-          summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
-          reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
+
+  - stage: Tests
+    dependsOn: InstallDependencies
+    displayName: 'Run Tests'
+    jobs:
+    - job: RunTests
+
+      steps: 
+
+        # Test
+        - task: Npm@1
+          displayName: 'Run Unit Tests'
+          inputs:
+            command: 'custom'
+            customCommand: 'run test:ci'
+        
+        # Publish Test Results
+        - task: PublishTestResults@2
+          displayName: 'Publish Test Results'
+          inputs:
+            testResultsFormat: 'JUnit'
+            testResultsFiles: 'test/junit.xml'
+            failTaskOnFailedTests: true
+
+        # Publish Code Coverage Results
+        - task: PublishCodeCoverageResults@1
+          inputs:
+            codeCoverageTool: 'Cobertura'
+            summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
+            reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
+
+
+  - stage: BuildDocz
+    dependsOn: InstallDependencies
+    displayName: 'Build Docz'
+    jobs:
+    - job: BuildDocz
+
+      steps:
+
+        # Build Docz
+        - task: Npm@1
+          displayName: 'Run Build Docz'
+          inputs:
+            command: 'custom'
+            customCommand: 'run build'
+        
+        # Copy Docz Files To Artifacts Staging Directory
+        - task: CopyFiles@2
+          displayName: 'Copy Docz Files To Artifacts Staging Directory'
+          inputs:
+            SourceFolder: '.docz\dist'
+            Contents: '**'
+            TargetFolder: '$(Build.Artifactstagingdirectory)'
+            CleanTargetFolder: true
+            OverWrite: true
+        
+        # Publish Docz
+        - task: PublishBuildArtifacts@1
+          displayName: 'Publish Docz'
+          inputs:
+            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+            ArtifactName: 'drop'
+            publishLocation: 'Container'
+
+
+  - stage: PublishArtifacts
+    dependsOn: Tests
+    displayName: 'Publish Artifacts'
+    jobs:
+    - job: PublishArtifacts
+
+      steps:
 
       # Add Git User
       - task: Bash@3
