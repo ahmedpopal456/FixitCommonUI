@@ -16,6 +16,7 @@
     "test:ci": "jest --env=jsdom --testResultsProcessor=\"jest-junit\" --coverage"
   },
   "dependencies": {
+    "gatsby": "^2.25.3",
     "react-native": "^0.63.3",
     "react-native-vector-icons": "^7.1.0",
     "styled-components": "^5.2.1"
