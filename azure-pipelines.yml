@@ -27,7 +27,7 @@ stages:
         displayName: 'Run Unit Tests'
         inputs:
           command: 'custom'
-          customCommand: 'run test'
+          customCommand: 'run test:ci'
       
       # Publish Test Results
       - task: PublishTestResults@2
