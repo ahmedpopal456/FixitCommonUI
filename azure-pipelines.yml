@@ -28,6 +28,21 @@ stages:
         inputs:
           command: 'custom'
           customCommand: 'run test'
+      
+      # Publish Test Results
+      - task: PublishTestResults@2
+        displayName: 'Publish Test Results'
+        inputs:
+          testResultsFormat: 'JUnit'
+          testResultsFiles: 'test/junit.xml'
+          failTaskOnFailedTests: true
+
+      # Publish Code Coverage Results
+      - task: PublishCodeCoverageResults@1
+        inputs:
+          codeCoverageTool: 'Cobertura'
+          summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
+          reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
 
       # Add Git User
       - task: Bash@3
