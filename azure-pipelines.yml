@@ -4,153 +4,143 @@ trigger:
       - development
       - master
 
+
 variables:
   npm_config_cache: $(Pipeline.Workspace)/node_modules
 
 
-stages:
-  - stage: InstallDependencies
-    displayName: 'Install Dependencies'
-    jobs:
-    - job: InstallDependencies
+jobs:
+- job: InstallDependencies
+  displayName: 'Install Dependencies'
 
-      pool:
-        vmImage: 'windows-2019'
-        displayName: 'Run Main Build and Test Pipeline'
-        
-      steps:
+  pool:
+    vmImage: 'windows-2019'
+    displayName: 'Run Main Build and Test Pipeline'
+    
+  steps:
 
-      # caching npm node_modules
-      - task: Cache@2
-        displayName: Cache npm
-        inputs:
-          key: 'npm | "$(Agent.OS)" | package-lock.json'
-          path: '$(npm_config_cache)'
-          cacheHitVar: 'CacheRestored'
-        
-      # Run npm ci
-      - task: Npm@1
-        displayName: 'Run npm ci'
-        inputs:
-          command: 'ci'
+  # caching npm node_modules
+  - task: Cache@2
+    displayName: 'Cache npm'
+    inputs:
+      key: 'npm | "$(Agent.OS)" | package-lock.json'
+      path: '$(npm_config_cache)'
+      cacheHitVar: 'CacheRestored'
+    
+  # Run npm ci
+  - task: Npm@1
+    displayName: 'Run npm ci'
+    inputs:
+      command: 'ci'
 
 
-  - stage: Tests
-    dependsOn: InstallDependencies
-    displayName: 'Run Tests'
-    jobs:
-    - job: RunTests
+- job: RunTests
+  displayName: 'Run Tests'
+  dependsOn: InstallDependencies
 
-      steps: 
+  steps: 
 
-        # Test
-        - task: Npm@1
-          displayName: 'Run Unit Tests'
-          inputs:
-            command: 'custom'
-            customCommand: 'run test:ci'
-        
-        # Publish Test Results
-        - task: PublishTestResults@2
-          displayName: 'Publish Test Results'
-          inputs:
-            testResultsFormat: 'JUnit'
-            testResultsFiles: 'test/junit.xml'
-            failTaskOnFailedTests: true
+    # Test
+    - task: Npm@1
+      displayName: 'Run Unit Tests'
+      inputs:
+        command: 'custom'
+        customCommand: 'run test:ci'
+    
+    # Publish Test Results
+    - task: PublishTestResults@2
+      displayName: 'Publish Test Results'
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: 'test/junit.xml'
+        failTaskOnFailedTests: true
 
-        # Publish Code Coverage Results
-        - task: PublishCodeCoverageResults@1
-          inputs:
-            codeCoverageTool: 'Cobertura'
-            summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
-            reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
+    # Publish Code Coverage Results
+    - task: PublishCodeCoverageResults@1
+      inputs:
+        codeCoverageTool: 'Cobertura'
+        summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
+        reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
 
 
-  - stage: BuildDocz
-    dependsOn: InstallDependencies
-    displayName: 'Build Docz'
-    jobs:
-    - job: BuildDocz
+- job: BuildDocz
+  displayName: 'Build Docz'
+  dependsOn: InstallDependencies
 
-      steps:
+  steps:
 
-        # Build Docz
-        - task: Npm@1
-          displayName: 'Run Build Docz'
-          inputs:
-            command: 'custom'
-            customCommand: 'run build'
-        
-        # Copy Docz Files To Artifacts Staging Directory
-        - task: CopyFiles@2
-          displayName: 'Copy Docz Files To Artifacts Staging Directory'
-          inputs:
-            SourceFolder: '.docz\dist'
-            Contents: '**'
-            TargetFolder: '$(Build.Artifactstagingdirectory)'
-            CleanTargetFolder: true
-            OverWrite: true
-        
-        # Publish Docz
-        - task: PublishBuildArtifacts@1
-          displayName: 'Publish Docz'
-          inputs:
-            PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-            ArtifactName: 'drop'
-            publishLocation: 'Container'
+    # Build Docz
+    - task: Npm@1
+      displayName: 'Run Build Docz'
+      inputs:
+        command: 'custom'
+        customCommand: 'run build'
+    
+    # Copy Docz Files To Artifacts Staging Directory
+    - task: CopyFiles@2
+      displayName: 'Copy Docz Files To Artifacts Staging Directory'
+      inputs:
+        SourceFolder: '.docz\dist'
+        Contents: '**'
+        TargetFolder: '$(Build.Artifactstagingdirectory)'
+        CleanTargetFolder: true
+        OverWrite: true
+    
+    # Publish Docz
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Docz'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
 
 
-  - stage: PublishArtifacts
-    dependsOn: Tests
-    displayName: 'Publish Artifacts'
-    jobs:
-    - job: PublishArtifacts
+- job: PublishArtifacts
+  displayName: 'Publish Artifacts'
+  dependsOn: RunTests
 
-      steps:
+  steps:
 
-      # Add Git User
-      - task: Bash@3
-        displayName: 'Add Git User'
-        inputs:
-          targetType: 'inline'
-          script: |
-            git config --global user.email "Admin@FixIt148.onmicrosoft.com"
-            git config --global user.name "Fixit"
+  # Add Git User
+  - task: Bash@3
+    displayName: 'Add Git User'
+    inputs:
+      targetType: 'inline'
+      script: |
+        git config --global user.email "Admin@FixIt148.onmicrosoft.com"
+        git config --global user.name "Fixit"
 
-      # Bump Package Version Patch
-      - task: Npm@1
-        displayName: 'Bump Package Version'
-        inputs:
-          command: 'custom'
-          customCommand: 'version patch --force'
-        condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
-      
-      # Bump Package Version Minor
-      - task: Npm@1
-        displayName: 'Bump Package Version'
-        inputs:
-          command: 'custom'
-          customCommand: 'version minor --force'
-        condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+  # Bump Package Version Patch
+  - task: Npm@1
+    displayName: 'Bump Package Version'
+    inputs:
+      command: 'custom'
+      customCommand: 'version patch --force'
+    condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
+  
+  # Bump Package Version Minor
+  - task: Npm@1
+    displayName: 'Bump Package Version'
+    inputs:
+      command: 'custom'
+      customCommand: 'version minor --force'
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
-      # Publishes npm package
-      - task: Npm@1
-        displayName: 'Publish Artifact'
-        inputs:
-          command: 'publish'
-          publishRegistry: 'useFeed'
-          # publishFeed: projectName/feedName
-          publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
-      
-      # Commiting the package.json version bump 
-      # Official microsoft documentation:
-      # (https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=code)
-      - task: CmdLine@2
-        displayName: 'Commit version bump'
-        inputs:
-          script: |
-            git commit -a -m "Bump package version"
-            git push -u origin HEAD:development
-
-
-
+  # Publishes npm package
+  - task: Npm@1
+    displayName: 'Publish Artifact'
+    inputs:
+      command: 'publish'
+      publishRegistry: 'useFeed'
+      # publishFeed: projectName/feedName
+      publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
+  
+  # Commiting the package.json version bump 
+  # Official microsoft documentation:
+  # (https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=code)
+  - task: CmdLine@2
+    displayName: 'Commit version bump'
+    inputs:
+      script: |
+        git commit -a -m "Bump package version"
+        git push -u origin HEAD:development
