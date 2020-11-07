@@ -8,7 +8,6 @@ trigger:
 jobs:
 - job: BuildFixitMobileComponentLib
   displayName: 'Build Fixit Mobile Component Library'
-  condition: ne(contains(variables['Build.SourceVersionMessage'], '[skip ci]'))
 
   pool:
     vmImage: 'windows-2019'
@@ -87,7 +86,7 @@ jobs:
     displayName: 'Bump Package Version'
     inputs:
       command: 'custom'
-      customCommand: 'version patch --force'
+      customCommand: 'version patch -m "Bump package version [skip ci]" --force'
     condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
   
   # Bump Package Version Minor
@@ -95,7 +94,7 @@ jobs:
     displayName: 'Bump Package Version'
     inputs:
       command: 'custom'
-      customCommand: 'version minor --force'
+      customCommand: 'version minor -m "Bump package version [skip ci]" --force'
     condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
   # Commiting the package.json version bump 
@@ -105,7 +104,7 @@ jobs:
     displayName: 'Commit version bump'
     inputs:
       script: |
-        git commit -a -m "Bump package version [skip ci]"
+        git commit -a -m "Auto CI commit [skip ci]"
         git push -u https://Admin%40FixIt148.onmicrosoft.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitMobileComponentLib HEAD:development
     condition: succeeded()
 
