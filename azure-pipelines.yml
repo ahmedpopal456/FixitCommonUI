@@ -4,6 +4,9 @@ trigger:
       - development
       - master
 
+variables:
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+
 
 stages:
   - stage: InstallDependencies
@@ -16,12 +19,16 @@ stages:
         displayName: 'Run Main Build and Test Pipeline'
         
       steps:
-
-      # Install
-      - task: Npm@1
-        displayName: 'Install Dependencies'
+      - task: Cache@2
+        displayName: 'Enable Caching for npm'
         inputs:
-          command: 'install'
+          key: '''npm | "$(Agent.OS)" | package-lock.json'''
+          path: '$(npm_config_cache)'
+          restoreKeys: |
+            restoreKeys: |
+                   npm | "$(Agent.OS)"
+      
+      - script: npm ci
 
 
   - stage: Tests
