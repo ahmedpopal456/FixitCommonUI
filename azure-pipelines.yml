@@ -19,15 +19,20 @@ stages:
         displayName: 'Run Main Build and Test Pipeline'
         
       steps:
+      # caching npm node_modules
       - task: Cache@2
+        displayName: Cache npm
         inputs:
           key: 'npm | "$(Agent.OS)" | package-lock.json'
           restoreKeys: |
             npm | "$(Agent.OS)"
           path: $(npm_config_cache)
-        displayName: Cache npm
-
-      - script: npm ci
+        
+      # Run npm ci
+      - task: Npm@1
+        displayName: 'Run npm ci'
+        inputs:
+          command: 'ci'
 
 
   - stage: Tests
@@ -136,7 +141,16 @@ stages:
           publishRegistry: 'useFeed'
           # publishFeed: projectName/feedName
           publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
-  
+      
+      # Commiting the package.json version bump 
+      # Official microsoft documentation:
+      # (https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=code)
+      - task: CmdLine@2
+        displayName: 'Commit version bump'
+        inputs:
+          script: |
+            git commit -a -m "Bump package version"
+            git push -u origin HEAD:development
 
 
 
