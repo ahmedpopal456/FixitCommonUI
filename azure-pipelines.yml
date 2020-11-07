@@ -97,16 +97,6 @@ jobs:
       customCommand: 'version minor --force'
     condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
 
-  # Publishes npm package
-  - task: Npm@1
-    displayName: 'Publish Artifact'
-    inputs:
-      command: 'publish'
-      publishRegistry: 'useFeed'
-      # publishFeed: projectName/feedName
-      publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
-    condition: succeeded()
-  
   # Commiting the package.json version bump 
   # Official microsoft documentation:
   # (https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=code)
@@ -117,4 +107,13 @@ jobs:
         git commit -a -m "Bump package version"
         git push -u https://Admin%40FixIt148.onmicrosoft.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitMobileComponentLib HEAD:development
     condition: succeeded()
-        
+
+  # Publishes npm package
+  - task: Npm@1
+    displayName: 'Publish Artifact'
+    inputs:
+      command: 'publish'
+      publishRegistry: 'useFeed'
+      # publishFeed: projectName/feedName
+      publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
+    condition: succeeded()
