@@ -6,8 +6,8 @@ trigger:
 
 
 jobs:
-- job: InstallDependencies
-  displayName: 'Install Dependencies'
+- job: BuildFixitMobileComponentLib
+  displayName: 'Build Fixit Mobile Component Library'
 
   pool:
     vmImage: 'windows-2019'
@@ -22,72 +22,54 @@ jobs:
       command: 'install'
 
 
-- job: RunTests
-  displayName: 'Run Tests'
-  dependsOn: InstallDependencies
+  # Run Unit Tests
+  - task: Npm@1
+    displayName: 'Run Unit Tests'
+    inputs:
+      command: 'custom'
+      customCommand: 'run test:ci'
+  
+  # Publish Test Results
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results'
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: 'test/junit.xml'
+      failTaskOnFailedTests: true
 
-  steps: 
-
-    # Test
-    - task: Npm@1
-      displayName: 'Run Unit Tests'
-      inputs:
-        command: 'custom'
-        customCommand: 'run test:ci'
-    
-    # Publish Test Results
-    - task: PublishTestResults@2
-      displayName: 'Publish Test Results'
-      inputs:
-        testResultsFormat: 'JUnit'
-        testResultsFiles: 'test/junit.xml'
-        failTaskOnFailedTests: true
-
-    # Publish Code Coverage Results
-    - task: PublishCodeCoverageResults@1
-      inputs:
-        codeCoverageTool: 'Cobertura'
-        summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
-        reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
+  # Publish Code Coverage Results
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
+      reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
 
 
-- job: BuildDocz
-  displayName: 'Build Docz'
-  dependsOn: InstallDependencies
+  # Build Docz
+  - task: Npm@1
+    displayName: 'Run Build Docz'
+    inputs:
+      command: 'custom'
+      customCommand: 'run build'
 
-  steps:
+  # Copy Docz Files To Artifacts Staging Directory
+  - task: CopyFiles@2
+    displayName: 'Copy Docz Files To Artifacts Staging Directory'
+    inputs:
+      SourceFolder: '.docz\dist'
+      Contents: '**'
+      TargetFolder: '$(Build.Artifactstagingdirectory)'
+      CleanTargetFolder: true
+      OverWrite: true
 
-    # Build Docz
-    - task: Npm@1
-      displayName: 'Run Build Docz'
-      inputs:
-        command: 'custom'
-        customCommand: 'run build'
-    
-    # Copy Docz Files To Artifacts Staging Directory
-    - task: CopyFiles@2
-      displayName: 'Copy Docz Files To Artifacts Staging Directory'
-      inputs:
-        SourceFolder: '.docz\dist'
-        Contents: '**'
-        TargetFolder: '$(Build.Artifactstagingdirectory)'
-        CleanTargetFolder: true
-        OverWrite: true
-    
-    # Publish Docz
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Docz'
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
+  # Publish Docz
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Docz'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
 
-
-- job: PublishArtifacts
-  displayName: 'Publish Artifacts'
-  dependsOn: RunTests
-
-  steps:
 
   # Add Git User
   - task: Bash@3
