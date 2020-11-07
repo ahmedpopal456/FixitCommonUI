@@ -20,14 +20,13 @@ stages:
         
       steps:
       - task: Cache@2
-        displayName: 'Enable Caching for npm'
         inputs:
-          key: '''npm | "$(Agent.OS)" | package-lock.json'''
-          path: '$(npm_config_cache)'
+          key: 'npm | "$(Agent.OS)" | package-lock.json'
           restoreKeys: |
-            restoreKeys: |
-                   npm | "$(Agent.OS)"
-      
+            npm | "$(Agent.OS)"
+          path: $(npm_config_cache)
+        displayName: Cache npm
+
       - script: npm ci
 
 
