@@ -39,6 +39,7 @@ jobs:
 
   # Publish Code Coverage Results
   - task: PublishCodeCoverageResults@1
+    displayName: 'Publish Code Coverage Results'
     inputs:
       codeCoverageTool: 'Cobertura'
       summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
@@ -113,4 +114,5 @@ jobs:
     inputs:
       script: |
         git commit -a -m "Bump package version"
-        git push -u origin HEAD:development
+        git push -u https://Admin%40FixIt148.onmicrosoft.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitMobileComponentLib HEAD:development
+        
