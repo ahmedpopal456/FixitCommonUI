@@ -1,5 +1,6 @@
 .docz
 coverage
+test
 
 ### react ###
 .DS_*
