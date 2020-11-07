@@ -8,6 +8,7 @@ trigger:
 jobs:
 - job: BuildFixitMobileComponentLib
   displayName: 'Build Fixit Mobile Component Library'
+  condition: ne(contains(variables['Build.SourceVersionMessage'], '[skip ci]'))
 
   pool:
     vmImage: 'windows-2019'
@@ -104,7 +105,7 @@ jobs:
     displayName: 'Commit version bump'
     inputs:
       script: |
-        git commit -a -m "Bump package version"
+        git commit -a -m "Bump package version [skip ci]"
         git push -u https://Admin%40FixIt148.onmicrosoft.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitMobileComponentLib HEAD:development
     condition: succeeded()
 
