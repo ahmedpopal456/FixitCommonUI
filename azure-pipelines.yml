@@ -5,7 +5,7 @@ trigger:
       - master
 
 variables:
-  npm_config_cache: $(Pipeline.Workspace)/.npm
+  npm_config_cache: $(Pipeline.Workspace)/node_modules
 
 
 stages:
@@ -19,14 +19,14 @@ stages:
         displayName: 'Run Main Build and Test Pipeline'
         
       steps:
+
       # caching npm node_modules
       - task: Cache@2
         displayName: Cache npm
         inputs:
           key: 'npm | "$(Agent.OS)" | package-lock.json'
-          restoreKeys: |
-            npm | "$(Agent.OS)"
-          path: $(npm_config_cache)
+          path: '$(npm_config_cache)'
+          cacheHitVar: 'CacheRestored'
         
       # Run npm ci
       - task: Npm@1
