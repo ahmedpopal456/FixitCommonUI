@@ -8,7 +8,6 @@ trigger:
 jobs:
 - job: BuildFixitMobileComponentLib
   displayName: 'Build Fixit Mobile Component Library'
-  condition: ne(contains(variables['Build.SourceVersionMessage'], '[skip ci]'))
 
   pool:
     vmImage: 'windows-2019'
