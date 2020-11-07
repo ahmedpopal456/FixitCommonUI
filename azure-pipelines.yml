@@ -5,10 +5,6 @@ trigger:
       - master
 
 
-variables:
-  npm_config_cache: $(Pipeline.Workspace)/node_modules
-
-
 jobs:
 - job: InstallDependencies
   displayName: 'Install Dependencies'
@@ -19,11 +15,11 @@ jobs:
     
   steps:
 
-  # Run npm ci
+  # Run npm install
   - task: Npm@1
-    displayName: 'Run npm ci'
+    displayName: 'Run npm install'
     inputs:
-      command: 'ci'
+      command: 'install'
 
 
 - job: RunTests
