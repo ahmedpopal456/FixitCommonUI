@@ -221,6 +221,73 @@ exports[`matches disabled snapshot 1`] = `
 </View>
 `;
 
+exports[`matches icon snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#00000000",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      library="AntDesign"
+      style={
+        Array [
+          Object {
+            "color": "#D4675A",
+            "fontSize": 24,
+          },
+          undefined,
+          Object {
+            "fontFamily": "anticon",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`matches shape snapshot 1`] = `
 <View
   accessible={true}

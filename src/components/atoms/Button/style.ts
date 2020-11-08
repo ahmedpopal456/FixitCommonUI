@@ -25,7 +25,7 @@ export const ButtonContainer = styled.TouchableOpacity`
   ${(props: Props) =>
         props.color != "transparent" &&
         `
-      border-color: ${props.disabled ? colors.grey : props.color ? colors[props.color] : colors.primary};
+      border-color: ${props.disabled ? colors.grey : colors[props.color!]};
       }
       border-width: 1px;
       border-radius: ${props.shape === "square" ? '3px' : '100px'};
@@ -58,7 +58,7 @@ export const IconWrapper = styled.View`
 
 /** Helpers */
 const getContainerColor = (props: Props) => {
-    let color = props.color ? colors[props.color] : colors.primary;
+    let color =colors[props.color!];
 
     if (props.$outline) {
         color = colors.transparent;
@@ -70,7 +70,7 @@ const getContainerColor = (props: Props) => {
 };
 
 const getTextColor = (props: Props): string => {
-    const bgColor = props.color ? colors[props.color] : colors.primary;
+    const bgColor = colors[props.color!];
     let color = bgColor == colors.primary ? colors.accent : colors.primary;
 
     if (props.$outline) {

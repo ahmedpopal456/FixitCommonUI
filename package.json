@@ -47,7 +47,8 @@
   "jest": {
     "coverageReporters": [
       "cobertura",
-      "html"
+      "html",
+      "lcov"
     ],
     "preset": "react-native",
     "moduleFileExtensions": [

@@ -1,6 +1,7 @@
 import "react-native";
 import React from "react";
 import { Button } from "../src/components/atoms/Button";
+import { Icon } from "../src/components/atoms/Icon";
 
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
@@ -95,6 +96,17 @@ it("matches shape snapshot", () => {
   const button = renderer.create(
     <Button onPress={mockFn} shape="circle">
       Button
+    </Button>
+  );
+
+  expect(button.toJSON()).toMatchSnapshot();
+});
+
+it("matches icon snapshot", () => {
+  const mockFn = jest.fn();
+  const button = renderer.create(
+    <Button onPress={mockFn} color="transparent">
+      <Icon library="AntDesign" name="heart" color="red"/>
     </Button>
   );
 
