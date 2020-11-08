@@ -7,8 +7,9 @@ import { IconLibraries } from "./IconLibraries";
 /** PROPS */
 interface Props {
   style?: object;
-  /** primary or accent */
+  /** Any color from the theme's color palette */
   color?: keyof typeof colors;
+  /** Size of the icon */
   size?: number;
   /**  The library which the icon is from */
   library?: keyof typeof IconLibraries;
@@ -18,10 +19,8 @@ interface Props {
 
 /** Building the Icon */
 export const Icon: React.FC<Props> = (props) => {
-  const VectorIcon = props.library
-    ? IconLibraries[props.library]
-    : IconLibraries.MaterialCommunityIcons;
-  const color: string = props.color ? colors[props.color] : colors.primary;
+  const VectorIcon = IconLibraries[props.library!];
+  const color: string = colors[props.color!];
 
   const childProps = { ...props };
   delete childProps.color;
