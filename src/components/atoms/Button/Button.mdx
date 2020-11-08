@@ -16,7 +16,7 @@ A Button is a clickable view to carry out actions such as clearing user input or
 ```tsx
 import { Button } from 'fixit-mobile-components';
 
-<Button onPress={() => this.doSomething()}>
+<Button onPress={doSomething}>
   Press Me
 </Button>
 ```
@@ -30,8 +30,8 @@ import { Button } from 'fixit-mobile-components';
   <DoczContainer>
     <Button onPress={() => void 0}>Press Me</Button>
     <Button onPress={() => void 0} color="accent">Press Me</Button>
-    <Button onPress={() => void 0} outline>Press Me</Button>
-    <Button onPress={() => void 0} outline color="accent">Press Me</Button>
+    <Button onPress={() => void 0} $outline>Press Me</Button>
+    <Button onPress={() => void 0} $outline color="accent">Press Me</Button>
   </DoczContainer>
 </Playground>
 
@@ -59,7 +59,7 @@ import { Button } from 'fixit-mobile-components';
 
 <Playground>
   <DoczContainer>
-    <Button onPress={() => void 0} width={100}>
+    <Button onPress={() => void 0} width={150}>
       Press Me
     </Button>
     <Button onPress={() => void 0} width={200}>

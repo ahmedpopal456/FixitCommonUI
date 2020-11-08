@@ -24,12 +24,12 @@ Regardless of the technologies and tools behind them, a successful design system
 ## How can I see the components?
 Start by installing the dependencies of the project.
 ```bash
-yarn
+npm install
 ```
 
 Once that is done, you should be able to run docz.
 ```bash
-yarn dev
+npm run dev
 ```
 This will open docz at [this address](http://localhost:3000). Now you can edit components,
 and as soon as you save, you should see the changes in the browser.
@@ -43,8 +43,8 @@ the changes as you implement the component.
 This file consists of the code for the component.
 ```tsx
 import React from "react";
-import styled from "styled-components/native";
 
+import { StyledView } from "./style"
 import colors from "../../../theme/colors";
 
 /** PROPS */
@@ -68,7 +68,18 @@ export const Component: React.FC<Props> = (props) => {
 Button.defaultProps = {
   optional: "default",
 };
+```
 
+#### style.ts
+This file contains the styling for the component.
+```tsx
+import styled from "styled-components/native";
+
+import colors from "../../../theme/colors";
+
+/** PROPS */
+interface Props {
+}
 /** 
  * Styled Components
  * 
@@ -117,7 +128,7 @@ import { Component } from "fixit-mobile-components";
 #### index.ts
 This file is used to export all the components in the Component directory.
 ```ts
-import { Button } from './Button';
+import { Button } from "./Button";
 
 export { Button };
 ```
