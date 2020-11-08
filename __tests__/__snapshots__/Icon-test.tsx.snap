@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches snapshot 1`] = `
+exports[`matches color snapshot 1`] = `
 <Text
   allowFontScaling={false}
   library="AntDesign"
@@ -21,5 +21,53 @@ exports[`matches snapshot 1`] = `
   }
 >
   
+</Text>
+`;
+
+exports[`matches library snapshot 1`] = `
+<Text
+  allowFontScaling={false}
+  library="AntDesign"
+  style={
+    Array [
+      Object {
+        "color": "#33343E",
+        "fontSize": 24,
+      },
+      undefined,
+      Object {
+        "fontFamily": "anticon",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`matches name snapshot 1`] = `
+<Text
+  allowFontScaling={false}
+  library="MaterialCommunityIcons"
+  style={
+    Array [
+      Object {
+        "color": "#33343E",
+        "fontSize": 24,
+      },
+      undefined,
+      Object {
+        "fontFamily": "Material Design Icons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  󰋜
 </Text>
 `;
