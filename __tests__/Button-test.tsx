@@ -4,53 +4,99 @@ import { Button } from "../src/components/atoms/Button";
 
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
+import { render, fireEvent } from '@testing-library/react-native';
 
-it("renders default", () => {
-  renderer.create(<Button onPress={() => void 0}>Button</Button>);
-});
 
-it("renders outline", () => {
-  renderer.create(
-    <Button onPress={() => void 0} outline>
+/** Testing user interaction */
+it("fires onPress event when pressed", () => {
+  const mockFn = jest.fn();
+
+  const { getByTestId } = render(
+    <Button onPress={mockFn} testID="buttonTestID">
       Button
     </Button>
   );
+  const button = getByTestId('buttonTestID');
+  
+  fireEvent.press(button);
+
+  expect(mockFn).toHaveBeenCalled();
 });
 
-it("renders disabled", () => {
-  renderer.create(
-    <Button onPress={() => void 0} disabled>
+it("does not fires onPress event when disabled", () => {
+  const mockFn = jest.fn();
+
+  const { getByTestId } = render(
+    <Button onPress={mockFn} testID="disabledTestID" disabled>
       Button
     </Button>
   );
+  const disabledButton = getByTestId('disabledTestID');
+  
+  fireEvent.press(disabledButton);
+
+  expect(mockFn).toBeCalledTimes(0);
 });
 
-it("renders color", () => {
-  renderer.create(
-    <Button onPress={() => void 0} color="accent">
+/** Testing Rendered Output (snapshot testing) */
+it("matches default snapshot", () => {
+  const mockFn = jest.fn();
+  const button = renderer.create(<Button onPress={mockFn}>Button</Button>);
+  
+  expect(button.toJSON()).toMatchSnapshot();
+});
+
+it("matches $outline snapshot", () => {
+  const mockFn = jest.fn();
+  const button = renderer.create(
+    <Button onPress={mockFn} $outline>
       Button
     </Button>
   );
+
+  expect(button.toJSON()).toMatchSnapshot();
 });
 
-it("renders width", () => {
-  renderer.create(
-    <Button onPress={() => void 0} width={30}>
+it("matches disabled snapshot", () => {
+  const mockFn = jest.fn();
+  const button = renderer.create(
+    <Button onPress={mockFn} disabled>
       Button
     </Button>
   );
+
+  expect(button.toJSON()).toMatchSnapshot();
 });
 
-it("renders shape", () => {
-  renderer.create(
-    <Button onPress={() => void 0} shape="circle">
+it("matches color snapshot", () => {
+  const mockFn = jest.fn();
+  const button = renderer.create(
+    <Button onPress={mockFn} color="accent">
       Button
     </Button>
   );
+
+  expect(button.toJSON()).toMatchSnapshot();
 });
-it("matches snapshot", () => {
-  const button = renderer
-    .create(<Button onPress={() => void 0}>Button</Button>)
-    .toJSON();
-  expect(button).toMatchSnapshot();
+
+it("matches width snapshot", () => {
+  const mockFn = jest.fn();
+  const button = renderer.create(
+    <Button onPress={mockFn} width={30}>
+      Button
+    </Button>
+  );
+
+  expect(button.toJSON()).toMatchSnapshot();
+});
+
+it("matches shape snapshot", () => {
+  const mockFn = jest.fn();
+  const button = renderer.create(
+    <Button onPress={mockFn} shape="circle">
+      Button
+    </Button>
+  );
+
+  expect(button.toJSON()).toMatchSnapshot();
 });
