@@ -1,5 +1,5 @@
 {
-  "name": "fixit-mobile-components",
+  "name": "fixit-common-ui",
   "version": "1.0.9",
   "description": "A library of react native components to use in the mobile Fixit application",
   "main": "src/index.ts",
