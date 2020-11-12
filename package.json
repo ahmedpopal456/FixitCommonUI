@@ -13,7 +13,8 @@
     "dev": "docz dev",
     "build": "docz build",
     "test": "jest --coverage",
-    "test:ci": "jest --env=jsdom --testResultsProcessor=\"jest-junit\" --coverage"
+    "test:ci": "jest --env=jsdom --testResultsProcessor=\"jest-junit\" --coverage",
+    "generate": "node bin/generate.js"
   },
   "dependencies": {
     "react-native": "^0.63.3",

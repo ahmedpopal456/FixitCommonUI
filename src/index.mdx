@@ -39,96 +39,31 @@ Each component should include at least 3 files. A starting point for the compone
 from below. My suggestion would be to start by writting the documentation so that you can see 
 the changes as you implement the component.
 
-#### Component.tsx
-This file consists of the code for the component.
-```tsx
-import React from "react";
+* **Component.tsx:** This file consists of the code for the component.
 
-import { StyledView } from "./style"
-import colors from "../../../theme/colors";
+* **style.ts:** This file contains the styling for the component.
 
-/** PROPS */
-interface Props {
-  /**  Example of an optional prop */
-  optional?: string;
-  /** Example of a required prop*/
-  required: number;
-}
+* **Component.mdx:** This file consists of the documentation for the component.
 
-/** Building the Component */
-export const Component: React.FC<Props> = (props) => {
-  return (
-    <StyledView>
-        // TODO: implement the component
-    </StyledView>
-  );
-};
+* **index.ts:** This file is used to export all the components in the Component directory.
 
-/** Setting the defaults for the props*/
-Button.defaultProps = {
-  optional: "default",
-};
-```
+* **Component-test.tsx:** This file contains the unit tests.
 
-#### style.ts
-This file contains the styling for the component.
-```tsx
-import styled from "styled-components/native";
 
-import colors from "../../../theme/colors";
 
-/** PROPS */
-interface Props {
-}
-/** 
- * Styled Components
- * 
- * Here you can add css to react native components to create a styled version of it
- */
-const StyledView = styled.View`
-    color: red;
-`;
-```
+We have a custom script you can run to generate these files and populate it with boilerplate content:
+```bash
+Usage: generate [options] [command]
 
-#### Component.mdx
-This file consists of the documentation for the component.
-```md
----
-name: Component
-menu: Atoms
----
+Options:
+  -V, --version  output the version number
+  -h, --help     output usage information
 
-import { Props, Playground } from "docz";
-import { Component } from "./Component.tsx";
+Commands:
+  atom|a         Add an atom to the component library
+  molecule|m     Add an molecule to the component library
+  organism|o     Add an organism to the component library
+  template|t     Add a template to the component library
 
-# Component
-
-A description of the component
-
-# Usage
-
-<!-- ```tsx
-import { Component } from "fixit-common-ui";
-
-// TODO: write how the component is used and uncomment this block
-``` -->
-
-## Props
-
-<Props of={Component}></Props>
-
-## Default
-
-<Playground>
-  <Component/>
-</Playground>
-
-```
-
-#### index.ts
-This file is used to export all the components in the Component directory.
-```ts
-import { Button } from "./Button";
-
-export { Button };
+npm run generate atom Button
 ```
