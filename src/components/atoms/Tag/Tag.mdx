@@ -1,0 +1,44 @@
+---
+name: Tag
+menu: Atoms
+---
+import { Props, Playground } from "docz"
+import { Tag } from "./Tag.tsx"
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
+
+
+# Component
+A description of the component
+
+# Usage
+```tsx
+import { Tag } from "fixit-common-ui"
+<Tag>Tag text</Tag>
+```
+
+## Props
+<Props of={Tag}></Props>
+
+## Default
+<Playground>
+  <DoczContainer>
+    <Tag>Bathroom</Tag>
+    <Tag textColor="accent">Kitchen</Tag>
+    <Tag backgroundColor="accent" textColor="primary">Bedroom</Tag>
+  </DoczContainer>
+</Playground>
+
+## Nested
+<Playground>
+  <DoczContainer>
+    <Tag>
+        Bathroom
+        <Tag backgroundColor="green" textColor="dark">$99.99</Tag>
+    </Tag>
+
+    <Tag>
+        Bathroom
+        <Tag backgroundColor="red" textColor="white">$99.99</Tag>
+    </Tag>
+  </DoczContainer>
+</Playground>
