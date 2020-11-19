@@ -1,0 +1,62 @@
+---
+name: Typography
+menu: Atoms
+---
+import { Props, Playground } from "docz";
+import { H1, H2, H3, H4, H5, Label, P } from "./Typography.tsx";
+
+# Typography
+The Typography components include **H1**, **H2**, **H3**, **H4**, **H5**, **P** and **Label**.
+
+## Props
+All typography elements have the same Props, but with different default values.
+The default values in the folowing table are from the **P** component.
+<Props of={P}></Props>
+
+# Usage
+```tsx
+import { H1 } from "fixit-common-ui";
+
+<H1>Typography</H1>
+```
+
+## Default
+<Playground>
+  <H1>Typography</H1>
+  <H2>Typography</H2>
+  <H3>Typography</H3>
+  <H4>Typography</H4>
+  <H5>Typography</H5>
+  <Label>Typography</Label>
+  <P>Typography</P>
+</Playground>
+
+## Caps
+Passing th `$caps` prop will capitalize every character in the text.
+<Playground>
+  <H1 $caps>Typography</H1>
+  <H2 $caps>Typography</H2>
+  <H3 $caps>Typography</H3>
+  <H4 $caps>Typography</H4>
+  <H5 $caps>Typography</H5>
+  <Label $caps>Typography</Label>
+  <P $caps>Typography</P>
+</Playground>
+
+## Styling
+If the default styling need to be changed, a fontSize, fontWeight and color prop can be passed.
+If more customization is needed, you can pass a style prop.
+<Playground>
+  <P>Default</P>
+  <P fontSize={30}>Font Size</P>
+  <P fontWeight={800}>Font Weight</P>
+  <P color="accent">Color Accent</P>
+  <P style={{
+    color: "white", 
+    fontSize: 24, 
+    backgroundColor: "black", 
+    textAlign: "center",
+    padding: 5,
+    textTransform: "uppercase"}}
+  >Styling</P>
+</Playground>

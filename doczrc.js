@@ -1,4 +1,5 @@
 export default {
+  title: 'Fixit Common UI',
   typescript: true,
   notUseSpecifiers: true,
   filterComponents: (files) =>

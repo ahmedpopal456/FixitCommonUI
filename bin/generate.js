@@ -59,6 +59,7 @@ function add(name, type) {
   const content = new Content(name, type);
   createFile(dir, `${name}.tsx`, content.component);
   createFile(dir, `${name}.mdx`, content.documentation);
+  createFile(dir, `props.model.ts`, content.props);
   createFile(dir, `index.ts`, content.index);
   createFile(dir, `style.ts`, content.style);
   createFile(TESTS_DIR, `${name}-test.tsx`, content.test);
@@ -87,28 +88,39 @@ function createFile(parentDir, fileName, content) {
 /** Content to be added inside each file */
 function Content(name, type) {
   this.component = componentContent(name);
+  this.props = propsContent();
   this.index = indexContent(name);
   this.style = styleContent(name);
   this.documentation = documentationContent(name);
   this.test = testsContent(name, type);
 }
 
+function propsContent() {
+  return `import colors from "../../../theme/colors";
+  
+  export interface Props {
+    /**  Example of an optional prop */
+    optional?: string;
+    /** Example of a required prop*/
+    required: boolean;
+  }`
+}
+
 function componentContent(name) {
   return `import React from "react";
 import { StyledView } from "./style"
+import { Props } from "./props.model";
+
 import colors from "../../../theme/colors";
-/** PROPS */
-interface Props {
-  /**  Example of an optional prop */
-  optional?: string;
-  /** Example of a required prop*/
-  required: boolean;
-}
-/** Describe the Component */
-export const ${name}: React.FC<Props> = (props) => {
+
+/** 
+ * Describe the Component 
+ * @param props - The ${name}'s props
+ * @returns A react native custom ${name} component
+ */
+export const ${name}: React.FC<Props> = (props): JSX.Element => {
   return (
     <StyledView>
-        // TODO: implement the component
     </StyledView>
   );
 };
@@ -127,10 +139,10 @@ export { ${name} };
 
 function styleContent(){
   return `import styled from "styled-components/native";
+import { Props } from './props.model';
 import colors from "../../../theme/colors";
-/** PROPS */
-interface Props {
-}
+
+
 /** 
  * Styled Components
  * 
@@ -144,23 +156,27 @@ export const StyledView = styled.View\`
 
 function  documentationContent(name){
   return `---
-name: Component
+name: ${name}
 menu: Atoms
 ---
 import { Props, Playground } from "docz";
 import { ${name} } from "./${name}.tsx";
+
 # Component
 A description of the component
+
 # Usage
 \`\`\`tsx
 import { ${name} } from "fixit-common-ui";
 // TODO: write how the component is used and uncomment this block
 \`\`\`
+
 ## Props
 <Props of={${name}}></Props>
+
 ## Default
 <Playground>
-  <${name}/>
+  <${name} required></${name}>
 </Playground>
 `
 }
@@ -175,7 +191,7 @@ function testsContent(name, type) {
   import { render, fireEvent } from '@testing-library/react-native';
   
   it('renders correctly', () => {
-      renderer.create(<${name} required/>);
+      renderer.create(<${name} required></${name}>);
   });
   `
 }
