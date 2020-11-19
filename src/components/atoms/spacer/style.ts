@@ -22,6 +22,7 @@ export const StyledSpacer = styled.View`
         flexGrow:0;
         width:${props.width};
      `}
+     
      ${(props: Props) =>
         props.height &&
         `
