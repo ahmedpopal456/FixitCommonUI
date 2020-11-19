@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches background color snapshot 1`] = `
+<View
+  margins="5px 10px 5px 0px"
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "flexDirection": "row",
+        "marginBottom": 5,
+        "marginLeft": 0,
+        "marginRight": 10,
+        "marginTop": 5,
+      },
+    ]
+  }
+>
+  <Text
+    backgroundcolor="accent"
+    color="primary"
+    marginleft="0px"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFD14A",
+          "borderRadius": 4,
+          "color": "#33343E",
+          "marginLeft": 0,
+          "paddingBottom": 5,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    Bedroom
+  </Text>
+</View>
+`;
+
+exports[`matches default snapshot 1`] = `
+<View
+  margins="5px 10px 5px 0px"
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "flexDirection": "row",
+        "marginBottom": 5,
+        "marginLeft": 0,
+        "marginRight": 10,
+        "marginTop": 5,
+      },
+    ]
+  }
+>
+  <Text
+    backgroundcolor="primary"
+    color="white"
+    marginleft="0px"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#33343E",
+          "borderRadius": 4,
+          "color": "#FFFFFF",
+          "marginLeft": 0,
+          "paddingBottom": 5,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    Bathroom
+  </Text>
+</View>
+`;
+
+exports[`matches nested snapshot 1`] = `
+<View
+  margins="5px 10px 5px 0px"
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "flexDirection": "row",
+        "marginBottom": 5,
+        "marginLeft": 0,
+        "marginRight": 10,
+        "marginTop": 5,
+      },
+    ]
+  }
+>
+  <Text
+    backgroundcolor="primary"
+    color="white"
+    marginleft="0px"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#33343E",
+          "borderRadius": 4,
+          "color": "#FFFFFF",
+          "marginLeft": 0,
+          "paddingBottom": 5,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    Bathroom
+  </Text>
+  <View
+    margins="0px"
+    style={
+      Array [
+        Object {
+          "alignSelf": "flex-start",
+          "flexDirection": "row",
+          "marginBottom": 0,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      backgroundcolor="green"
+      color="dark"
+      marginleft="-3px"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#8ED698",
+            "borderRadius": 4,
+            "color": "#1D1F2A",
+            "marginLeft": -3,
+            "paddingBottom": 5,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 5,
+          },
+        ]
+      }
+    >
+      $99.99
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches text color snapshot 1`] = `
+<View
+  margins="5px 10px 5px 0px"
+  style={
+    Array [
+      Object {
+        "alignSelf": "flex-start",
+        "flexDirection": "row",
+        "marginBottom": 5,
+        "marginLeft": 0,
+        "marginRight": 10,
+        "marginTop": 5,
+      },
+    ]
+  }
+>
+  <Text
+    backgroundcolor="primary"
+    color="accent"
+    marginleft="0px"
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#33343E",
+          "borderRadius": 4,
+          "color": "#FFD14A",
+          "marginLeft": 0,
+          "paddingBottom": 5,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 5,
+        },
+      ]
+    }
+  >
+    Kitchen
+  </Text>
+</View>
+`;

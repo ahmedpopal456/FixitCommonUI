@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches default snapshot 1`] = `
+<View
+  stretch={true}
+  style={
+    Array [
+      Object {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`matches height snapshot 1`] = `
+<View
+  height="120px"
+  stretch={true}
+  style={
+    Array [
+      Object {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "height": 120,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`matches stretch snapshot 1`] = `
+<View
+  stretch={true}
+  style={
+    Array [
+      Object {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+/>
+`;
+
+exports[`matches width snapshot 1`] = `
+<View
+  stretch={true}
+  style={
+    Array [
+      Object {
+        "flexBasis": "unset",
+        "flexGrow": 0,
+        "flexShrink": 1,
+        "width": 30,
+      },
+    ]
+  }
+  width="30px"
+/>
+`;

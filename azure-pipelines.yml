@@ -4,6 +4,8 @@ trigger:
       - development
       - master
 
+pr: none
+
 
 jobs:
 - job: BuildFixitMobileComponentLib
