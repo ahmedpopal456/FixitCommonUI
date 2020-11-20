@@ -3,7 +3,7 @@ export default {
     accent: "#FFD14A",
   
     white: "#FFFFFF",
-    grey: "#CECECE",
+    grey: "#8B8B8B",
   
     light: "#EEEEEE",
     dark: "#1D1F2A",
@@ -15,6 +15,7 @@ export default {
     green: "#8ED698",
   
     notification: "#FF0000",
+    disabled: "#CECECE",
   
     error: "#D4675A",
     success: "#8ED698",
