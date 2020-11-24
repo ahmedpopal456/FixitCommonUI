@@ -1,0 +1,75 @@
+---
+name: DonutChart
+menu: 2 - Molecules
+---
+import { Props, Playground } from "docz";
+import { DonutChart } from "./DonutChart.tsx";
+import { DoczContainer } from '../../../utils/DoczContainer.tsx';
+import colors from '../../../theme/colors';
+
+# DonutChart
+A description of the component
+
+# Usage
+```tsx
+import { DonutChart } from "fixit-common-ui";
+
+<DonutChart value={30} />
+```
+
+## Props
+<Props of={DonutChart}></Props>
+
+## Default
+The Donut chart requires a value to be provided. This value will indicate the percentage
+to display.
+<Playground>
+  <DoczContainer>
+    <DonutChart value={25} />
+    <DonutChart value={50} />
+    <DonutChart value={75} />
+    <DonutChart value={100} />
+  </DoczContainer>
+</Playground>
+
+## Max
+If the max value is not provided, the default will be 100. If one is provided,
+The value given over the max will form the percentage displayed. If the value is greater
+than the max, it will display 100%.
+<Playground>
+  <DoczContainer>
+    <DonutChart value={250} max={1000} />
+    <DonutChart value={250} />
+  </DoczContainer>
+</Playground>
+
+## Color and TextColor
+Modify the default color and text color for the Donut Chart.
+<Playground>
+  <DoczContainer>
+    <DonutChart value={75} color="primary" textColor="white" />
+    <DonutChart value={75} color="red" textColor="red" />
+    <DonutChart value={75} color="green" />
+  </DoczContainer>
+</Playground>
+
+## Radius
+Modify the default color and text color for the Donut Chart.
+<Playground>
+  <DoczContainer>
+    <DonutChart value={75} radius={40} />
+    <DonutChart value={75} radius={50} />
+    <DonutChart value={75} radius={60} />
+    <DonutChart value={75} radius={70} />
+    <DonutChart value={75} radius={80} />
+  </DoczContainer>
+</Playground>
+
+## Stroke Width
+Modify the default color and text color for the Donut Chart.
+<Playground>
+  <DoczContainer>
+    <DonutChart value={75} strokeWidth={10} />
+    <DonutChart value={75} strokeWidth={30} />
+  </DoczContainer>
+</Playground>
