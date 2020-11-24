@@ -91,7 +91,7 @@ function Content(name, type) {
   this.props = propsContent();
   this.index = indexContent(name);
   this.style = styleContent(name);
-  this.documentation = documentationContent(name);
+  this.documentation = documentationContent(name, type);
   this.test = testsContent(name, type);
 }
 
@@ -154,15 +154,23 @@ export const StyledView = styled.View\`
 `
 }
 
-function  documentationContent(name){
+function  documentationContent(name, type){
+  let menu = '';
+
+  switch(type){
+    case 'atom': menu = '1 - Atoms'; break;
+    case 'molecule': menu = '2 - Molecules'; break;
+    case 'organism': menu = '3 - Organisms'; break; 
+  }
+
   return `---
 name: ${name}
-menu: Atoms
+menu: ${menu}
 ---
 import { Props, Playground } from "docz";
 import { ${name} } from "./${name}.tsx";
 
-# Component
+# ${name}
 A description of the component
 
 # Usage
