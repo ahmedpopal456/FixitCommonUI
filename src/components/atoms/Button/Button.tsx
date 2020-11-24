@@ -1,38 +1,18 @@
 import React from "react";
 
-import { ButtonContainer, Label, IconWrapper } from './style';
+import { ButtonContainer, IconWrapper } from './style';
+import { Label } from '../Typography'
+import { Props } from "./props.model";
+
 import colors from '../../../theme/colors';
 
-/** PROPS */
-interface Props {
-  /**  To override default style */
-  style?: any;
-  /** Can be any color from the theme color palette */
-  color?: keyof typeof colors;
-  /** Callback function to be called when pressed */
-  onPress(): void;
-  /** Boolean value for outline button */
-  $outline?: boolean;
-  /** Boolean value for disabled button */
-  disabled?: boolean;
-  /** If true, the button will stretch to the screen width */
-  block?: boolean;
-  /** To pass custom icon */
-  icon?: any;
-  /** Icon Position */
-  position?: "left" | "right";
-  /** Button width */
-  width?: number;
-  /** Children which will be contained in the button (ie. Icon or string) */
-  children: any;
-  /** Shape of the ends of the button */
-  shape?: "circle" | "square";
-  /** Used for testing */
-  testID?: string;
-}
-
-/** Custom Fixit Button component */
-export const Button: React.FC<Props> = (props: Props) => {
+/** 
+ * Custom Fixit Button component
+ * 
+ * @param props - the button props
+ * @returns a react native custom button component
+ */
+export const Button: React.FC<Props> = (props: Props): JSX.Element => {
   return (
     <ButtonContainer
       {...props}
@@ -42,7 +22,12 @@ export const Button: React.FC<Props> = (props: Props) => {
   );
 };
 
-const renderChildren = (props: Props) => {
+/**
+ * 
+ * @param props - The button's props
+ * @returns The items that will be displayed in the button. ie. Label and/or Icon
+ */
+const renderChildren = (props: Props): JSX.Element => {
   return (
     <>
       {React.Children.map(props.children, (child: any) => {
@@ -50,9 +35,12 @@ const renderChildren = (props: Props) => {
           typeof child === "string" || child instanceof String;
         if (childIsString) {
           return <Label 
-            color={props.color}
-            disabled={props.disabled}
-            $outline={props.$outline}
+            color={getTextColor(props)}
+            padding={6}
+            fontSize={17}
+            fontWeight={400}
+            $caps={props.$caps}
+            justification="center"
           >{child}</Label>;
         } else {
           const icon = React.cloneElement(child);
@@ -61,6 +49,22 @@ const renderChildren = (props: Props) => {
       })}
     </>
   );
+};
+
+/**
+ * @param props - The button's props
+ * @returns a color value that the text should display
+ */
+const getTextColor = (props: Props): keyof typeof colors => {
+  const bgColor = props.color!;
+  let color: keyof typeof colors = bgColor == "primary" ? "accent" : "primary";
+
+  if (props.$outline) {
+      color = bgColor;
+  } else if (props.disabled) {
+      color = "light";
+  }
+  return color;
 };
 
 Button.defaultProps = {

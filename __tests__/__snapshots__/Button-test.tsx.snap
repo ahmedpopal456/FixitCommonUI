@@ -33,25 +33,46 @@ exports[`matches $outline snapshot 1`] = `
     }
   }
 >
-  <Text
-    color="primary"
+  <View
     style={
       Array [
         Object {
-          "color": "#33343E",
-          "fontSize": 17,
-          "fontWeight": "600",
-          "height": "100%",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
         },
       ]
     }
   >
-    Button
-  </Text>
+    <Text
+      color="primary"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#33343E",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
 </View>
 `;
 
@@ -88,25 +109,46 @@ exports[`matches color snapshot 1`] = `
     }
   }
 >
-  <Text
-    color="accent"
+  <View
     style={
       Array [
         Object {
-          "color": "#33343E",
-          "fontSize": 17,
-          "fontWeight": "600",
-          "height": "100%",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
         },
       ]
     }
   >
-    Button
-  </Text>
+    <Text
+      color="primary"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#33343E",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
 </View>
 `;
 
@@ -143,25 +185,46 @@ exports[`matches default snapshot 1`] = `
     }
   }
 >
-  <Text
-    color="primary"
+  <View
     style={
       Array [
         Object {
-          "color": "#FFD14A",
-          "fontSize": 17,
-          "fontWeight": "600",
-          "height": "100%",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
         },
       ]
     }
   >
-    Button
-  </Text>
+    <Text
+      color="accent"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
 </View>
 `;
 
@@ -198,26 +261,46 @@ exports[`matches disabled snapshot 1`] = `
     }
   }
 >
-  <Text
-    color="primary"
-    disabled={true}
+  <View
     style={
       Array [
         Object {
-          "color": "#EEEEEE",
-          "fontSize": 17,
-          "fontWeight": "600",
-          "height": "100%",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
         },
       ]
     }
   >
-    Button
-  </Text>
+    <Text
+      color="light"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#EEEEEE",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
 </View>
 `;
 
@@ -321,25 +404,46 @@ exports[`matches shape snapshot 1`] = `
     }
   }
 >
-  <Text
-    color="primary"
+  <View
     style={
       Array [
         Object {
-          "color": "#FFD14A",
-          "fontSize": 17,
-          "fontWeight": "600",
-          "height": "100%",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
         },
       ]
     }
   >
-    Button
-  </Text>
+    <Text
+      color="accent"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
 </View>
 `;
 
@@ -377,24 +481,45 @@ exports[`matches width snapshot 1`] = `
     }
   }
 >
-  <Text
-    color="primary"
+  <View
     style={
       Array [
         Object {
-          "color": "#FFD14A",
-          "fontSize": 17,
-          "fontWeight": "600",
-          "height": "100%",
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
         },
       ]
     }
   >
-    Button
-  </Text>
+    <Text
+      color="accent"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
 </View>
 `;

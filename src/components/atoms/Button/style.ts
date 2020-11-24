@@ -1,17 +1,11 @@
 import { Platform } from 'react-native';
 import styled from "styled-components/native";
+import custom from "styled-components";
 
+import { Label } from "../Typography";
+import { Props } from './props.model';
 import colors from '../../../theme/colors';
 
-/** PROPS */
-interface Props {
-    color?: keyof typeof colors;
-    $outline?: boolean;
-    disabled?: boolean;
-    block?: boolean;
-    width?: number;
-    shape?: "circle" | "square";
-}
 
 /** Styled Components */
 export const ButtonContainer = styled.TouchableOpacity`
@@ -25,7 +19,7 @@ export const ButtonContainer = styled.TouchableOpacity`
   ${(props: Props) =>
         props.color != "transparent" &&
         `
-      border-color: ${props.disabled ? colors.grey : colors[props.color!]};
+      border-color: ${props.disabled ? colors.disabled : colors[props.color!]};
       }
       border-width: 1px;
       border-radius: ${props.shape === "square" ? '3px' : '100px'};
@@ -44,14 +38,6 @@ export const ButtonContainer = styled.TouchableOpacity`
     `}    
 `;
 
-export const Label = styled.Text`
-  color: ${(props: Props) => getTextColor(props)};
-  font-size: 17px;
-  font-weight: 600;
-  height: 100%;
-  padding: 8px;
-`;
-
 export const IconWrapper = styled.View`
     padding: 8px;
 `;
@@ -63,20 +49,7 @@ const getContainerColor = (props: Props) => {
     if (props.$outline) {
         color = colors.transparent;
     } else if (props.disabled) {
-        color = colors.grey;
-    }
-
-    return color;
-};
-
-const getTextColor = (props: Props): string => {
-    const bgColor = colors[props.color!];
-    let color = bgColor == colors.primary ? colors.accent : colors.primary;
-
-    if (props.$outline) {
-        color = bgColor;
-    } else if (props.disabled) {
-        color = colors.light;
+        color = colors.disabled;
     }
 
     return color;
