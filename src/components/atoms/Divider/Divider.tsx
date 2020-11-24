@@ -37,8 +37,3 @@ const renderChildren = (props: Props) => {
     </>
   );
 };
-
-/** Setting the defaults for the props*/
-Divider.defaultProps = {
-  optional: "default",
-};
