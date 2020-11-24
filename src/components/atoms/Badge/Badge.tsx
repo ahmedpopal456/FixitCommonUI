@@ -1,22 +1,35 @@
 import React from "react";
-import { StyledView } from "./style"
-import { Props } from "./props.model";
+import { BadgeContainer } from "./style"
+import { Props } from "./props.model"
+import { Label } from '../Typography'
+import colors from "../../../theme/colors"
 
-import colors from "../../../theme/colors";
-
-/** 
- * Describe the Component 
+/**
+ * Describe the Component
  * @param props - The Badge's props
  * @returns A react native custom Badge component
  */
 export const Badge: React.FC<Props> = (props): JSX.Element => {
   return (
-    <StyledView>
-    </StyledView>
+    <BadgeContainer {...props}>
+        {renderChildren(props)}
+    </BadgeContainer>
   );
 };
+
+const renderChildren = (props: Props) => {
+  return (
+    <>
+      {React.Children.map(props.children, (child: any) => {
+          return <Label justification="center" color={props.color} fontWeight={400} fontSize={20}>{child}</Label>;
+      })}
+    </>
+  );
+};
+
 /** Setting the defaults for the props*/
 Badge.defaultProps = {
-  optional: "default",
+  color:"accent",
+  background:"primary",
+  opacity:1
 };
-    

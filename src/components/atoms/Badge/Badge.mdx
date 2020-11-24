@@ -4,14 +4,15 @@ menu: Atoms
 ---
 import { Props, Playground } from "docz";
 import { Badge } from "./Badge.tsx";
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
 
-# Component
-A description of the component
+# Badge
+The badge components dispays a number in a circle
 
 # Usage
 ```tsx
 import { Badge } from "fixit-common-ui";
-// TODO: write how the component is used and uncomment this block
+<Badge>1</Badge>
 ```
 
 ## Props
@@ -19,5 +20,24 @@ import { Badge } from "fixit-common-ui";
 
 ## Default
 <Playground>
-  <Badge required></Badge>
+  <DoczContainer>
+    <Badge>1</Badge>
+    <Badge>12</Badge>
+    <Badge>12345</Badge>
+  </DoczContainer>
+</Playground>
+
+## Custom
+<Playground>
+  <DoczContainer>
+    <Badge background="red" color="light">12</Badge>
+    <Badge background="accent" border="primary" color="primary">12</Badge>
+  </DoczContainer>
+</Playground>
+
+## See through
+<Playground>
+  <DoczContainer>
+    <Badge opacity={.2} color="accent" background="accent">12</Badge>
+  </DoczContainer>
 </Playground>
