@@ -11,6 +11,7 @@ interface Props {
     color?: keyof typeof colors;
     /** Border width of the Text box */
     borderWidth?: number;
+    /** Border radius of the Text box (square or round)*/
     borderRadius?: number;
     /** Width of the Text box */
     width?: number;
@@ -18,10 +19,10 @@ interface Props {
     height?:number;
     /**  The title of the Text box */
     title?:string;
+    /** Placeholder for the Text box */
     placeholder?: string;
     /** To pass custom icon */
     icon?:any;
-    children?:any;
     /** Used for testing */
     testID?: string;
   }
@@ -54,7 +55,6 @@ interface Props {
              borderColor: '#FFD14A', 
              borderWidth: 2, 
              textAlign:'left', 
-             outline:'#FFD14A',
              }
   };
 
@@ -65,7 +65,6 @@ interface Props {
              borderColor: '#FFD14A', 
              borderWidth: 2, 
              textAlign:'left', 
-             outline:'#FFD14A',
              }
   };
 

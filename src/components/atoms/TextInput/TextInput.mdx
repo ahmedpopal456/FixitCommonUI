@@ -11,11 +11,11 @@ import { View } from 'react-native';
 
 # TextInput
 
-A Text Input is where users enter relevant information in a form.
+A Text Input is a component for inputting text into the app via keyboard.
 
 # Usage
 ```tsx
-import { TextBox } from "fixit-common-ui";
+import { TextBox, TextBoxIcon } from "fixit-common-ui";
 
 <TextBox/>
 ```
@@ -27,7 +27,7 @@ import { TextBox } from "fixit-common-ui";
 <Playground>
   <DoczContainer>
     <TextBox placeholder="Name"/>
-    <TextBox title="Section Name" style={{height:80, borderColor: 'grey', borderWidth: 2, outline:'grey'}}/>
+    <TextBox title="Section Name" style={{height:80, borderColor: 'grey', borderWidth: 2}}/>
     <TextBoxIcon icon={<Icon library="MaterialCommunityIcons" name="currency-usd" color="accent"/>}  style={{height: 45, borderWidth: 2, backgroundColor:'#33343E'}}/>
   </DoczContainer>
 </Playground>

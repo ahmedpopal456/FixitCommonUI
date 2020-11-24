@@ -40,7 +40,6 @@ exports[`matches default snapshot 1`] = `
           "borderColor": "#FFD14A",
           "borderWidth": 2,
           "height": 45,
-          "outline": "#FFD14A",
           "textAlign": "left",
         },
       ]
@@ -137,7 +136,6 @@ exports[`matches placeholder snapshot 1`] = `
           "borderColor": "#FFD14A",
           "borderWidth": 2,
           "height": 45,
-          "outline": "#FFD14A",
           "textAlign": "left",
         },
       ]
@@ -177,7 +175,6 @@ exports[`matches text input icon snapshot 1`] = `
         "borderColor": "#FFD14A",
         "borderWidth": 2,
         "height": 45,
-        "outline": "#FFD14A",
         "textAlign": "left",
       },
     ]
@@ -290,7 +287,6 @@ exports[`matches title snapshot 1`] = `
           "borderColor": "#FFD14A",
           "borderWidth": 2,
           "height": 45,
-          "outline": "#FFD14A",
           "textAlign": "left",
         },
       ]

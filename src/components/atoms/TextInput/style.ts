@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const TextInputWrapper = styled.TextInput`
-    borderWidth:2;
+    border-width:2px;
     justify-content: flex-end;
     border-radius: 5px;
     margin:10px;
