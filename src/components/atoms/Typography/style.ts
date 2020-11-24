@@ -4,7 +4,6 @@ import { Props } from './props.model';
 
 export const StyledText = styled.Text`
     font-family: "Raleway";
-    flex: 1;
     flexDirection: row;
     font-size: ${(props: Props) => props.fontSize}px;
     padding: ${(props: Props) => props.padding}px;
