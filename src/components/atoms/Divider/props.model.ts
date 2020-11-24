@@ -1,8 +1,10 @@
 import colors from "../../../theme/colors";
-  
+
   export interface Props {
-    /**  Example of an optional prop */
-    optional?: string;
-    /** Example of a required prop*/
-    required: boolean;
+    /** True if the divider should not take the full width  */
+    small?: boolean;
+    /** True if the divider's opacity should be reduced  */
+    faded?: boolean;
+    /** Text to be displayed in the hr */
+    children?: string;
   }
