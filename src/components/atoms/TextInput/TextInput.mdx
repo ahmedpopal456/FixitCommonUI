@@ -1,0 +1,35 @@
+---
+name: TextInput
+menu: Atoms
+---
+
+import { Props, Playground } from "docz";
+import { TextBox, TextBoxIcon } from "./TextInput.tsx";
+import { Icon } from '../Icon/Icon.tsx';
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
+import { View } from 'react-native';
+
+# TextInput
+
+A Text Input is where users enter relevant information in a form.
+
+# Usage
+```tsx
+import { TextBox } from "fixit-common-ui";
+
+<TextBox/>
+```
+
+## Props
+<Props of={TextBox}></Props>
+
+## Example 
+<Playground>
+  <DoczContainer>
+    <TextBox placeholder="Name"/>
+    <TextBox title="Section Name" style={{height:80, borderColor: 'grey', borderWidth: 2, outline:'grey'}}/>
+    <TextBoxIcon icon={<Icon library="MaterialCommunityIcons" name="currency-usd" color="accent"/>}  style={{height: 45, borderWidth: 2, backgroundColor:'#33343E'}}/>
+  </DoczContainer>
+</Playground>
+
+
