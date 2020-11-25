@@ -31,7 +31,6 @@ export const TextInputWrapper = styled.TextInput`
     padding: 10px;
 `;
 
-
 export const TextInputIconWrapper = styled.TextInput`
     border-radius: 5px;
     padding-top: 10px;
