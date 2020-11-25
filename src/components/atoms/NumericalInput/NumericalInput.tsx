@@ -1,9 +1,6 @@
 import React from "react";
-import { NumericalInputContainer } from "./style"
+import { NumericalInputContainer, StyledNumInput } from "./style"
 import { Props } from "./props.model";
-import { TextInput } from 'react-native';
-
-import colors from "../../../theme/colors";
 
 /** 
  * Describe the Component 
@@ -15,17 +12,10 @@ export const NumericalInput: React.FC<Props> = (props: Props): JSX.Element => {
     <NumericalInputContainer
       borderColor={props.borderColor}
     >
-      <TextInput
-        style={{
-          backgroundColor: "white",
-          textAlign: "center",
-          width: "30px",
-          fontSize: 25,
-          borderBottomWidth: 1,
-          borderColor: colors[props.borderColor!]
-        }}
+      <StyledNumInput
         keyboardType="number-pad"
         maxLength={1} // only works on mobile devices!!
+        style={{fontSize: 25}}
       />
     </NumericalInputContainer>
   );

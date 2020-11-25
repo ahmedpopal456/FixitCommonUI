@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches border color snapshot 1`] = `
+<View
+  borderColor="accent"
+  style={
+    Array [
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "white",
+        "borderColor": "#FFD14A",
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "space-around",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "paddingBottom": 7,
+        "paddingLeft": 7,
+        "paddingRight": 7,
+        "paddingTop": 7,
+      },
+    ]
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="number-pad"
+    maxLength={1}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "borderBottomWidth": 1,
+          "borderColor": undefined,
+          "textAlign": "center",
+          "width": 30,
+        },
+        Object {
+          "fontSize": 25,
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
+
+exports[`matches default snapshot 1`] = `
+<View
+  borderColor="primary"
+  style={
+    Array [
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "white",
+        "borderColor": "#33343E",
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "height": 50,
+        "justifyContent": "space-around",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "paddingBottom": 7,
+        "paddingLeft": 7,
+        "paddingRight": 7,
+        "paddingTop": 7,
+      },
+    ]
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    keyboardType="number-pad"
+    maxLength={1}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "white",
+          "borderBottomWidth": 1,
+          "borderColor": undefined,
+          "textAlign": "center",
+          "width": 30,
+        },
+        Object {
+          "fontSize": 25,
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

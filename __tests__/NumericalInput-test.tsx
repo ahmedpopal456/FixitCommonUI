@@ -6,7 +6,13 @@ import "react-native";
   import renderer from "react-test-renderer";
   import { render, fireEvent } from '@testing-library/react-native';
   
-  it('renders correctly', () => {
-      renderer.create(<NumericalInput />);
+  it('matches default snapshot', () => {
+      const numinput = renderer.create(<NumericalInput />);
+      expect(numinput.toJSON()).toMatchSnapshot();
+  });
+
+  it('matches border color snapshot', () => {
+    const numinput = renderer.create(<NumericalInput borderColor="accent"/>);
+    expect(numinput.toJSON()).toMatchSnapshot();
   });
   
