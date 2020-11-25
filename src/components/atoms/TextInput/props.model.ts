@@ -14,4 +14,6 @@ export interface TextProps {
     title?:string;
     /** To pass custom icon */
     icon?:any;
+    /** Placeholder for the Text box */
+    placeholder?:string;
   }

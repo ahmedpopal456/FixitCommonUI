@@ -146,103 +146,105 @@ exports[`matches placeholder snapshot 1`] = `
 `;
 
 exports[`matches text input icon snapshot 1`] = `
-<View
-  borderRadius={5}
-  icon={
-    <Icon
-      color="accent"
-      library="MaterialCommunityIcons"
-      name="currency-usd"
-      size={24}
-    />
-  }
-  style={
-    Array [
-      Object {
-        "borderColor": undefined,
-        "borderRadius": 5,
-        "borderWidth": undefined,
-        "color": undefined,
-        "flexDirection": "row",
-        "height": "undefinedpx",
-        "marginBottom": 10,
-        "marginLeft": 10,
-        "marginRight": 10,
-        "marginTop": 10,
-        "width": "undefinedpx",
-      },
-      Object {
-        "backgroundColor": "#33343E",
-        "borderColor": "#000000",
-        "borderWidth": 2,
-        "height": 45,
-        "textAlign": "left",
-      },
-    ]
-  }
->
+<View>
   <View
+    borderRadius={5}
+    icon={
+      <Icon
+        color="accent"
+        library="MaterialCommunityIcons"
+        name="currency-usd"
+        size={24}
+      />
+    }
     style={
       Array [
         Object {
-          "alignItems": "center",
+          "backgroundColor": "#33343E",
+          "borderColor": "#000000",
           "borderRadius": 5,
-          "height": 30,
-          "justifyContent": "center",
-          "marginLeft": 5,
-          "marginTop": 5,
-          "paddingBottom": 8,
-          "paddingLeft": 8,
-          "paddingRight": 8,
-          "paddingTop": 8,
-          "width": 30,
+          "borderWidth": undefined,
+          "color": undefined,
+          "flexDirection": "row",
+          "height": "undefinedpx",
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "width": "undefinedpx",
         },
         Object {
-          "backgroundColor": "grey",
+          "borderColor": "#FFD14A",
+          "borderWidth": 2,
+          "height": 45,
+          "textAlign": "left",
         },
       ]
     }
   >
-    <Text
-      allowFontScaling={false}
-      library="MaterialCommunityIcons"
+    <View
       style={
         Array [
           Object {
-            "color": "#FFD14A",
-            "fontSize": 24,
+            "alignItems": "center",
+            "borderRadius": 5,
+            "height": 30,
+            "justifyContent": "center",
+            "marginLeft": 5,
+            "marginTop": 5,
+            "paddingBottom": 8,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "width": 30,
           },
-          undefined,
           Object {
-            "fontFamily": "Material Design Icons",
-            "fontStyle": "normal",
-            "fontWeight": "normal",
+            "backgroundColor": "grey",
           },
-          Object {},
         ]
       }
     >
-      󰇁
-    </Text>
+      <Text
+        allowFontScaling={false}
+        library="MaterialCommunityIcons"
+        style={
+          Array [
+            Object {
+              "color": "#FFD14A",
+              "fontSize": 24,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        󰇁
+      </Text>
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 5,
+            "color": "white",
+            "justifyContent": "center",
+            "paddingLeft": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
   </View>
-  <TextInput
-    allowFontScaling={true}
-    multiline={true}
-    rejectResponderTermination={true}
-    style={
-      Array [
-        Object {
-          "alignItems": "center",
-          "borderRadius": 5,
-          "color": "white",
-          "justifyContent": "center",
-          "paddingLeft": 10,
-          "paddingTop": 10,
-        },
-      ]
-    }
-    underlineColorAndroid="transparent"
-  />
 </View>
 `;
 

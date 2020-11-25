@@ -1,7 +1,6 @@
 import 'react-native';
 import React from 'react';
 import { TextBox } from '../src/components/atoms/TextInput';
-import { TextBoxIcon } from '../src/components/atoms/TextInput/TextInput';
 import { Icon } from "../src/components/atoms/Icon";
 
 import renderer from 'react-test-renderer';
@@ -27,7 +26,7 @@ it('matches height snapshot', () => {
 })
 
 it('matches text input icon snapshot', () => {
-    const textInputIcon = renderer.create(<TextBoxIcon icon={<Icon library="MaterialCommunityIcons" name="currency-usd" color="accent"/>}/>);
+    const textInputIcon = renderer.create(<TextBox icon={<Icon library="MaterialCommunityIcons" name="currency-usd" color="accent"/>}/>);
     expect(textInputIcon.toJSON()).toMatchSnapshot();
 })
 

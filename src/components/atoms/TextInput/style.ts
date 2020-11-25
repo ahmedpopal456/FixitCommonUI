@@ -40,15 +40,15 @@ export const TextBoxWrapper = styled.View`
     border-radius: 5px;
     margin: 10px;
     flex-direction: row;
+    backgroundColor: #33343E;
+    borderColor: #000000;
     ${(props:Props)=>
         `
         color: ${props.color};
         height: ${props.height}px;
         width: ${props.width}px;
         border-width:${props.borderWidth};
-        border-color:${props.borderColor};
         `}
-
 `;
 
 export const IconWrapper = styled.View`
