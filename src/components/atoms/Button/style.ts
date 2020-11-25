@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import custom from "styled-components";
 
 import { Label } from "../Typography";
-import { ButtonProps } from './button-props.model';
+import { ButtonProps } from './ButtonModel';
 import colors from '../../../theme/colors';
 
 

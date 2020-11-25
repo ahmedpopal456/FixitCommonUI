@@ -59,7 +59,7 @@ function add(name, type) {
   const content = new Content(name, type);
   createFile(dir, `${name}.tsx`, content.component);
   createFile(dir, `${name}.mdx`, content.documentation);
-  createFile(dir, `${name.toString().toLowerCase()}-props.model.ts`, content.props);
+  createFile(dir, `${name}Model.ts`, content.props);
   createFile(dir, `index.ts`, content.index);
   createFile(dir, `style.ts`, content.style);
   createFile(TESTS_DIR, `${name}-test.tsx`, content.test);
@@ -109,7 +109,7 @@ function propsContent(name) {
 function componentContent(name) {
   return `import React from "react";
 import { StyledView } from "./style"
-import { ${name}Props } from "./${name.toString().toLowerCase()}-props.model";
+import { ${name}Props } from "./${name}Model";
 
 import colors from "../../../theme/colors";
 
@@ -139,7 +139,7 @@ export { ${name} };
 
 function styleContent(name){
   return `import styled from "styled-components/native";
-import { ${name}Props } from './${name.toString().toLowerCase()}-props.model';
+import { ${name}Props } from './${name}Model';
 import colors from "../../../theme/colors";
 
 

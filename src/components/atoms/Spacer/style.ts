@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { SpacerProps } from "./spacer-props";
+import { SpacerProps } from "./SpacerModel";
 
 /** Styled Components */
 export const StyledSpacer = styled.View`

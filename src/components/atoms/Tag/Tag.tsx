@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { TagWrapper, TagText } from "./style"
-import { TagProps } from "./tag-props";
+import { TagProps } from "./TagModel";
 
 /** Building the Component */
 export const Tag: React.FC<TagProps> = (props: TagProps) => {

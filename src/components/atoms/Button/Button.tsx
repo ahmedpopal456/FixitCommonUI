@@ -2,7 +2,7 @@ import React from "react";
 
 import { ButtonContainer, IconWrapper } from './style';
 import { Label } from '../Typography'
-import { ButtonProps } from "./button-props.model";
+import { ButtonProps } from "./ButtonModel";
 
 import colors from '../../../theme/colors';
 

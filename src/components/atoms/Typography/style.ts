@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import colors from "../../../theme/colors";
-import { TypographyProps } from './typography-props.model';
+import { TypographyProps } from './TypographyModel';
 
 export const StyledText = styled.Text`
     font-family: "Raleway";

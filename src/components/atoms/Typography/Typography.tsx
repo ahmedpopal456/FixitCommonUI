@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledText, StyledContainer } from "./style"
 
-import { TypographyProps } from "./typography-props.model";
+import { TypographyProps } from "./TypographyModel";
 
 /** 
  * @param props - The H1 component props
