@@ -1,33 +1,9 @@
 import React from "react";
-import colors from '../../../theme/colors';
 import { TextInputIconWrapper, TextInputWrapper, IconWrapper, TextBoxWrapper } from "./style";
 import { View,Text } from "react-native";
+import { TextProps } from "./props.model";
 
-/** PROPS */
-interface Props {
-    /**  To override default style */
-    style?: any;
-    /** Any color from the theme's color palette */
-    color?: keyof typeof colors;
-    /** Border width of the Text box */
-    borderWidth?: number;
-    /** Border radius of the Text box (square or round)*/
-    borderRadius?: number;
-    /** Width of the Text box */
-    width?: number;
-    /** Height of the Text box */
-    height?:number;
-    /**  The title of the Text box */
-    title?:string;
-    /** Placeholder for the Text box */
-    placeholder?: string;
-    /** To pass custom icon */
-    icon?:any;
-    /** Used for testing */
-    testID?: string;
-  }
-
-  export const TextBox: React.FC<Props> = (props:Props) => {
+  export const TextBox: React.FC<TextProps> = (props:TextProps) => {
     return (
           <View>
               <View style={{backgroundColor:'#FFF',padding:5, top:-5, left:25, zIndex:50, position:'absolute'}}>
@@ -39,7 +15,7 @@ interface Props {
     );
   }
 
-  export const TextBoxIcon: React.FC<Props> = (props:Props) => {
+  export const TextBoxIcon: React.FC<TextProps> = (props:TextProps) => {
     return (
           <TextBoxWrapper {...props} >  
               <IconWrapper style={{backgroundColor:'grey'}}>{props.icon}</IconWrapper>
@@ -62,8 +38,9 @@ interface Props {
     borderRadius: 5,
     style: {  
              height: 45,
-             borderColor: '#FFD14A', 
+             borderColor: '#000000', 
              borderWidth: 2, 
+             backgroundColor:"#33343E",
              textAlign:'left', 
              }
   };

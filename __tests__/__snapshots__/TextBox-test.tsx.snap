@@ -172,7 +172,8 @@ exports[`matches text input icon snapshot 1`] = `
         "width": "undefinedpx",
       },
       Object {
-        "borderColor": "#FFD14A",
+        "backgroundColor": "#33343E",
+        "borderColor": "#000000",
         "borderWidth": 2,
         "height": 45,
         "textAlign": "left",
