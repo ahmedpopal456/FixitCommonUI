@@ -3,20 +3,20 @@ import styled from "styled-components/native";
 import custom from "styled-components";
 
 import { Label } from "../Typography";
-import { Props } from './props.model';
+import { ButtonProps } from './button-props.model';
 import colors from '../../../theme/colors';
 
 
 /** Styled Components */
 export const ButtonContainer = styled.TouchableOpacity`
-  background-color: ${(props: Props) => getContainerColor(props)};
+  background-color: ${(props: ButtonProps) => getContainerColor(props)};
   margin: 5px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   align-self: flex-start;
   padding: 7px;
-  ${(props: Props) =>
+  ${(props: ButtonProps) =>
         props.color != "transparent" &&
         `
       border-color: ${props.disabled ? colors.disabled : colors[props.color!]};
@@ -24,11 +24,11 @@ export const ButtonContainer = styled.TouchableOpacity`
       border-width: 1px;
       border-radius: ${props.shape === "square" ? '3px' : '100px'};
     `}
-  ${(props: Props) =>
+  ${(props: ButtonProps) =>
     props.width &&`
         width: ${props.width}px;
     `}
-  ${(props: Props) =>
+  ${(props: ButtonProps) =>
     Platform.OS === 'web' ?
         props.block && `
         flex: 1;
@@ -43,8 +43,8 @@ export const IconWrapper = styled.View`
 `;
 
 /** Helpers */
-const getContainerColor = (props: Props) => {
-    let color =colors[props.color!];
+const getContainerColor = (props: ButtonProps) => {
+    let color = colors[props.color!];
 
     if (props.$outline) {
         color = colors.transparent;

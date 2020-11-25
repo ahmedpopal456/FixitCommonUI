@@ -1,21 +1,14 @@
-import { Platform } from 'react-native';
 import styled from "styled-components/native";
-
-/** PROPS */
-interface Props {
-    stretch?: boolean;
-    width?: string;
-    height?: string;
-}
+import { SpacerProps } from "./spacer-props";
 
 /** Styled Components */
 export const StyledSpacer = styled.View`
-    ${(props: Props) =>
+    ${(props: SpacerProps) =>
         props.stretch &&
         `
         flex:1;
      `}
-     ${(props: Props) =>
+     ${(props: SpacerProps) =>
         props.width &&
         `
         flexBasis:unset;
@@ -23,7 +16,7 @@ export const StyledSpacer = styled.View`
         width:${props.width};
      `}
      
-     ${(props: Props) =>
+     ${(props: SpacerProps) =>
         props.height &&
         `
         height:${props.height};

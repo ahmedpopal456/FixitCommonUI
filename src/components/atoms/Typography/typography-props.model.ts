@@ -1,8 +1,8 @@
 import colors from '../../../theme/colors';
 
-export interface Props {
+export interface TypographyProps {
     /**  To override default style */
-    style?: any;
+    style?: object;
     /** Can be any color from the theme color palette */
     color?: keyof typeof colors;
     /** Size of the text */
@@ -17,5 +17,5 @@ export interface Props {
     justification?: "left" | "center" | "right",
     /** Used for testing */
     testID?: string;
-    children: any;
+    children: string;
   }

@@ -3,22 +3,10 @@ import React from "react";
 import colors from "../../../theme/colors";
 
 import { IconLibraries } from "./IconLibraries";
-
-/** PROPS */
-interface Props {
-  style?: object;
-  /** Any color from the theme's color palette */
-  color?: keyof typeof colors;
-  /** Size of the icon */
-  size?: number;
-  /**  The library which the icon is from */
-  library?: keyof typeof IconLibraries;
-  /**  The name of the icon */
-  name: string;
-}
+import { IconProps } from "./icon-props.model";
 
 /** Building the Icon */
-export const Icon: React.FC<Props> = (props) => {
+export const Icon: React.FC<IconProps> = (props) => {
   const VectorIcon = IconLibraries[props.library!];
   const color: string = colors[props.color!];
 

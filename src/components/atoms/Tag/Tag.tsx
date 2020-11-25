@@ -1,22 +1,10 @@
 import React from "react";
 import { View } from "react-native";
 import { TagWrapper, TagText } from "./style"
-import colors from "../../../theme/colors";
-/** PROPS */
-interface Props {
-    /** Children which will be contained in the tag (ie. string or tag) */
-    children: string | Tag;
-    /** Can be any color from the theme color palette */
-    textColor?: keyof typeof colors;
-    /** Can be any color from the theme color palette */
-    backgroundColor?: keyof typeof colors;
-    /** When nesting tags, you may want to give negative margin to the child so that it overlaps the parent. This is set to 0px for parents and -3px for children by default */
-    leftMarginCorrection?: string;
-    /** When nesting tags, child tag wrappers must not have margins. By default, parents have 5px 10px 5px 0px margins and children have 0px margins  */
-    margins?: string;
-}
+import { TagProps } from "./tag-props";
+
 /** Building the Component */
-export const Tag: React.FC<Props> = (props) => {
+export const Tag: React.FC<TagProps> = (props: TagProps) => {
   return (
     <TagWrapper
         margins={props.margins ? props.margins : "5px 10px 5px 0px"}
@@ -26,7 +14,7 @@ export const Tag: React.FC<Props> = (props) => {
   );
 };
 
-const renderChildren = (props: Props) => {
+const renderChildren = (props: TagProps) => {
   return (
     <>
       {React.Children.map(props.children, (child: any) => {

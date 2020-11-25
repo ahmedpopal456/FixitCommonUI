@@ -1,8 +1,9 @@
+import { Icon } from '../Icon/Icon';
 import colors from '../../../theme/colors';
 
-export interface Props {
+export interface ButtonProps {
     /**  To override default style */
-    style?: any;
+    style?: object;
     /** Can be any color from the theme color palette */
     color?: keyof typeof colors;
     /** Callback function to be called when pressed */
@@ -14,7 +15,7 @@ export interface Props {
     /** If true, the button will stretch to the screen width */
     block?: boolean;
     /** To pass custom icon */
-    icon?: any;
+    icon?: typeof Icon;
     /** Icon Position */
     position?: "left" | "right";
     /** Button width */

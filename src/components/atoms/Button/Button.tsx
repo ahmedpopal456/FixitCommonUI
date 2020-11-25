@@ -2,7 +2,7 @@ import React from "react";
 
 import { ButtonContainer, IconWrapper } from './style';
 import { Label } from '../Typography'
-import { Props } from "./props.model";
+import { ButtonProps } from "./button-props.model";
 
 import colors from '../../../theme/colors';
 
@@ -12,7 +12,7 @@ import colors from '../../../theme/colors';
  * @param props - the button props
  * @returns a react native custom button component
  */
-export const Button: React.FC<Props> = (props: Props): JSX.Element => {
+export const Button: React.FC<ButtonProps> = (props: ButtonProps): JSX.Element => {
   return (
     <ButtonContainer
       {...props}
@@ -27,7 +27,7 @@ export const Button: React.FC<Props> = (props: Props): JSX.Element => {
  * @param props - The button's props
  * @returns The items that will be displayed in the button. ie. Label and/or Icon
  */
-const renderChildren = (props: Props): JSX.Element => {
+const renderChildren = (props: ButtonProps): JSX.Element => {
   return (
     <>
       {React.Children.map(props.children, (child: any) => {
@@ -55,7 +55,7 @@ const renderChildren = (props: Props): JSX.Element => {
  * @param props - The button's props
  * @returns a color value that the text should display
  */
-const getTextColor = (props: Props): keyof typeof colors => {
+const getTextColor = (props: ButtonProps): keyof typeof colors => {
   const bgColor = props.color!;
   let color: keyof typeof colors = bgColor == "primary" ? "accent" : "primary";
 
