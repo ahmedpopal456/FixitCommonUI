@@ -33,7 +33,6 @@ import { TextProps } from "./props.model";
     }
   };
 
-
   TextBox.defaultProps={ 
     borderRadius: 5,
     style: {  
