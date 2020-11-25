@@ -1,21 +1,26 @@
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import styled from "styled-components/native";
 import colors from '../../../theme/colors';
 
 /** PROPS */
-interface Props {
+interface TextProps {
+    /**  To override default style */
     style?: any;
+    /** Any color from the theme's color palette */
     color?: keyof typeof colors;
-    height?:number;
-    border?: number;
-    borderColor?:string;
+    /** Border width of the Text box */
     borderWidth?: number;
-    width?: number;
-    outline?:keyof typeof Colors;
-    backgroundColor?: keyof typeof colors;
+    /** Border radius of the Text box (square or round)*/
+    borderRadius?: number;
+    /**  The title of the Text box */
+    title?:string;
+    /** To pass custom icon */
     icon?:any;
-    placeholder?: any;
-    fill?: boolean;
+    /** Height of the Text box */
+    height?: number;
+    /** Width of the Text box */
+    width?: number;
+    /** Placeholder for the Text box */
+    placeholder?:string;
 }
 
 export const TextInputWrapper = styled.TextInput`
@@ -42,7 +47,7 @@ export const TextBoxWrapper = styled.View`
     flex-direction: row;
     backgroundColor: #33343E;
     borderColor: #000000;
-    ${(props:Props)=>
+    ${(props:TextProps)=>
         `
         color: ${props.color};
         height: ${props.height}px;
