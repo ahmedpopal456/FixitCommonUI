@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches icon snapshot 1`] = `
+<View
+  icon={
+    <Icon
+      color="white"
+      library="AntDesign"
+      name="user"
+      size={30}
+    />
+  }
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 50,
+        "justifyContent": "center",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+      Object {
+        "backgroundColor": "grey",
+        "color": "white",
+        "height": 50,
+        "width": 50,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "white",
+          "fontFamily": "Cochin",
+          "fontSize": 20,
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+        },
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      library="AntDesign"
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 30,
+          },
+          undefined,
+          Object {
+            "fontFamily": "anticon",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches image snapshot 1`] = `
+<View
+  image="https://reactjs.org/logo-og.png"
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 50,
+        "justifyContent": "center",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+      Object {
+        "backgroundColor": "grey",
+        "color": "white",
+        "height": 50,
+        "width": 50,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "white",
+          "fontFamily": "Cochin",
+          "fontSize": 20,
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+        },
+      ]
+    }
+  />
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "borderRadius": 50,
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "height": 50,
+          "overflow": "hidden",
+          "width": 50,
+        },
+        Object {
+          "backgroundColor": "grey",
+          "color": "white",
+          "height": 50,
+          "width": 50,
+        },
+      ]
+    }
+  >
+    <Image
+      image="https://reactjs.org/logo-og.png"
+      source={
+        Object {
+          "uri": "https://reactjs.org/logo-og.png",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`matches title snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderRadius": 50,
+        "justifyContent": "center",
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+      },
+      Object {
+        "backgroundColor": "grey",
+        "color": "white",
+        "height": 50,
+        "width": 50,
+      },
+    ]
+  }
+  title="Name"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "color": "white",
+          "fontFamily": "Cochin",
+          "fontSize": 20,
+          "fontWeight": "bold",
+        },
+      ]
+    }
+  >
+    Name
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+        },
+      ]
+    }
+  />
+</View>
+`;
