@@ -1,7 +1,7 @@
 import React from "react";
 import { TextInputIconWrapper, TextInputWrapper, IconWrapper, TextBoxWrapper } from "./style";
 import { View,Text } from "react-native";
-import { TextProps } from "./textModel";
+import { TextProps } from "./TextModel";
 
   export const TextBox: React.FC<TextProps> = (props:TextProps) => {
       return (
