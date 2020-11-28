@@ -2,6 +2,7 @@ import React from "react";
 import { TextInputIconWrapper, TextInputWrapper, IconWrapper, TextBoxWrapper } from "./style";
 import { View,Text } from "react-native";
 import { TextProps } from "./TextModel";
+import colors from '../../../theme/colors';
 
   export const TextBox: React.FC<TextProps> = (props:TextProps) => {
       return (
@@ -35,11 +36,8 @@ import { TextProps } from "./TextModel";
 
   TextBox.defaultProps={ 
     borderRadius: 5,
-    style: {  
-             height: 45,
-             borderColor: '#FFD14A', 
-             borderWidth: 2, 
-             textAlign:'left', 
-             }
+    height: 45,
+    borderColor: colors.accent, 
+    borderWidth: 2, 
   };
 
