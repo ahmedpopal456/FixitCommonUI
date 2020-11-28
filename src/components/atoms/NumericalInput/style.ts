@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { NumericalProps } from './NumericalProps.model';
+import { NumericalProps } from './NumericalModel';
 import colors from "../../../theme/colors";
 
 

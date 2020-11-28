@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { NumericalInputContainer, StyledNumInput } from "./style"
-import { NumericalProps } from "./NumericalProps.model";
+import { NumericalProps } from "./NumericalModel";
 
 /** 
  * Describe the Component 
@@ -30,18 +30,6 @@ export const NumericalInput: React.FC<NumericalProps> = (props: NumericalProps):
         </NumericalInputContainer>;
       })}
     </div>
-    
-    // <NumericalInputContainer
-    //   borderColor={props.borderColor}
-    //   numbers={props.numbers}
-    // >
-    //   <StyledNumInput
-    //     {...props}
-    //     keyboardType="number-pad"
-    //     maxLength={1} // only works on mobile devices!!
-    //     style={{fontSize: 25}}
-    //   />
-    // </NumericalInputContainer>
   );
 };
 
