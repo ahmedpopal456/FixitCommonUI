@@ -1,10 +1,10 @@
 import styled from "styled-components/native";
 import colors from "../../../theme/colors";
 
-import {StyleProps} from './TagModel';
+import {StyleTagProps} from './TagModel';
 
 export const TagWrapper = styled.View`
-    ${(styleProps: StyleProps) =>
+    ${(styleTagProps: StyleTagProps) =>
         `
         margin:${styleProps.margins};
       `}
@@ -13,7 +13,7 @@ export const TagWrapper = styled.View`
 `;
 
  export const TagText = styled.Text`
-     ${(styleProps: StyleProps) =>
+     ${(styleTagProps: StyleTagProps) =>
          `
          color:${colors[styleProps.color!]};
          backgroundColor:${colors[styleProps.backgroundcolor!]};

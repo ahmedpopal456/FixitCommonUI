@@ -14,7 +14,7 @@ export interface TagProps {
     margins?: string;
 }
 
-export interface StyleProps {
+export interface StyleTagProps {
     backgroundcolor?: keyof typeof colors;
     color?: keyof typeof colors;
     marginleft?: string;
