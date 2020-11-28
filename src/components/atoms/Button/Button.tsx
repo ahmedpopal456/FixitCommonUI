@@ -2,44 +2,44 @@ import React from "react";
 
 import { ButtonContainer, IconWrapper } from './style';
 import { Label } from '../Typography'
-import { Props } from "./props.model";
+import { ButtonProps } from "./ButtonModel";
 
 import colors from '../../../theme/colors';
 
 /** 
  * Custom Fixit Button component
  * 
- * @param props - the button props
+ * @param buttonProps - the button props
  * @returns a react native custom button component
  */
-export const Button: React.FC<Props> = (props: Props): JSX.Element => {
+export const Button: React.FC<ButtonProps> = (buttonProps: ButtonProps): JSX.Element => {
   return (
     <ButtonContainer
-      {...props}
+      {...buttonProps}
     >
-      {renderChildren(props)}
+      {renderChildren(buttonProps)}
     </ButtonContainer>
   );
 };
 
 /**
  * 
- * @param props - The button's props
+ * @param buttonProps - The button's props
  * @returns The items that will be displayed in the button. ie. Label and/or Icon
  */
-const renderChildren = (props: Props): JSX.Element => {
+const renderChildren = (buttonProps: ButtonProps): JSX.Element => {
   return (
     <>
-      {React.Children.map(props.children, (child: any) => {
+      {React.Children.map(buttonProps.children, (child: any) => {
         const childIsString: boolean =
           typeof child === "string" || child instanceof String;
         if (childIsString) {
           return <Label 
-            color={getTextColor(props)}
+            color={getTextColor(buttonProps)}
             padding={6}
             fontSize={17}
             fontWeight={400}
-            $caps={props.$caps}
+            caps={buttonProps.caps}
             justification="center"
           >{child}</Label>;
         } else {
@@ -52,16 +52,16 @@ const renderChildren = (props: Props): JSX.Element => {
 };
 
 /**
- * @param props - The button's props
+ * @param buttonProps - The button's props
  * @returns a color value that the text should display
  */
-const getTextColor = (props: Props): keyof typeof colors => {
-  const bgColor = props.color!;
+const getTextColor = (buttonProps: ButtonProps): keyof typeof colors => {
+  const bgColor = buttonProps.color!;
   let color: keyof typeof colors = bgColor == "primary" ? "accent" : "primary";
 
-  if (props.$outline) {
+  if (buttonProps.outline) {
       color = bgColor;
-  } else if (props.disabled) {
+  } else if (buttonProps.disabled) {
       color = "light";
   }
   return color;
