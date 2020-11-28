@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Props } from './props.model';
+import { NumericalProps } from './NumericalProps.model';
 import colors from "../../../theme/colors";
 
 
@@ -16,7 +16,7 @@ export const NumericalInputContainer = styled.View`
     padding: 7px;
     height: 50px;
     background-color: white;
-    ${(props: Props) =>
+    ${(props: NumericalProps) =>
     `
         border-color: ${colors[props.borderColor!]};
         border-width: 1px;
@@ -27,7 +27,7 @@ export const StyledNumInput = styled.TextInput`
     background-color: white;
     text-align: center;
     width: 30px;
-    ${(props: Props) =>
+    ${(props: NumericalProps) =>
     `
         border-color: ${colors[props.borderColor!]};
         border-bottom-width: 1px;  
