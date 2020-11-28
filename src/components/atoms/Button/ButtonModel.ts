@@ -1,4 +1,3 @@
-import { Icon } from '../Icon/Icon';
 import colors from '../../../theme/colors';
 
 export interface ButtonProps {
@@ -9,13 +8,11 @@ export interface ButtonProps {
     /** Callback function to be called when pressed */
     onPress(): void;
     /** Boolean value for outline button */
-    $outline?: boolean;
+    outline?: boolean;
     /** Boolean value for disabled button */
     disabled?: boolean;
     /** If true, the button will stretch to the screen width */
     block?: boolean;
-    /** To pass custom icon */
-    icon?: typeof Icon;
     /** Icon Position */
     position?: "left" | "right";
     /** Button width */
@@ -25,7 +22,7 @@ export interface ButtonProps {
     /** Shape of the ends of the button */
     shape?: "circle" | "square";
     /** Capitalizes the characters */
-    $caps?: boolean;
+    caps?: boolean;
     /** Used for testing */
     testID?: string;
   }

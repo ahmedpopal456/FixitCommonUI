@@ -6,13 +6,13 @@ export const StyledText = styled.Text`
     font-family: "Raleway";
     flex: 1;
     flexDirection: row;
-    font-size: ${(props: TypographyProps) => props.fontSize}px;
-    padding: ${(props: TypographyProps) => props.padding}px;
-    font-weight: ${(props: TypographyProps) => props.fontWeight}
-    color: ${(props: TypographyProps) => colors[props.color!]};
-    text-align: ${(props: TypographyProps) => props.justification};
-    ${(props: TypographyProps) =>
-        props.$caps &&`
+    font-size: ${(typographyProps: TypographyProps) => typographyProps.fontSize}px;
+    padding: ${(typographyProps: TypographyProps) => typographyProps.padding}px;
+    font-weight: ${(typographyProps: TypographyProps) => typographyProps.fontWeight}
+    color: ${(typographyProps: TypographyProps) => colors[typographyProps.color!]};
+    text-align: ${(typographyProps: TypographyProps) => typographyProps.justification};
+    ${(typographyProps: TypographyProps) =>
+        typographyProps.caps &&`
             text-transform: uppercase;
         `}
 `;

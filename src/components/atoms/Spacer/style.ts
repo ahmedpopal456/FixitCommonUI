@@ -3,22 +3,22 @@ import { SpacerProps } from "./SpacerModel";
 
 /** Styled Components */
 export const StyledSpacer = styled.View`
-    ${(props: SpacerProps) =>
-        props.stretch &&
+    ${(spacerProps: SpacerProps) =>
+        spacerProps.stretch &&
         `
         flex:1;
      `}
-     ${(props: SpacerProps) =>
-        props.width &&
+     ${(spacerProps: SpacerProps) =>
+        spacerProps.width &&
         `
         flexBasis:unset;
         flexGrow:0;
-        width:${props.width};
+        width:${spacerProps.width};
      `}
      
-     ${(props: SpacerProps) =>
-        props.height &&
+     ${(spacerProps: SpacerProps) =>
+        spacerProps.height &&
         `
-        height:${props.height};
+        height:${spacerProps.height};
      `}
 `;

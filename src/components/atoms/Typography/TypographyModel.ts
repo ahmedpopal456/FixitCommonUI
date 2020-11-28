@@ -10,7 +10,7 @@ export interface TypographyProps {
     /** Weight of the text */
     fontWeight?: number;
     /** Capitalizes the characters */
-    $caps?: boolean;
+    caps?: boolean;
     /** Padding value for the text */
     padding?: number;
     /** Justification */
