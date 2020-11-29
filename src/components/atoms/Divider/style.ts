@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Props } from './DividerModel';
+import { DividerProps } from './DividerModel';
 import colors from "../../../theme/colors";
 
 
@@ -21,18 +21,18 @@ export const DividerSegment = styled.View`
     opacity:1;
     flexGrow:1;
     height:1px;
-    ${(props: Props) =>
+    ${(dividerProps: DividerProps) =>
        `
        backgroundColor:${colors['dark']};
     `}
-    ${(props: Props) =>
-       props.small &&
+    ${(dividerProps: DividerProps) =>
+       dividerProps.small &&
        `
        flexGrow:0;
        flexBasis:15%;
     `}
-    ${(props: Props) =>
-       props.faded &&
+    ${(dividerProps: DividerProps) =>
+       dividerProps.faded &&
        `
        opacity:0.3;
     `}
@@ -45,7 +45,7 @@ export const DividerText = styled.Text`
     fontSize: 13px;
     fontWeight: 400;
     margin:0px 5px;
-    ${(props: Props) =>
+    ${(dividerProps: DividerProps) =>
        `
        color:${colors['dark']};
     `}

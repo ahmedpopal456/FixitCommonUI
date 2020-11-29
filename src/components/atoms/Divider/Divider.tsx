@@ -1,6 +1,6 @@
 import React from "react";
 import { DividerContainer, DividerSegment, DividerText } from "./style"
-import { Props } from "./DividerModel";
+import { DividerProps } from "./DividerModel";
 
 import colors from "../../../theme/colors";
 
@@ -9,27 +9,27 @@ import colors from "../../../theme/colors";
  * @param props - The Divider's props
  * @returns A react native custom Divider component
  */
-export const Divider: React.FC<Props> = (props): JSX.Element => {
+export const Divider: React.FC<DividerProps> = (dividerProps:DividerProps): JSX.Element => {
   return (
     <DividerContainer>
         <DividerSegment
-            small={props.small}
-            faded={props.faded}
+            small={dividerProps.small}
+            faded={dividerProps.faded}
          />
-         {renderChildren(props)}
+         {renderChildren(dividerProps)}
         <DividerSegment
-            small={props.small}
-            faded={props.faded}
+            small={dividerProps.small}
+            faded={dividerProps.faded}
         />
     </DividerContainer>
   );
 };
 
 
-const renderChildren = (props: Props) => {
+const renderChildren = (dividerProps: DividerProps) => {
   return (
     <>
-      {React.Children.map(props.children, (child: any) => {
+      {React.Children.map(dividerProps.children, (child: String) => {
           if(child){
               return <DividerText>{child}</DividerText>;
           }
