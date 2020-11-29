@@ -7,12 +7,17 @@ import "react-native";
   import { render, fireEvent } from '@testing-library/react-native';
   
   it('matches default snapshot', () => {
-      const numinput = renderer.create(<NumericalInput />);
+      const numinput = renderer.create(<NumericalInput numbers={1}/>);
       expect(numinput.toJSON()).toMatchSnapshot();
   });
 
   it('matches border color snapshot', () => {
-    const numinput = renderer.create(<NumericalInput borderColor="accent"/>);
+    const numinput = renderer.create(<NumericalInput numbers={1} borderColor="accent"/>);
+    expect(numinput.toJSON()).toMatchSnapshot();
+  });
+
+  it('matches the number of inputs snapshot', () => {
+    const numinput = renderer.create(<NumericalInput numbers={4}/>);
     expect(numinput.toJSON()).toMatchSnapshot();
   });
   
