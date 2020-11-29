@@ -1,32 +1,23 @@
 import styled from "styled-components/native";
 import colors from "../../../theme/colors";
-/** PROPS */
-interface Props {
-    backgroundcolor?: keyof typeof colors;
-    color?: keyof typeof colors;
-    marginleft?: string;
-    margins?: string;
-}
-/**
- * Styled Components
- *
- * Here you can add css to react native components to create a styled version of it
- */
+
+import {StyleTagProps} from './TagModel';
+
 export const TagWrapper = styled.View`
-    ${(props: Props) =>
+    ${(styleTagProps: StyleTagProps) =>
         `
-        margin:${props.margins};
+        margin:${styleProps.margins};
       `}
     align-self: flex-start;
     flex-direction: row;
 `;
 
  export const TagText = styled.Text`
-     ${(props: Props) =>
+     ${(styleTagProps: StyleTagProps) =>
          `
-         color:${colors[props.color!]};
-         backgroundColor:${colors[props.backgroundcolor!]};
-         marginLeft:${props.marginleft};
+         color:${colors[styleProps.color!]};
+         backgroundColor:${colors[styleProps.backgroundcolor!]};
+         marginLeft:${styleProps.marginleft};
        `}
      padding:5px 8px;
      borderRadius:4px;
