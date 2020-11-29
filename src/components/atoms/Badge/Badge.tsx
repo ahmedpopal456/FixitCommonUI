@@ -20,7 +20,7 @@ export const Badge: React.FC<BadgeProps> = (badgeProps:BadgeProps): JSX.Element 
 const renderChildren = (badgeProps: BadgeProps) => {
   return (
     <>
-      {React.Children.map(badgeProps.children, (child: any) => {
+      {React.Children.map(badgeProps.children, (child: string) => {
           return <Label justification="center" color={badgeProps.color} fontWeight={400} fontSize={20}>{child}</Label>;
       })}
     </>
