@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Props } from './props.model';
+import { Props } from './DividerModel';
 import colors from "../../../theme/colors";
 
 

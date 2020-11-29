@@ -1,6 +1,6 @@
 import React from "react";
 import { DividerContainer, DividerSegment, DividerText } from "./style"
-import { Props } from "./props.model";
+import { Props } from "./DividerModel";
 
 import colors from "../../../theme/colors";
 
