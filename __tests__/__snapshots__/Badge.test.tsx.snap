@@ -52,10 +52,7 @@ exports[`matches background color snapshot 1`] = `
         Array [
           Object {
             "color": "#33343E",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 20,
             "fontWeight": "400",
@@ -127,10 +124,7 @@ exports[`matches border color snapshot 1`] = `
         Array [
           Object {
             "color": "#33343E",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 20,
             "fontWeight": "400",
@@ -201,10 +195,7 @@ exports[`matches default snapshot 1`] = `
         Array [
           Object {
             "color": "#FFD14A",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 20,
             "fontWeight": "400",
@@ -276,10 +267,7 @@ exports[`matches opacity snapshot 1`] = `
         Array [
           Object {
             "color": "#33343E",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 20,
             "fontWeight": "400",
@@ -350,10 +338,7 @@ exports[`matches text color snapshot 1`] = `
         Array [
           Object {
             "color": "#FFD14A",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 20,
             "fontWeight": "400",
