@@ -62,7 +62,7 @@ function add(name, type) {
   createFile(dir, `${name}Model.ts`, content.props);
   createFile(dir, `index.ts`, content.index);
   createFile(dir, `style.ts`, content.style);
-  createFile(TESTS_DIR, `${name}-test.tsx`, content.test);
+  createFile(TESTS_DIR, `${name}.test.tsx`, content.test);
 }
 
 /** Creating the component's directory with its name */
@@ -118,7 +118,7 @@ import colors from "../../../theme/colors";
  * @param props - The ${name}'s props
  * @returns A react native custom ${name} component
  */
-export const ${name}: React.FC<${name}Props> = (props): JSX.Element => {
+export const ${name}: React.FC<${name}Props> = (${name.toString().toLowerCase()}Props: ${name}Props): JSX.Element => {
   return (
     <StyledView>
     </StyledView>

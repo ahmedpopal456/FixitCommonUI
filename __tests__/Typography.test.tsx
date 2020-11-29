@@ -4,7 +4,6 @@ import { Label, H1, H2, H3, H4, H5, P } from "../src/components/atoms/Typography
 
 // Note: test renderer must be required after react-native.
 import renderer from "react-test-renderer";
-import { render } from '@testing-library/react-native';
 
 
 it("matches H1 snapshot", () => {
@@ -50,6 +49,6 @@ it("matches P snapshot", () => {
 });
 
 it("matches $caps snapshot", () => {
-  const paragraph = renderer.create(<P $caps>Button</P>);
+  const paragraph = renderer.create(<P caps>Button</P>);
   expect(paragraph.toJSON()).toMatchSnapshot();
 });

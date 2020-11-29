@@ -38,7 +38,7 @@ export const DonutChart: React.FC<DonutChartProps> = (donutChartProps: DonutChar
           fontWeight={500}
           padding={0}
         >
-          {percentage > 100 ? 100: percentage}%
+          {percentage > 100 ? '100%': `${percentage}%`}
         </Label>
         
       

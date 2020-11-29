@@ -13,6 +13,7 @@ exports[`matches $caps snapshot 1`] = `
   }
 >
   <Text
+    caps={true}
     color="dark"
     fontSize={13}
     fontWeight={400}
