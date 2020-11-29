@@ -1,39 +1,37 @@
 import { Platform } from 'react-native';
 import styled from "styled-components/native";
-import custom from "styled-components";
 
-import { Label } from "../Typography";
-import { Props } from './props.model';
+import { ButtonProps } from './ButtonModel';
 import colors from '../../../theme/colors';
 
 
 /** Styled Components */
 export const ButtonContainer = styled.TouchableOpacity`
-  background-color: ${(props: Props) => getContainerColor(props)};
+  background-color: ${(buttonProps: ButtonProps) => getContainerColor(buttonProps)};
   margin: 5px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   align-self: flex-start;
   padding: 7px;
-  ${(props: Props) =>
-        props.color != "transparent" &&
+  ${(buttonProps: ButtonProps) =>
+        buttonProps.color != "transparent" &&
         `
-      border-color: ${props.disabled ? colors.disabled : colors[props.color!]};
+      border-color: ${buttonProps.disabled ? colors.disabled : colors[buttonProps.color!]};
       }
       border-width: 1px;
-      border-radius: ${props.shape === "square" ? '3px' : '100px'};
+      border-radius: ${buttonProps.shape === "square" ? '3px' : '100px'};
     `}
-  ${(props: Props) =>
-    props.width &&`
-        width: ${props.width}px;
+  ${(buttonProps: ButtonProps) =>
+    buttonProps.width &&`
+        width: ${buttonProps.width}px;
     `}
-  ${(props: Props) =>
+  ${(buttonProps: ButtonProps) =>
     Platform.OS === 'web' ?
-        props.block && `
+        buttonProps.block && `
         flex: 1;
     `:
-        props.block && `
+        buttonProps.block && `
         align-self: stretch;
     `}    
 `;
@@ -43,12 +41,12 @@ export const IconWrapper = styled.View`
 `;
 
 /** Helpers */
-const getContainerColor = (props: Props) => {
-    let color =colors[props.color!];
+const getContainerColor = (buttonProps: ButtonProps) => {
+    let color = colors[buttonProps.color!];
 
-    if (props.$outline) {
+    if (buttonProps.outline) {
         color = colors.transparent;
-    } else if (props.disabled) {
+    } else if (buttonProps.disabled) {
         color = colors.disabled;
     }
 
