@@ -1,6 +1,6 @@
 import React from "react";
 import { BadgeContainer } from "./style"
-import { Props } from "./props.model"
+import { Props } from "./BadgeModel"
 import { Label } from '../Typography'
 import colors from "../../../theme/colors"
 
