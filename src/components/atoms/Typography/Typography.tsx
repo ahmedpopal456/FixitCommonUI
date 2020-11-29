@@ -1,14 +1,14 @@
 import React from "react";
 import { StyledText, StyledContainer } from "./style"
 
-import { Props } from "./props.model";
+import { TypographyProps } from "./TypographyModel";
 
 /** 
- * @param props - The H1 component props
+ * @param typographyProps - The H1 component props
  * @returns A react native custom H1 component
  */
-export const H1: React.FC<Props> = (props): JSX.Element => {
-  return renderText(props);
+export const H1: React.FC<TypographyProps> = (typographyProps: TypographyProps): JSX.Element => {
+  return renderText(typographyProps);
 };
 
 H1.defaultProps = {
@@ -20,11 +20,11 @@ H1.defaultProps = {
 };
 
 /** 
- * @param props - The H2 component props
+ * @param typographyProps - The H2 component props
  * @returns A react native custom H2 component
  */
-export const H2: React.FC<Props> = (props): JSX.Element => {
-  return renderText(props);
+export const H2: React.FC<TypographyProps> = (typographyProps: TypographyProps): JSX.Element => {
+  return renderText(typographyProps);
 };
 
 H2.defaultProps = {
@@ -36,11 +36,11 @@ H2.defaultProps = {
 };
 
 /** 
- * @param props - The H3 component props
+ * @param typographyProps - The H3 component props
  * @returns A react native custom H3 component
  */
-export const H3: React.FC<Props> = (props): JSX.Element => {
-  return renderText(props);
+export const H3: React.FC<TypographyProps> = (typographyProps: TypographyProps): JSX.Element => {
+  return renderText(typographyProps);
 };
 
 H3.defaultProps = {
@@ -52,11 +52,11 @@ H3.defaultProps = {
 };
 
 /** 
- * @param props - The H4 component props
+ * @param typographyProps - The H4 component props
  * @returns A react native custom H4 component
  */
-export const H4: React.FC<Props> = (props): JSX.Element => {
-  return renderText(props);
+export const H4: React.FC<TypographyProps> = (typographyProps: TypographyProps): JSX.Element => {
+  return renderText(typographyProps);
 };
 
 H4.defaultProps = {
@@ -68,11 +68,11 @@ H4.defaultProps = {
 };
 
 /** 
- * @param props - The H5 component props
+ * @param typographyProps - The H5 component props
  * @returns A react native custom H5 component
  */
-export const H5: React.FC<Props> = (props): JSX.Element => {
-  return renderText(props);
+export const H5: React.FC<TypographyProps> = (typographyProps: TypographyProps): JSX.Element => {
+  return renderText(typographyProps);
 };
 
 H5.defaultProps = {
@@ -84,11 +84,11 @@ H5.defaultProps = {
 };
 
 /** 
- * @param props - The Label component props
+ * @param typographyProps - The Label component props
  * @returns A react native custom Label component
  */
-export const Label: React.FC<Props> = (props): JSX.Element => {
-  return renderText(props);
+export const Label: React.FC<TypographyProps> = (typographyProps: TypographyProps): JSX.Element => {
+  return renderText(typographyProps);
 };
 
 Label.defaultProps = {
@@ -100,11 +100,11 @@ Label.defaultProps = {
 };
     
 /** 
- * @param props - The P component props
+ * @param typographyProps - The P component props
  * @returns A react native custom P component
  */
-export const P: React.FC<Props> = (props): JSX.Element => {
-  return renderText(props);
+export const P: React.FC<TypographyProps> = (typographyProps: TypographyProps): JSX.Element => {
+  return renderText(typographyProps);
 };
 
 P.defaultProps = {
@@ -119,14 +119,14 @@ P.defaultProps = {
  * Since all the typography elements are so similar appart from the default props
  * this method renders the text.
  * 
- * @param props - The component's props
+ * @param typographyProps - The component's props
  * @returns A react native custom Typography component based on the given props
  */
-const renderText = (props: Props) => {
+const renderText = (typographyProps: TypographyProps): JSX.Element => {
   return (
     <StyledContainer>
-      <StyledText {...props}>
-        {props.children}
+      <StyledText {...typographyProps}>
+        {typographyProps.children}
       </StyledText>
     </StyledContainer>
   );
