@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Props } from './BadgeModel';
+import { BadgeProps } from './BadgeModel';
 import colors from "../../../theme/colors";
 
 
@@ -19,18 +19,18 @@ export const BadgeContainer = styled.View`
     align-items: center;
     align-self: flex-start;
     padding: 5px;
-     ${(props: Props) =>
-      props.background &&`
-          backgroundColor: ${colors[props.background]};
-          borderColor:${colors[props.background]};
+     ${(badgeProps: BadgeProps) =>
+      badgeProps.background &&`
+          backgroundColor: ${colors[badgeProps.background]};
+          borderColor:${colors[badgeProps.background]};
       `}
-     ${(props: Props) =>
-      props.border &&`
-          borderColor: ${colors[props.border]};
+     ${(badgeProps: BadgeProps) =>
+      badgeProps.border &&`
+          borderColor: ${colors[badgeProps.border]};
       `}
-     ${(props: Props) =>
-      props.opacity &&`
-          backgroundColor: ${hex2rgba(colors[props.background],props.opacity)};
+     ${(badgeProps: BadgeProps) =>
+      badgeProps.opacity &&`
+          backgroundColor: ${hex2rgba(colors[badgeProps.background],badgeProps.opacity)};
       `}
 `;
 
