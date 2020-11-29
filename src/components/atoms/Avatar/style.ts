@@ -7,21 +7,19 @@ interface AvatarProps {
     style?: any;
     /** Any color from the theme's color palette */
     color?: keyof typeof colors;
-    /** Border width of the Text box */
-    borderWidth?: number;
-    /** Border radius of the Text box (square or round)*/
+    /** Border radius of the to make it round*/
     borderRadius?: number;
     /**  The title of the Text box */
     title?:string;
     /** To pass custom icon */
     icon?:any;
+    /** Background color of the Avatar */
     backgroundColor?:keyof typeof colors;
-    /** Height of the Text box */
+    /** Height of the Avatar circle */
     height?: number;
-    /** Width of the Text box */
+    /** Width of the Avatar circle */
     width?: number;
-    /** Placeholder for the Text box */
-    placeholder?:string;
+    /** Image of Avatar */
     image?:any;
 }
 
@@ -52,6 +50,16 @@ export const IconWrapper = styled.View`
 `;
 
 export const TextWrapper =styled.Text`
+${(props: AvatarProps) =>
+    props.height &&
+    `
+    height:${props.height};
+ `}
+ ${(props: AvatarProps) =>
+    props.width &&
+    `
+    width:${props.width};
+ `}
     align-self:center;
     font-size:20;
     font-weight:bold;
@@ -60,9 +68,17 @@ export const TextWrapper =styled.Text`
 `;
 
 export const ImageWrapper = styled.ImageBackground`
+${(props: AvatarProps) =>
+    props.height &&
+    `
+    height:${props.height};
+ `}
+ ${(props: AvatarProps) =>
+    props.width &&
+    `
+    width:${props.width};
+ `}
     flex:1;
-    width:50;
-    height:50;
     borderRadius:50;
     overflow:hidden;
     align-self:center;

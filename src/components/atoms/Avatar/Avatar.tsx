@@ -1,5 +1,5 @@
 import React from "react";
-import { AvatarProps } from "./avatarModel";
+import { AvatarProps } from "./AvatarModel";
 import {AvatarWrapper, IconWrapper, TextWrapper, ImageWrapper } from './style'
 
 export const AvatarBadge: React.FC<AvatarProps> = (props: AvatarProps) => {
