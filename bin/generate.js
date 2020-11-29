@@ -59,10 +59,10 @@ function add(name, type) {
   const content = new Content(name, type);
   createFile(dir, `${name}.tsx`, content.component);
   createFile(dir, `${name}.mdx`, content.documentation);
-  createFile(dir, `props.model.ts`, content.props);
+  createFile(dir, `${name}Model.ts`, content.props);
   createFile(dir, `index.ts`, content.index);
   createFile(dir, `style.ts`, content.style);
-  createFile(TESTS_DIR, `${name}-test.tsx`, content.test);
+  createFile(TESTS_DIR, `${name}.test.tsx`, content.test);
 }
 
 /** Creating the component's directory with its name */
@@ -88,17 +88,17 @@ function createFile(parentDir, fileName, content) {
 /** Content to be added inside each file */
 function Content(name, type) {
   this.component = componentContent(name);
-  this.props = propsContent();
+  this.props = propsContent(name);
   this.index = indexContent(name);
   this.style = styleContent(name);
-  this.documentation = documentationContent(name);
+  this.documentation = documentationContent(name, type);
   this.test = testsContent(name, type);
 }
 
-function propsContent() {
+function propsContent(name) {
   return `import colors from "../../../theme/colors";
   
-  export interface Props {
+  export interface ${name}Props {
     /**  Example of an optional prop */
     optional?: string;
     /** Example of a required prop*/
@@ -109,7 +109,7 @@ function propsContent() {
 function componentContent(name) {
   return `import React from "react";
 import { StyledView } from "./style"
-import { Props } from "./props.model";
+import { ${name}Props } from "./${name}Model";
 
 import colors from "../../../theme/colors";
 
@@ -118,7 +118,7 @@ import colors from "../../../theme/colors";
  * @param props - The ${name}'s props
  * @returns A react native custom ${name} component
  */
-export const ${name}: React.FC<Props> = (props): JSX.Element => {
+export const ${name}: React.FC<${name}Props> = (${name.toString().toLowerCase()}Props: ${name}Props): JSX.Element => {
   return (
     <StyledView>
     </StyledView>
@@ -137,9 +137,9 @@ export { ${name} };
 `
 }
 
-function styleContent(){
+function styleContent(name){
   return `import styled from "styled-components/native";
-import { Props } from './props.model';
+import { ${name}Props } from './${name}Model';
 import colors from "../../../theme/colors";
 
 
@@ -154,15 +154,23 @@ export const StyledView = styled.View\`
 `
 }
 
-function  documentationContent(name){
+function  documentationContent(name, type){
+  let menu = '';
+
+  switch(type){
+    case 'atom': menu = '1 - Atoms'; break;
+    case 'molecule': menu = '2 - Molecules'; break;
+    case 'organism': menu = '3 - Organisms'; break; 
+  }
+
   return `---
 name: ${name}
-menu: Atoms
+menu: ${menu}
 ---
 import { Props, Playground } from "docz";
 import { ${name} } from "./${name}.tsx";
 
-# Component
+# ${name}
 A description of the component
 
 # Usage

@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`matches $caps snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+      },
+    ]
+  }
+>
+  <Text
+    caps={true}
+    color="dark"
+    fontSize={13}
+    fontWeight={400}
+    justification="left"
+    padding={8}
+    style={
+      Array [
+        Object {
+          "color": "#1D1F2A",
+          "flexDirection": "row",
+          "fontFamily": "Raleway",
+          "fontSize": 13,
+          "fontWeight": "400",
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+          "textAlign": "left",
+          "textTransform": "uppercase",
+        },
+      ]
+    }
+  >
+    Button
+  </Text>
+</View>
+`;
+
 exports[`matches H1 snapshot 1`] = `
 <View
   style={
@@ -22,10 +64,7 @@ exports[`matches H1 snapshot 1`] = `
       Array [
         Object {
           "color": "#1D1F2A",
-          "flexBasis": 0,
           "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "fontFamily": "Raleway",
           "fontSize": 24,
           "fontWeight": "400",
@@ -65,10 +104,7 @@ exports[`matches H2 snapshot 1`] = `
       Array [
         Object {
           "color": "#1D1F2A",
-          "flexBasis": 0,
           "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "fontFamily": "Raleway",
           "fontSize": 18,
           "fontWeight": "700",
@@ -108,10 +144,7 @@ exports[`matches H3 snapshot 1`] = `
       Array [
         Object {
           "color": "#1D1F2A",
-          "flexBasis": 0,
           "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "fontFamily": "Raleway",
           "fontSize": 15,
           "fontWeight": "400",
@@ -151,10 +184,7 @@ exports[`matches H4 snapshot 1`] = `
       Array [
         Object {
           "color": "#1D1F2A",
-          "flexBasis": 0,
           "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "fontFamily": "Raleway",
           "fontSize": 13,
           "fontWeight": "400",
@@ -194,10 +224,7 @@ exports[`matches H5 snapshot 1`] = `
       Array [
         Object {
           "color": "#8B8B8B",
-          "flexBasis": 0,
           "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "fontFamily": "Raleway",
           "fontSize": 13,
           "fontWeight": "400",
@@ -237,10 +264,7 @@ exports[`matches Label snapshot 1`] = `
       Array [
         Object {
           "color": "#1D1F2A",
-          "flexBasis": 0,
           "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "fontFamily": "Raleway",
           "fontSize": 13,
           "fontWeight": "700",
@@ -280,10 +304,7 @@ exports[`matches P snapshot 1`] = `
       Array [
         Object {
           "color": "#1D1F2A",
-          "flexBasis": 0,
           "flexDirection": "row",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "fontFamily": "Raleway",
           "fontSize": 13,
           "fontWeight": "400",

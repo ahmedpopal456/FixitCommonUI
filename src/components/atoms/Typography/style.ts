@@ -1,18 +1,17 @@
 import styled from "styled-components/native";
 import colors from "../../../theme/colors";
-import { Props } from './props.model';
+import { TypographyProps } from './TypographyModel';
 
 export const StyledText = styled.Text`
     font-family: "Raleway";
-    flex: 1;
     flexDirection: row;
-    font-size: ${(props: Props) => props.fontSize}px;
-    padding: ${(props: Props) => props.padding}px;
-    font-weight: ${(props: Props) => props.fontWeight}
-    color: ${(props: Props) => colors[props.color!]};
-    text-align: ${(props: Props) => props.justification};
-    ${(props: Props) =>
-        props.$caps &&`
+    font-size: ${(typographyProps: TypographyProps) => typographyProps.fontSize}px;
+    padding: ${(typographyProps: TypographyProps) => typographyProps.padding}px;
+    font-weight: ${(typographyProps: TypographyProps) => typographyProps.fontWeight}
+    color: ${(typographyProps: TypographyProps) => colors[typographyProps.color!]};
+    text-align: ${(typographyProps: TypographyProps) => typographyProps.justification};
+    ${(typographyProps: TypographyProps) =>
+        typographyProps.caps &&`
             text-transform: uppercase;
         `}
 `;
