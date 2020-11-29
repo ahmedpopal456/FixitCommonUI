@@ -18,10 +18,7 @@
     "g": "node bin/generate.js"
   },
   "dependencies": {
-    "react-native": "^0.63.3",
-    "react-native-svg": "^12.1.0",
-    "react-native-vector-icons": "^7.1.0",
-    "styled-components": "^5.2.1"
+    "react-native": "^0.63.3"
   },
   "devDependencies": {
     "@babel/preset-flow": "^7.12.1",
@@ -29,6 +26,9 @@
     "@types/jest": "^26.0.15",
     "@types/react-native-vector-icons": "^6.4.6",
     "@types/styled-components": "^5.1.4",
+    "react-native-svg": "^12.1.0",
+    "react-native-vector-icons": "^7.1.0",
+    "styled-components": "^5.2.1",
     "cache-loader": "^4.1.0",
     "commander": "^6.2.0",
     "docz": "^2.3.2-alpha.0",
