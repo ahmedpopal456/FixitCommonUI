@@ -2,8 +2,6 @@ import React from "react";
 import { DividerContainer, DividerSegment, DividerText } from "./style"
 import { DividerProps } from "./DividerModel";
 
-import colors from "../../../theme/colors";
-
 /**
  * Describe the Component
  * @param props - The Divider's props
