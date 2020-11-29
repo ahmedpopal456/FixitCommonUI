@@ -3,7 +3,7 @@ import { Tag } from "./Tag";
 
 export interface TagProps {
     /** Children which will be contained in the tag (ie. string or tag) */
-    children: string | typeof Tag;
+    children: object | string;
     /** Can be any color from the theme color palette */
     textColor?: keyof typeof colors;
     /** Can be any color from the theme color palette */

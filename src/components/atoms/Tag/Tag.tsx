@@ -28,8 +28,8 @@ const renderChildren = (tagProps: TagProps): JSX.Element => {
         } else {
           return React.cloneElement(child,
               {
-                  margins: child.tagProps.margins ? child.tagProps.margins : "0px",
-                  leftMarginCorrection: child.tagProps.leftMarginCorrection ? child.tagProps.leftMarginCorrection : "-3px",
+                  margins: child.props.margins ? child.props.margins : "0px",
+                  leftMarginCorrection: child.props.leftMarginCorrection ? child.props.leftMarginCorrection : "-3px",
               });
         }
       })}

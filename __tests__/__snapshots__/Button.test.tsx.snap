@@ -54,10 +54,7 @@ exports[`matches $outline snapshot 1`] = `
         Array [
           Object {
             "color": "#33343E",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 17,
             "fontWeight": "400",
@@ -130,10 +127,7 @@ exports[`matches color snapshot 1`] = `
         Array [
           Object {
             "color": "#33343E",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 17,
             "fontWeight": "400",
@@ -206,10 +200,7 @@ exports[`matches default snapshot 1`] = `
         Array [
           Object {
             "color": "#FFD14A",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 17,
             "fontWeight": "400",
@@ -282,10 +273,7 @@ exports[`matches disabled snapshot 1`] = `
         Array [
           Object {
             "color": "#EEEEEE",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 17,
             "fontWeight": "400",
@@ -425,10 +413,7 @@ exports[`matches shape snapshot 1`] = `
         Array [
           Object {
             "color": "#FFD14A",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 17,
             "fontWeight": "400",
@@ -502,10 +487,7 @@ exports[`matches width snapshot 1`] = `
         Array [
           Object {
             "color": "#FFD14A",
-            "flexBasis": 0,
             "flexDirection": "row",
-            "flexGrow": 1,
-            "flexShrink": 1,
             "fontFamily": "Raleway",
             "fontSize": 17,
             "fontWeight": "400",
