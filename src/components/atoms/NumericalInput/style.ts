@@ -16,9 +16,9 @@ export const NumericalInputContainer = styled.View`
     padding: 7px;
     height: 50px;
     background-color: white;
-    ${(props: NumericalProps) =>
+    ${(numericalProps: NumericalProps) =>
     `
-        border-color: ${colors[props.borderColor!]};
+        border-color: ${colors[numericalProps.borderColor!]};
         border-width: 1px;
     `}
 `;
@@ -27,9 +27,9 @@ export const StyledNumInput = styled.TextInput`
     background-color: white;
     text-align: center;
     width: 30px;
-    ${(props: NumericalProps) =>
+    ${(numericalProps: NumericalProps) =>
     `
-        border-color: ${colors[props.borderColor!]};
+        border-color: ${colors[numericalProps.borderColor!]};
         border-bottom-width: 1px;  
     `}
 `;

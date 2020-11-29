@@ -4,12 +4,12 @@ import { NumericalProps } from "./NumericalModel";
 
 /** 
  * Describe the Component 
- * @param props - The NumericalInput's props
+ * @param numericalProps - The NumericalInput's props
  * @returns A react native custom NumericalInput component
  */
 
-export const NumericalInput: React.FC<NumericalProps> = (props: NumericalProps): JSX.Element => {
-  var arr = new Array(props.numbers);
+export const NumericalInput: React.FC<NumericalProps> = (numericalProps: NumericalProps): JSX.Element => {
+  var arr = new Array(numericalProps.numbers);
   for (let i = 0; i < arr.length; i++)
     arr[i] = "NumInputKey_" + i;
 
@@ -18,11 +18,11 @@ export const NumericalInput: React.FC<NumericalProps> = (props: NumericalProps):
       {arr.map(function(index) {
         return <NumericalInputContainer
           key={index}
-          borderColor={props.borderColor}
-          numbers={props.numbers}
+          borderColor={numericalProps.borderColor}
+          numbers={numericalProps.numbers}
         >
           <StyledNumInput
-            {...props}
+            {...numericalProps}
             keyboardType="number-pad"
             maxLength={1} // only works on mobile devices!!
             style={{fontSize: 25}}
