@@ -1,0 +1,331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches border color snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    borderColor="accent"
+    numbers={1}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "white",
+          "borderColor": "#FFD14A",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-around",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+          "paddingBottom": 7,
+          "paddingLeft": 7,
+          "paddingRight": 7,
+          "paddingTop": 7,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      borderColor="accent"
+      keyboardType="number-pad"
+      maxLength={1}
+      numbers={1}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderBottomWidth": 1,
+            "borderColor": "#FFD14A",
+            "textAlign": "center",
+            "width": 30,
+          },
+          Object {
+            "fontSize": 25,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+</div>
+`;
+
+exports[`matches default snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    borderColor="primary"
+    numbers={1}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "white",
+          "borderColor": "#33343E",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-around",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+          "paddingBottom": 7,
+          "paddingLeft": 7,
+          "paddingRight": 7,
+          "paddingTop": 7,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      borderColor="primary"
+      keyboardType="number-pad"
+      maxLength={1}
+      numbers={1}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderBottomWidth": 1,
+            "borderColor": "#33343E",
+            "textAlign": "center",
+            "width": 30,
+          },
+          Object {
+            "fontSize": 25,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+</div>
+`;
+
+exports[`matches the number of inputs snapshot 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    borderColor="primary"
+    numbers={4}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "white",
+          "borderColor": "#33343E",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-around",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+          "paddingBottom": 7,
+          "paddingLeft": 7,
+          "paddingRight": 7,
+          "paddingTop": 7,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      borderColor="primary"
+      keyboardType="number-pad"
+      maxLength={1}
+      numbers={4}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderBottomWidth": 1,
+            "borderColor": "#33343E",
+            "textAlign": "center",
+            "width": 30,
+          },
+          Object {
+            "fontSize": 25,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    borderColor="primary"
+    numbers={4}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "white",
+          "borderColor": "#33343E",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-around",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+          "paddingBottom": 7,
+          "paddingLeft": 7,
+          "paddingRight": 7,
+          "paddingTop": 7,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      borderColor="primary"
+      keyboardType="number-pad"
+      maxLength={1}
+      numbers={4}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderBottomWidth": 1,
+            "borderColor": "#33343E",
+            "textAlign": "center",
+            "width": 30,
+          },
+          Object {
+            "fontSize": 25,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    borderColor="primary"
+    numbers={4}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "white",
+          "borderColor": "#33343E",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-around",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+          "paddingBottom": 7,
+          "paddingLeft": 7,
+          "paddingRight": 7,
+          "paddingTop": 7,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      borderColor="primary"
+      keyboardType="number-pad"
+      maxLength={1}
+      numbers={4}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderBottomWidth": 1,
+            "borderColor": "#33343E",
+            "textAlign": "center",
+            "width": 30,
+          },
+          Object {
+            "fontSize": 25,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+  <View
+    borderColor="primary"
+    numbers={4}
+    style={
+      Array [
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "white",
+          "borderColor": "#33343E",
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-around",
+          "marginBottom": 5,
+          "marginLeft": 5,
+          "marginRight": 5,
+          "marginTop": 5,
+          "paddingBottom": 7,
+          "paddingLeft": 7,
+          "paddingRight": 7,
+          "paddingTop": 7,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      borderColor="primary"
+      keyboardType="number-pad"
+      maxLength={1}
+      numbers={4}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderBottomWidth": 1,
+            "borderColor": "#33343E",
+            "textAlign": "center",
+            "width": 30,
+          },
+          Object {
+            "fontSize": 25,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+</div>
+`;
