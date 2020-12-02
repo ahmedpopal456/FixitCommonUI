@@ -61,6 +61,11 @@ class Wrapper extends React.Component {
       font-family: "Octicons";
       src: url(${Octicons});
     }
+
+    textArea {
+      outline: none !important;
+    }
+    
     `;
     const style = document.createElement('style');
 
