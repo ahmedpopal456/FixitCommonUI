@@ -21,6 +21,8 @@ interface TextProps {
     width?: number;
     /** Placeholder for the Text box */
     placeholder?:string;
+    /** Border color */
+    borderColor?: keyof typeof colors;
 }
 
 export const TextInputWrapper = styled.TextInput`
@@ -29,6 +31,14 @@ export const TextInputWrapper = styled.TextInput`
     border-radius: 5px;
     margin:10px;
     padding: 10px;
+    ${(props:TextProps)=>
+        `
+        borderColor: ${props.borderColor};
+        color: ${props.color};
+        height: ${props.height}px;
+        width: ${props.width}px;
+        border-width:${props.borderWidth};
+        `}
 `;
 
 export const TextInputIconWrapper = styled.TextInput`
@@ -45,9 +55,9 @@ export const TextBoxWrapper = styled.View`
     margin: 10px;
     flex-direction: row;
     backgroundColor: #33343E;
-    borderColor: #000000;
     ${(props:TextProps)=>
         `
+        borderColor: ${props.borderColor};
         color: ${props.color};
         height: ${props.height}px;
         width: ${props.width}px;

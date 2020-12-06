@@ -4,7 +4,6 @@ import { TypographyProps } from './TypographyModel';
 
 export const StyledText = styled.Text`
     font-family: "Raleway";
-    flex: 1;
     flexDirection: row;
     font-size: ${(typographyProps: TypographyProps) => typographyProps.fontSize}px;
     padding: ${(typographyProps: TypographyProps) => typographyProps.padding}px;

@@ -18,14 +18,20 @@ exports[`matches default snapshot 1`] = `
   </View>
   <TextInput
     allowFontScaling={true}
+    borderColor="#FFD14A"
     borderRadius={5}
+    borderWidth={2}
+    height={45}
     multiline={true}
     rejectResponderTermination={true}
     style={
       Array [
         Object {
+          "borderColor": "#FFD14A",
           "borderRadius": 5,
           "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
           "justifyContent": "flex-end",
           "marginBottom": 10,
           "marginLeft": 10,
@@ -35,12 +41,7 @@ exports[`matches default snapshot 1`] = `
           "paddingLeft": 10,
           "paddingRight": 10,
           "paddingTop": 10,
-        },
-        Object {
-          "borderColor": "#FFD14A",
-          "borderWidth": 2,
-          "height": 45,
-          "textAlign": "left",
+          "width": "undefinedpx",
         },
       ]
     }
@@ -67,14 +68,20 @@ exports[`matches height snapshot 1`] = `
   </View>
   <TextInput
     allowFontScaling={true}
+    borderColor="#FFD14A"
     borderRadius={5}
+    borderWidth={2}
+    height={45}
     multiline={true}
     rejectResponderTermination={true}
     style={
       Array [
         Object {
+          "borderColor": "#FFD14A",
           "borderRadius": 5,
           "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
           "justifyContent": "flex-end",
           "marginBottom": 10,
           "marginLeft": 10,
@@ -84,6 +91,7 @@ exports[`matches height snapshot 1`] = `
           "paddingLeft": 10,
           "paddingRight": 10,
           "paddingTop": 10,
+          "width": "undefinedpx",
         },
         Object {
           "height": "45",
@@ -113,15 +121,21 @@ exports[`matches placeholder snapshot 1`] = `
   </View>
   <TextInput
     allowFontScaling={true}
+    borderColor="#FFD14A"
     borderRadius={5}
+    borderWidth={2}
+    height={45}
     multiline={true}
     placeholder="Name"
     rejectResponderTermination={true}
     style={
       Array [
         Object {
+          "borderColor": "#FFD14A",
           "borderRadius": 5,
           "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
           "justifyContent": "flex-end",
           "marginBottom": 10,
           "marginLeft": 10,
@@ -131,12 +145,7 @@ exports[`matches placeholder snapshot 1`] = `
           "paddingLeft": 10,
           "paddingRight": 10,
           "paddingTop": 10,
-        },
-        Object {
-          "borderColor": "#FFD14A",
-          "borderWidth": 2,
-          "height": 45,
-          "textAlign": "left",
+          "width": "undefinedpx",
         },
       ]
     }
@@ -148,7 +157,10 @@ exports[`matches placeholder snapshot 1`] = `
 exports[`matches text input icon snapshot 1`] = `
 <View>
   <View
+    borderColor="#FFD14A"
     borderRadius={5}
+    borderWidth={2}
+    height={45}
     icon={
       <Icon
         color="accent"
@@ -161,23 +173,17 @@ exports[`matches text input icon snapshot 1`] = `
       Array [
         Object {
           "backgroundColor": "#33343E",
-          "borderColor": "#000000",
+          "borderColor": "#FFD14A",
           "borderRadius": 5,
-          "borderWidth": undefined,
+          "borderWidth": 2,
           "color": undefined,
           "flexDirection": "row",
-          "height": "undefinedpx",
+          "height": 45,
           "marginBottom": 10,
           "marginLeft": 10,
           "marginRight": 10,
           "marginTop": 10,
           "width": "undefinedpx",
-        },
-        Object {
-          "borderColor": "#FFD14A",
-          "borderWidth": 2,
-          "height": 45,
-          "textAlign": "left",
         },
       ]
     }
@@ -268,14 +274,20 @@ exports[`matches title snapshot 1`] = `
   </View>
   <TextInput
     allowFontScaling={true}
+    borderColor="#FFD14A"
     borderRadius={5}
+    borderWidth={2}
+    height={45}
     multiline={true}
     rejectResponderTermination={true}
     style={
       Array [
         Object {
+          "borderColor": "#FFD14A",
           "borderRadius": 5,
           "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
           "justifyContent": "flex-end",
           "marginBottom": 10,
           "marginLeft": 10,
@@ -285,12 +297,7 @@ exports[`matches title snapshot 1`] = `
           "paddingLeft": 10,
           "paddingRight": 10,
           "paddingTop": 10,
-        },
-        Object {
-          "borderColor": "#FFD14A",
-          "borderWidth": 2,
-          "height": 45,
-          "textAlign": "left",
+          "width": "undefinedpx",
         },
       ]
     }

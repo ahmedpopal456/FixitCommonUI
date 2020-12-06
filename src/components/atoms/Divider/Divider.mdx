@@ -1,0 +1,38 @@
+---
+name: Divider
+menu: 1 - Atoms
+---
+import { Props, Playground } from "docz";
+import { Divider } from "./Divider.tsx";
+
+# Divider
+Simple divider, akin to an hr element in html
+
+# Usage
+```tsx
+import { Divider } from "fixit-common-ui";
+<Divider />
+<Divider>Hello</Divider>
+```
+
+## Props
+<Props of={Divider}></Props>
+
+## Divider types
+<Playground>
+<Divider />
+
+<Divider small/>
+
+<Divider faded/>
+
+<Divider small faded/>
+
+<Divider>some text</Divider>
+
+<Divider small>some text</Divider>
+
+<Divider faded>some text</Divider>
+
+<Divider small faded>some text</Divider>
+</Playground>

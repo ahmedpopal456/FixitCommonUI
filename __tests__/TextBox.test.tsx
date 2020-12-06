@@ -1,6 +1,6 @@
-import 'react-native';
-import React from 'react';
-import { TextBox } from '../src/components/atoms/TextInput';
+import "react-native";
+import React from "react";
+import { TextBox } from "../src/components/atoms/TextInput";
 import { Icon } from "../src/components/atoms/Icon";
 
 import renderer from 'react-test-renderer';

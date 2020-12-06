@@ -1,0 +1,43 @@
+---
+name: Badge
+menu: 1 - Atoms
+---
+import { Props, Playground } from "docz";
+import { Badge } from "./Badge.tsx";
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
+
+# Badge
+The badge components dispays a number in a circle
+
+# Usage
+```tsx
+import { Badge } from "fixit-common-ui";
+<Badge>1</Badge>
+```
+
+## Props
+<Props of={Badge}></Props>
+
+## Default
+<Playground>
+  <DoczContainer>
+    <Badge>1</Badge>
+    <Badge>12</Badge>
+    <Badge>12345</Badge>
+  </DoczContainer>
+</Playground>
+
+## Custom
+<Playground>
+  <DoczContainer>
+    <Badge background="red" color="light">12</Badge>
+    <Badge background="accent" border="primary" color="primary">12</Badge>
+  </DoczContainer>
+</Playground>
+
+## See through
+<Playground>
+  <DoczContainer>
+    <Badge opacity={.2} color="accent" background="accent">12</Badge>
+  </DoczContainer>
+</Playground>

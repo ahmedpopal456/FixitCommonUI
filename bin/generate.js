@@ -62,7 +62,7 @@ function add(name, type) {
   createFile(dir, `${name}Model.ts`, content.props);
   createFile(dir, `index.ts`, content.index);
   createFile(dir, `style.ts`, content.style);
-  createFile(TESTS_DIR, `${name}-test.tsx`, content.test);
+  createFile(TESTS_DIR, `${name}.test.tsx`, content.test);
 }
 
 /** Creating the component's directory with its name */
@@ -91,7 +91,7 @@ function Content(name, type) {
   this.props = propsContent(name);
   this.index = indexContent(name);
   this.style = styleContent(name);
-  this.documentation = documentationContent(name);
+  this.documentation = documentationContent(name, type);
   this.test = testsContent(name, type);
 }
 
@@ -118,7 +118,7 @@ import colors from "../../../theme/colors";
  * @param props - The ${name}'s props
  * @returns A react native custom ${name} component
  */
-export const ${name}: React.FC<${name}Props> = (props): JSX.Element => {
+export const ${name}: React.FC<${name}Props> = (${name.toString().toLowerCase()}Props: ${name}Props): JSX.Element => {
   return (
     <StyledView>
     </StyledView>
@@ -154,15 +154,23 @@ export const StyledView = styled.View\`
 `
 }
 
-function  documentationContent(name){
+function  documentationContent(name, type){
+  let menu = '';
+
+  switch(type){
+    case 'atom': menu = '1 - Atoms'; break;
+    case 'molecule': menu = '2 - Molecules'; break;
+    case 'organism': menu = '3 - Organisms'; break; 
+  }
+
   return `---
 name: ${name}
-menu: Atoms
+menu: ${menu}
 ---
 import { Props, Playground } from "docz";
 import { ${name} } from "./${name}.tsx";
 
-# Component
+# ${name}
 A description of the component
 
 # Usage

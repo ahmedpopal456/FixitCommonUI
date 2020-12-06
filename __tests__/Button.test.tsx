@@ -50,7 +50,7 @@ it("matches default snapshot", () => {
 it("matches $outline snapshot", () => {
   const mockFn = jest.fn();
   const button = renderer.create(
-    <Button onPress={mockFn} $outline>
+    <Button onPress={mockFn} outline>
       Button
     </Button>
   );
