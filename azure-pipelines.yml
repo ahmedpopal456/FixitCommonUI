@@ -80,8 +80,8 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        git config --global user.email "Admin@FixIt148.onmicrosoft.com"
-        git config --global user.name "Fixit"
+        git config --global user.email "ahmed.popal@hotmail.com"
+        git config --global user.name "Ahmed Popal"
 
   # Bump Package Version Patch
   - task: Npm@1
@@ -107,7 +107,7 @@ jobs:
     inputs:
       script: |
         git commit -a -m "Auto CI commit [skip ci]"
-        git push -u https://Admin%40FixIt148.onmicrosoft.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitCommonUILib HEAD:development
+        git push -u https://ahmed.popal%40hotmail.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitCommonUI HEAD:staging
     condition: succeeded()
 
   # Publishes npm package
