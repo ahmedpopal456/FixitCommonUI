@@ -107,7 +107,7 @@ jobs:
     inputs:
       script: |
         git commit -a -m "Auto CI commit [skip ci]"
-        git push -u https://Admin%40FixIt148.onmicrosoft.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitCommonUI HEAD:development
+        git push -u https://ahmed.popal%40hotmail.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitCommonUI HEAD:staging
     condition: succeeded()
 
   # Publishes npm package
