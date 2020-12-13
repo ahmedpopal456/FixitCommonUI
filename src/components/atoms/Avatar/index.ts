@@ -1,2 +1,2 @@
-import { AvatarBadge } from './Avatar';
-export { AvatarBadge};
+import { Avatar } from './Avatar';
+export { Avatar};

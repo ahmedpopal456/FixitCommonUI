@@ -132,9 +132,7 @@ exports[`matches image snapshot 1`] = `
           "flexBasis": 0,
           "flexGrow": 1,
           "flexShrink": 1,
-          "height": 50,
           "overflow": "hidden",
-          "width": 50,
         },
         Object {
           "backgroundColor": "grey",

@@ -2,7 +2,7 @@ import React from "react";
 import { AvatarProps } from "./AvatarModel";
 import {AvatarWrapper, IconWrapper, TextWrapper, ImageWrapper } from './style'
 
-export const AvatarBadge: React.FC<AvatarProps> = (avatarProps: AvatarProps) => {
+export const Avatar: React.FC<AvatarProps> = (avatarProps: AvatarProps) => {
     return (
         <AvatarWrapper {...avatarProps}>
           <TextWrapper>{avatarProps.title}</TextWrapper>
@@ -21,7 +21,7 @@ export const ImageBackground: React.FC<AvatarProps> = (avatarProps: AvatarProps)
     return null;
   };
 
-  AvatarBadge.defaultProps={
+  Avatar.defaultProps={
     style:{
       height:50,
       width:50,
