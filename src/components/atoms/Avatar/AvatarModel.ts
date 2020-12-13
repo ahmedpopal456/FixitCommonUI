@@ -1,6 +1,5 @@
 import colors from '../../../theme/colors';
 
-/** PROPS */
 export interface AvatarProps {
     style?: object;
     /** Any color from the theme's color palette */

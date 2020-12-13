@@ -24,22 +24,22 @@ interface AvatarProps {
 }
 
 export const AvatarWrapper = styled.View`
-${(props: AvatarProps) =>
-    props.height &&
+${(avatarProps: AvatarProps) =>
+   avatarProps.height &&
     `
-    height:${props.height};
+    height:${avatarProps.height};
  `}
- ${(props: AvatarProps) =>
-    props.width &&
+ ${(avatarProps: AvatarProps) =>
+   avatarProps.width &&
     `
-    width:${props.width};
+    width:${avatarProps.width};
  `}
     borderRadius:50;
     align-items:center;
-    ${(props: AvatarProps) =>
-        props.backgroundColor &&
+    ${(avatarProps: AvatarProps) =>
+      avatarProps.backgroundColor &&
         `
-        backgroundColor:${props.backgroundColor};
+        backgroundColor:${avatarProps.backgroundColor};
      `}
     justify-content:center;
     margin:10px;
@@ -50,15 +50,15 @@ export const IconWrapper = styled.View`
 `;
 
 export const TextWrapper =styled.Text`
-${(props: AvatarProps) =>
-    props.height &&
+${(avatarProps: AvatarProps) =>
+   avatarProps.height &&
     `
-    height:${props.height};
+    height:${avatarProps.height};
  `}
- ${(props: AvatarProps) =>
-    props.width &&
+ ${(avatarProps: AvatarProps) =>
+   avatarProps.width &&
     `
-    width:${props.width};
+    width:${avatarProps.width};
  `}
     align-self:center;
     font-size:20;
@@ -68,15 +68,15 @@ ${(props: AvatarProps) =>
 `;
 
 export const ImageWrapper = styled.ImageBackground`
-${(props: AvatarProps) =>
-    props.height &&
+${(avatarProps: AvatarProps) =>
+   avatarProps.height &&
     `
-    height:${props.height};
+    height:${avatarProps.height};
  `}
- ${(props: AvatarProps) =>
-    props.width &&
+ ${(avatarProps: AvatarProps) =>
+   avatarProps.width &&
     `
-    width:${props.width};
+    width:${avatarProps.width};
  `}
     flex:1;
     borderRadius:50;

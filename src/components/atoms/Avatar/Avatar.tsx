@@ -2,20 +2,20 @@ import React from "react";
 import { AvatarProps } from "./AvatarModel";
 import {AvatarWrapper, IconWrapper, TextWrapper, ImageWrapper } from './style'
 
-export const AvatarBadge: React.FC<AvatarProps> = (props: AvatarProps) => {
+export const AvatarBadge: React.FC<AvatarProps> = (avatarProps: AvatarProps) => {
     return (
-        <AvatarWrapper {...props}>
-          <TextWrapper>{props.title}</TextWrapper>
-          <IconWrapper>{props.icon}</IconWrapper>
-          <ImageBackground {...props}/>
+        <AvatarWrapper {...avatarProps}>
+          <TextWrapper>{avatarProps.title}</TextWrapper>
+          <IconWrapper>{avatarProps.icon}</IconWrapper>
+          <ImageBackground {...avatarProps}/>
         </AvatarWrapper>
     );
   };
 
-export const ImageBackground: React.FC<AvatarProps> = (props: AvatarProps) => {
-    if(props.image != null){
+export const ImageBackground: React.FC<AvatarProps> = (avatarProps: AvatarProps) => {
+    if(avatarProps.image != null){
         return (
-                <ImageWrapper {...props} source={{uri:props.image}}/>
+                <ImageWrapper {...avatarProps} source={{uri:avatarProps.image}}/>
             );
     }
     return null;
