@@ -80,8 +80,8 @@ jobs:
     inputs:
       targetType: 'inline'
       script: |
-        git config --global user.email "Admin@FixIt148.onmicrosoft.com"
-        git config --global user.name "Fixit"
+        git config --global user.email "ahmed.popal@hotmail.com"
+        git config --global user.name "Ahmed Popal"
 
   # Bump Package Version Patch
   - task: Npm@1
