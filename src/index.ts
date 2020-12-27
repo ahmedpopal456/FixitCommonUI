@@ -6,3 +6,4 @@ export * from "./components/atoms/Spacer";
 export * from "./components/atoms/Divider";
 export * from "./components/atoms/Badge";
 export * from "./components/molecules/DonutChart";
+export * from "./theme/colors";
