@@ -7,3 +7,4 @@ export * from "./components/atoms/Divider";
 export * from "./components/atoms/Badge";
 export * from "./components/molecules/DonutChart";
 export * from "./theme/colors";
+export * from "./components/atoms/Avatar";
