@@ -8,7 +8,7 @@ Fixit Common UI is a cross platform component library which will speed up the de
 >TODO: add link to docz when it is hosted
 
 ## Installation
-⚠️ Before installing, make sure that you have followed the steps to [connect to the azure feed](https://dev.azure.com/FixIt-App/FixIt-Capstone/_packaging?_a=connect&feed=fixit-common-ui).
+⚠️ Before installing, make sure that you have followed the steps to [connect to the azure feed](https://dev.azure.com/FixIt-App/FixIt-Capstone/_packaging?_a=connect&feed=FixitFeed).
 
 #### Install the package
 ```sh

@@ -4,13 +4,23 @@ trigger:
       - staging
       - master
 
-pr: none
-
-
 jobs:
-- job: BuildFixitMobileComponentLib
-  displayName: 'Build Fixit Mobile Component Library'
-
+- job: BuildFixitCommonUI
+  displayName: 'Build Fixit Common UI Library'
+  variables:
+      # This library is published to the FixitFeed https://dev.azure.com/FixIt-App/FixIt-Capstone/_packaging?_a=feed&feed=FixitFeed
+    projectName: FixIt-Capstone
+    feedName: FixitFeed
+    majorProductVersion: 1
+    minorProductVersion: 0
+    masterMajorMinor: $(majorProductVersion).$(minorProductVersion)
+    masterPatchCount: $[counter(variables['masterMajorMinor'], 0)]
+    stagingMajorMinor: $(majorProductVersion).$(minorProductVersion)-beta
+    stagingPatchCount: $[counter(variables['stagingMajorMinor'], 0)]
+    pullRequestMajorMinor: $(majorProductVersion).$(minorProductVersion)-alpha$(variables['system.pullrequest.pullrequestid'])
+    pullRequestPatchCount: $[counter(variables['pullRequestMajorMinor'], 0)]
+    branchMajorMinor: $(majorProductVersion).$(minorProductVersion)-br$(variables['build.sourcebranch'])
+    branchPatchCount: $[counter(variables['branchMajorMinor'], 0)]
   pool:
     vmImage: 'windows-2019'
     displayName: 'Run Main Build and Test Pipeline'
@@ -73,42 +83,54 @@ jobs:
       ArtifactName: 'drop'
       publishLocation: 'Container'
 
-
-  # Add Git User
-  - task: Bash@3
-    displayName: 'Add Git User'
-    inputs:
-      targetType: 'inline'
-      script: |
-        git config --global user.email "ahmed.popal@hotmail.com"
-        git config --global user.name "Ahmed Popal"
-
-  # Bump Package Version Patch
+# Versioning
+  # master branch versioning
   - task: Npm@1
-    displayName: 'Bump Package Version'
-    inputs:
-      command: 'custom'
-      customCommand: 'version patch -m "Bump package version [skip ci]" --force'
-    condition: ne(variables['Build.SourceBranch'], 'refs/heads/master')
-  
-  # Bump Package Version Minor
-  - task: Npm@1
-    displayName: 'Bump Package Version'
-    inputs:
-      command: 'custom'
-      customCommand: 'version minor -m "Bump package version [skip ci]" --force'
+    displayName: 'Bump package version - master branch'
     condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
-
-  # Commiting the package.json version bump 
-  # Official microsoft documentation:
-  # (https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=code)
-  - task: CmdLine@2
-    displayName: 'Commit version bump'
     inputs:
-      script: |
-        git commit -a -m "Auto CI commit [skip ci]"
-        git push -u https://ahmed.popal%40hotmail.com:$(GitCredentials)@dev.azure.com/FixIt-App/FixIt-Capstone/_git/FixitCommonUI HEAD:staging
-    condition: succeeded()
+      command: 'custom'
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customCommand: 'version $(majorProductVersion).$(minorProductVersion).$(masterPatchCount) --no-git-tag-version --allow-same-version'
+      customRegistry: 'useFeed'
+      customFeed: '$(projectName)/$(feedName)'
+
+  # staging branch versioning
+  - task: Npm@1
+    displayName: 'Bump package version - staging branch'
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/staging')
+    inputs:
+      command: 'custom'
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customCommand: 'version $(majorProductVersion).$(minorProductVersion).$(stagingPatchCount)-beta --no-git-tag-version --allow-same-version'
+      customRegistry: 'useFeed'
+      customFeed: '$(projectName)/$(feedName)'
+
+  # PR versioning for master branch & staging branch
+  - task: Npm@1
+    displayName: 'Bump package version - PR for master & staging branch'
+    condition: and(ne(variables['Build.SourceBranch'], 'refs/heads/master'), ne(variables['Build.SourceBranch'], 'refs/heads/staging'), eq(variables['Build.Reason'], 'PullRequest'))
+    inputs:
+      command: 'custom'
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customCommand: 'version $(majorProductVersion).$(minorProductVersion).0-alpha$(system.pullrequest.pullrequestid)-$(pullRequestPatchCount) --no-git-tag-version --allow-same-version'
+      customRegistry: 'useFeed'
+      customFeed: '$(projectName)/$(feedName)'
+
+  # Name branch prefix to build version (master & staging branch)
+  - task: Npm@1
+    displayName: 'Bump package version - other branch'
+    condition: and(ne(variables['Build.SourceBranch'], 'refs/heads/master'), ne(variables['Build.SourceBranch'], 'refs/heads/staging'), ne(variables['Build.Reason'], 'PullRequest'))
+    inputs:
+      command: 'custom'
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customCommand: 'version $(majorProductVersion).$(minorProductVersion).0-$(Build.BuildId)-$(branchPatchCount) --no-git-tag-version --allow-same-version'
+      customRegistry: 'useFeed'
+      customFeed: '$(projectName)/$(feedName)'
 
   # Publishes npm package
   - task: Npm@1
@@ -116,6 +138,5 @@ jobs:
     inputs:
       command: 'publish'
       publishRegistry: 'useFeed'
-      # publishFeed: projectName/feedName
-      publishFeed: '08d378fd-be72-4c80-9ce4-1a7c754efb98/7ba6392b-6ff3-4d8f-bdc4-0a4bcdee1710'
+      publishFeed: '$(projectName)/$(feedName)'
     condition: succeeded()
