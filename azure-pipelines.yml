@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - development
+      - staging
       - master
 
 pr: none
