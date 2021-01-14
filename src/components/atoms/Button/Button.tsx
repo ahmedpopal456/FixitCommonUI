@@ -71,5 +71,6 @@ Button.defaultProps = {
   children: "",
   color: "primary",
   position: "left",
-  shape: "square"
+  shape: "square",
+  padding: 7
 };

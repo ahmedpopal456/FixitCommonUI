@@ -25,4 +25,6 @@ export interface ButtonProps {
     caps?: boolean;
     /** Used for testing */
     testID?: string;
+    /** Padding */
+    padding?: number;
   }

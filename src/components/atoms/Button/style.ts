@@ -13,7 +13,7 @@ export const ButtonContainer = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   align-self: flex-start;
-  padding: 7px;
+  padding: ${(buttonProps: ButtonProps) => buttonProps.padding}px;
   ${(buttonProps: ButtonProps) =>
         buttonProps.color != "transparent" &&
         `
