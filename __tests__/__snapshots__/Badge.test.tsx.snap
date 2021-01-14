@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches background color snapshot 1`] = `
+<View
+  background="accent"
+  color="primary"
+  opacity={1}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "rgba(255,209,74,1)",
+        "borderColor": "#FFD14A",
+        "borderRadius": 20,
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "minWidth": 40,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "paddingTop": 5,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="primary"
+      fontSize={20}
+      fontWeight={400}
+      justification="center"
+      padding={3}
+      style={
+        Array [
+          Object {
+            "color": "#33343E",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 20,
+            "fontWeight": "400",
+            "paddingBottom": 3,
+            "paddingLeft": 3,
+            "paddingRight": 3,
+            "paddingTop": 3,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches border color snapshot 1`] = `
+<View
+  background="accent"
+  border="red"
+  color="primary"
+  opacity={1}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "rgba(255,209,74,1)",
+        "borderColor": "#D4675A",
+        "borderRadius": 20,
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "minWidth": 40,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "paddingTop": 5,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="primary"
+      fontSize={20}
+      fontWeight={400}
+      justification="center"
+      padding={3}
+      style={
+        Array [
+          Object {
+            "color": "#33343E",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 20,
+            "fontWeight": "400",
+            "paddingBottom": 3,
+            "paddingLeft": 3,
+            "paddingRight": 3,
+            "paddingTop": 3,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches default snapshot 1`] = `
+<View
+  background="primary"
+  color="accent"
+  opacity={1}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "rgba(51,52,62,1)",
+        "borderColor": "#33343E",
+        "borderRadius": 20,
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "minWidth": 40,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "paddingTop": 5,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="accent"
+      fontSize={20}
+      fontWeight={400}
+      justification="center"
+      padding={3}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 20,
+            "fontWeight": "400",
+            "paddingBottom": 3,
+            "paddingLeft": 3,
+            "paddingRight": 3,
+            "paddingTop": 3,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches opacity snapshot 1`] = `
+<View
+  background="accent"
+  border="red"
+  color="primary"
+  opacity={0.3}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "rgba(255,209,74,0.3)",
+        "borderColor": "#D4675A",
+        "borderRadius": 20,
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "minWidth": 40,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "paddingTop": 5,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="primary"
+      fontSize={20}
+      fontWeight={400}
+      justification="center"
+      padding={3}
+      style={
+        Array [
+          Object {
+            "color": "#33343E",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 20,
+            "fontWeight": "400",
+            "paddingBottom": 3,
+            "paddingLeft": 3,
+            "paddingRight": 3,
+            "paddingTop": 3,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches text color snapshot 1`] = `
+<View
+  background="primary"
+  color="accent"
+  opacity={1}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "rgba(51,52,62,1)",
+        "borderColor": "#33343E",
+        "borderRadius": 20,
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "flexDirection": "row",
+        "height": 40,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "minWidth": 40,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "paddingTop": 5,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="accent"
+      fontSize={20}
+      fontWeight={400}
+      justification="center"
+      padding={3}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 20,
+            "fontWeight": "400",
+            "paddingBottom": 3,
+            "paddingLeft": 3,
+            "paddingRight": 3,
+            "paddingTop": 3,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      1
+    </Text>
+  </View>
+</View>
+`;

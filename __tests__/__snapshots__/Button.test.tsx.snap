@@ -1,0 +1,507 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches $outline snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#00000000",
+      "borderColor": "#33343E",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="primary"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#33343E",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches color snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#FFD14A",
+      "borderColor": "#FFD14A",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="primary"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#33343E",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches default snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#33343E",
+      "borderColor": "#33343E",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="accent"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches disabled snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#CECECE",
+      "borderColor": "#CECECE",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="light"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#EEEEEE",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches icon snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#00000000",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "paddingBottom": 8,
+          "paddingLeft": 8,
+          "paddingRight": 8,
+          "paddingTop": 8,
+        },
+      ]
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      library="AntDesign"
+      style={
+        Array [
+          Object {
+            "color": "#D4675A",
+            "fontSize": 24,
+          },
+          undefined,
+          Object {
+            "fontFamily": "anticon",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches shape snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#33343E",
+      "borderColor": "#33343E",
+      "borderRadius": 100,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="accent"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`matches width snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#33343E",
+      "borderColor": "#33343E",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginBottom": 5,
+      "marginLeft": 5,
+      "marginRight": 5,
+      "marginTop": 5,
+      "opacity": 1,
+      "paddingBottom": 7,
+      "paddingLeft": 7,
+      "paddingRight": 7,
+      "paddingTop": 7,
+      "width": 30,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="accent"
+      fontSize={17}
+      fontWeight={400}
+      justification="center"
+      padding={6}
+      style={
+        Array [
+          Object {
+            "color": "#FFD14A",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 17,
+            "fontWeight": "400",
+            "paddingBottom": 6,
+            "paddingLeft": 6,
+            "paddingRight": 6,
+            "paddingTop": 6,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Button
+    </Text>
+  </View>
+</View>
+`;

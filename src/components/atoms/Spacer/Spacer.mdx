@@ -1,0 +1,59 @@
+---
+name: Spacer
+menu: 1 - Atoms
+---
+
+import { Props, Playground } from 'docz';
+import { Spacer } from './Spacer.tsx';
+import { Button } from '../Button/Button.tsx';
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
+
+# Spacer
+A spacer is used to create horizontal or vertical spacing between elements
+
+# Usage
+```tsx
+import { Spacer } from 'fixit-common-ui';
+
+<Spacer />
+```
+## Props
+
+<Props of={Spacer}></Props>
+
+## Horizontal spacer
+
+<Playground>
+  <DoczContainer>
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Spacer width="20px" />
+    <Button onPress={() => void 0}>Press Me</Button>
+  </DoczContainer>
+  <DoczContainer>
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Spacer width="70px" />
+    <Button onPress={() => void 0}>Press Me</Button>
+  </DoczContainer>
+  <DoczContainer>
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Spacer stretch />
+    <Button onPress={() => void 0}>Press Me</Button>
+  </DoczContainer>
+  <DoczContainer>
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Spacer stretch />
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Spacer stretch />
+    <Button onPress={() => void 0}>Press Me</Button>
+  </DoczContainer>
+</Playground>
+
+## Vertical spacer
+
+<Playground>
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Spacer height="60px" />
+    <Button onPress={() => void 0}>Press Me</Button>
+    <Spacer height="120px" />
+    <Button onPress={() => void 0}>Press Me</Button>
+</Playground>

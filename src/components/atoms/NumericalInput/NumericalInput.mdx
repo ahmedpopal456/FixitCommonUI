@@ -1,0 +1,31 @@
+---
+name: NumericalInput
+menu: Atoms
+---
+import { Props, Playground } from "docz";
+import { NumericalInput } from "./NumericalInput.tsx";
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
+
+# Numerical Input
+A Numerical Input is a clickable view to enter numerical values into a field.
+
+# Usage
+```tsx
+import { NumericalInput } from "fixit-common-ui";
+<NumericalInput numbers={1}/>
+```
+
+## Props
+<Props of={NumericalInput}></Props>
+
+## Examples
+<Playground>
+  <DoczContainer>
+    <NumericalInput numbers={4}/>
+    <NumericalInput numbers={3} borderColor="accent"/>
+  </DoczContainer>
+</Playground>
+
+## Note
+You can enter multiple digits in the web browser. 
+But on mobile, there is a max length of 1 as input and it opens the numpad instead of an alphabetical keyboard.

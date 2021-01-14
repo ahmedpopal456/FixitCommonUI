@@ -1,0 +1,49 @@
+---
+name: Avatar
+menu: Atoms
+---
+
+import { Props, Playground } from 'docz';
+import { View, ImageBackground } from 'react-native';
+import { DoczContainer } from '../../../utils/DoczContainer.tsx'
+import { Avatar } from './Avatar.tsx';
+import { Icon } from '../Icon/Icon.tsx';
+
+# Avatar
+A Button is a clickable view to carry out actions such as clearing user input or submitting the form.
+
+# Usage
+```tsx
+import { Avatar } from 'fixit-common-ui';
+```
+
+## Props
+
+<Props of={Avatar}></Props>
+
+## Title
+<Playground>
+    <DoczContainer>
+        <Avatar title="FI"/>
+        <Avatar title="AS" backgroundColor="black" style={{width:60, height:60}}/>
+        <Avatar title="JD" backgroundColor="#FFD14A"style={{width:70, height:70}}/>
+    </DoczContainer>
+</Playground>
+
+## Icon
+<Playground>
+    <DoczContainer>
+        <Avatar icon={<Icon library="AntDesign" name="user" color="white" size={30}/>}/>
+        <Avatar backgroundColor="black" style={{width:60, height:60}} icon={<Icon library="AntDesign" name="user" color="white" size={30}/>}/>
+        <Avatar backgroundColor="#FFD14A" style={{width:70, height:70}} icon={<Icon library="AntDesign" name="user" color="white" size={30}/>}/>
+    </DoczContainer>
+</Playground>
+
+## Image
+<Playground>
+    <DoczContainer>
+        <Avatar image={"https://reactjs.org/logo-og.png"}/>
+        <Avatar style={{width:60, height:60}} image={"https://reactjs.org/logo-og.png"}/>
+        <Avatar style={{width:70, height:70}} image={"https://reactjs.org/logo-og.png"}/>
+    </DoczContainer>
+</Playground>

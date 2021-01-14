@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches default snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "left": 25,
+        "padding": 5,
+        "position": "absolute",
+        "top": -5,
+        "zIndex": 50,
+      }
+    }
+  >
+    <Text />
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    borderColor="#FFD14A"
+    borderRadius={5}
+    borderWidth={2}
+    height={45}
+    multiline={true}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderColor": "#FFD14A",
+          "borderRadius": 5,
+          "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
+          "justifyContent": "flex-end",
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+          "width": "undefinedpx",
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
+
+exports[`matches height snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "left": 25,
+        "padding": 5,
+        "position": "absolute",
+        "top": -5,
+        "zIndex": 50,
+      }
+    }
+  >
+    <Text />
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    borderColor="#FFD14A"
+    borderRadius={5}
+    borderWidth={2}
+    height={45}
+    multiline={true}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderColor": "#FFD14A",
+          "borderRadius": 5,
+          "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
+          "justifyContent": "flex-end",
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+          "width": "undefinedpx",
+        },
+        Object {
+          "height": "45",
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
+
+exports[`matches placeholder snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "left": 25,
+        "padding": 5,
+        "position": "absolute",
+        "top": -5,
+        "zIndex": 50,
+      }
+    }
+  >
+    <Text />
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    borderColor="#FFD14A"
+    borderRadius={5}
+    borderWidth={2}
+    height={45}
+    multiline={true}
+    placeholder="Name"
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderColor": "#FFD14A",
+          "borderRadius": 5,
+          "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
+          "justifyContent": "flex-end",
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+          "width": "undefinedpx",
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;
+
+exports[`matches text input icon snapshot 1`] = `
+<View>
+  <View
+    borderColor="#FFD14A"
+    borderRadius={5}
+    borderWidth={2}
+    height={45}
+    icon={
+      <Icon
+        color="accent"
+        library="MaterialCommunityIcons"
+        name="currency-usd"
+        size={24}
+      />
+    }
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#33343E",
+          "borderColor": "#FFD14A",
+          "borderRadius": 5,
+          "borderWidth": 2,
+          "color": undefined,
+          "flexDirection": "row",
+          "height": 45,
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "width": "undefinedpx",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 5,
+            "height": 30,
+            "justifyContent": "center",
+            "marginLeft": 5,
+            "marginTop": 5,
+            "paddingBottom": 8,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+            "width": 30,
+          },
+          Object {
+            "backgroundColor": "grey",
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        library="MaterialCommunityIcons"
+        style={
+          Array [
+            Object {
+              "color": "#FFD14A",
+              "fontSize": 24,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        󰇁
+      </Text>
+    </View>
+    <TextInput
+      allowFontScaling={true}
+      multiline={true}
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderRadius": 5,
+            "color": "white",
+            "justifyContent": "center",
+            "paddingLeft": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+    />
+  </View>
+</View>
+`;
+
+exports[`matches title snapshot 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "left": 25,
+        "padding": 5,
+        "position": "absolute",
+        "top": -5,
+        "zIndex": 50,
+      }
+    }
+  >
+    <Text>
+      Section Name
+    </Text>
+  </View>
+  <TextInput
+    allowFontScaling={true}
+    borderColor="#FFD14A"
+    borderRadius={5}
+    borderWidth={2}
+    height={45}
+    multiline={true}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "borderColor": "#FFD14A",
+          "borderRadius": 5,
+          "borderWidth": 2,
+          "color": undefined,
+          "height": 45,
+          "justifyContent": "flex-end",
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 10,
+          "width": "undefinedpx",
+        },
+      ]
+    }
+    title="Section Name"
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

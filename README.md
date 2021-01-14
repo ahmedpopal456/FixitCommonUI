@@ -1,21 +1,31 @@
+<h2 style="display: flex; align-items: center; font-size: 30px"><img style="padding-right: 20px" src="https://i.ibb.co/Vxpvv9k/LOGO.png" height="100" width="160"/> Fixit Common UI</h2>
 
-# React Native Component Design System
-TODO: Summary
+[![Build Status](https://dev.azure.com/FixIt-App/FixIt-Capstone/_apis/build/status/FixitLibraries/FixitMobileComponentLib?branchName=development)](https://dev.azure.com/FixIt-App/FixIt-Capstone/_build/latest?definitionId=3&branchName=development)
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Fixit Common UI is a cross platform component library which will speed up the development of the screens part of the mobile application and keep the look and feel consistent.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+### 📖 	[Documentation](#)
+>TODO: add link to docz when it is hosted
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Installation
+⚠️ Before installing, make sure that you have followed the steps to [connect to the azure feed](https://dev.azure.com/FixIt-App/FixIt-Capstone/_packaging?_a=connect&feed=FixitFeed).
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+#### Install the package
+```sh
+npm install fixit-common-ui
+```
+This library has a peerDependencies listing for `react-native-vector-icons`. Make sure to install it too! Check out [the docs](https://github.com/oblador/react-native-vector-icons/blob/master/README.md) outlining the installation steps.
+
+## Usage
+After installing the required packages, it is quite easy to use:
+```ts
+import { Button } from  'fixit-common-ui';
+
+function render(){
+  return (
+    <Button onPress={doSomething}>
+      Press Me
+    </Button>
+  );
+}
+```
