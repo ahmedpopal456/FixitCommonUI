@@ -1,6 +1,6 @@
-import colors from "../../../theme/colors";
-  
-  export interface DonutChartProps {
+import colors from '../../../theme/colors';
+
+export interface DonutChartProps {
     /** Can be any color from the theme color palette */
     color?: keyof typeof colors;
     textColor?: keyof typeof colors;

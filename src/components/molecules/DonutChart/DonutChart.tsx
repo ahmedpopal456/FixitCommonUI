@@ -1,22 +1,24 @@
-import React from "react";
-import { View } from "react-native";
+import React from 'react';
+import { View } from 'react-native';
 
-import { DonutChartProps } from "./DonutChartModel";
-import Svg, { Circle, G } from "react-native-svg";
-import {Label} from "../../atoms/Typography";
-import colors from "../../../theme/colors";
+import Svg, { Circle, G } from 'react-native-svg';
+import { DonutChartProps } from './DonutChartModel';
+import { Label } from '../../atoms/Typography';
+import colors from '../../../theme/colors';
 
 /**
  * The DonutChart component is used to display a progress
  * @param donutChartProps - The DonutChart's props
  * @returns A react native custom DonutChart component
  */
-export const DonutChart: React.FC<DonutChartProps> = (donutChartProps: DonutChartProps): JSX.Element => {
+export const DonutChart: React.FC<DonutChartProps> = (donutChartProps: DonutChartProps):
+JSX.Element => {
   const donutOuterRadius: number = donutChartProps.radius! + donutChartProps.strokeWidth!;
   const circumference: number = 2 * Math.PI * donutChartProps.radius!;
 
   const percentage = 100 * (donutChartProps.value / donutChartProps.max!);
-  const strokeDashoffset = percentage > 100 ? 0 : circumference - (circumference * percentage) / 100;
+  const strokeDashoffset = percentage > 100 ? 0 : circumference
+  - (circumference * percentage) / 100;
 
   return (
     <View
@@ -24,13 +26,13 @@ export const DonutChart: React.FC<DonutChartProps> = (donutChartProps: DonutChar
         width: donutChartProps.radius! * 2,
         height: donutChartProps.radius! * 2,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <View style={{
         flexDirection: 'row',
         alignSelf: 'center',
-        zIndex: 99
+        zIndex: 99,
       }}>
         <Label
           fontSize={donutChartProps.radius! / 2}
@@ -38,10 +40,9 @@ export const DonutChart: React.FC<DonutChartProps> = (donutChartProps: DonutChar
           fontWeight={500}
           padding={0}
         >
-          {percentage > 100 ? '100%': `${percentage}%`}
+          {percentage > 100 ? '100%' : `${percentage}%`}
         </Label>
-        
-      
+
       </View>
       <Svg
         height={donutChartProps.radius! * 2}
@@ -68,10 +69,10 @@ export const DonutChart: React.FC<DonutChartProps> = (donutChartProps: DonutChar
   );
 };
 
-/** Setting the defaults for the props*/
+/** Setting the defaults for the props */
 DonutChart.defaultProps = {
-  color: "accent",
-  textColor: "primary",
+  color: 'accent',
+  textColor: 'primary',
   radius: 80,
   strokeWidth: 15,
   max: 100,

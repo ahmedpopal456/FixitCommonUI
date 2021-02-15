@@ -1,2 +1,3 @@
-import { DonutChart } from "./DonutChart";
+import { DonutChart } from './DonutChart';
+
 export { DonutChart };

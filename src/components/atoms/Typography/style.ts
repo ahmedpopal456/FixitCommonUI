@@ -1,5 +1,5 @@
-import styled from "styled-components/native";
-import colors from "../../../theme/colors";
+import styled from 'styled-components/native';
+import colors from '../../../theme/colors';
 import { TypographyProps } from './TypographyModel';
 
 export const StyledText = styled.Text`
@@ -10,8 +10,7 @@ export const StyledText = styled.Text`
     font-weight: ${(typographyProps: TypographyProps) => typographyProps.fontWeight}
     color: ${(typographyProps: TypographyProps) => colors[typographyProps.color!]};
     text-align: ${(typographyProps: TypographyProps) => typographyProps.justification};
-    ${(typographyProps: TypographyProps) =>
-        typographyProps.caps &&`
+    ${(typographyProps: TypographyProps) => typographyProps.caps && `
             text-transform: uppercase;
         `}
 `;
@@ -19,4 +18,3 @@ export const StyledText = styled.Text`
 export const StyledContainer = styled.View`
     flex:1;
 `;
-

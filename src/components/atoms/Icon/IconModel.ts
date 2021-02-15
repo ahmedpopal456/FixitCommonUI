@@ -1,9 +1,10 @@
-import colors from "../../../theme/colors";
+import { TextStyle } from 'react-native';
+import colors from '../../../theme/colors';
 
-import { IconLibraries } from "./IconLibraries";
+import { IconLibraries } from './IconLibraries';
 
 export interface IconProps {
-  style?: object;
+  style?: TextStyle & React.CSSProperties;
   /** Any color from the theme's color palette */
   color?: keyof typeof colors;
   /** Size of the icon */

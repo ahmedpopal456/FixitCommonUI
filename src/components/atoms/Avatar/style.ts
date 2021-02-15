@@ -1,18 +1,18 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 import colors from '../../../theme/colors';
 
 /** PROPS */
 interface AvatarProps {
     /**  To override default style */
-    style?: any;
+    style?: React.CSSProperties;
     /** Any color from the theme's color palette */
     color?: keyof typeof colors;
-    /** Border radius of the to make it round*/
+    /** Border radius of the to make it round */
     borderRadius?: number;
     /**  The title of the Text box */
     title?:string;
     /** To pass custom icon */
-    icon?:any;
+    icon?:string;
     /** Background color of the Avatar */
     backgroundColor?:keyof typeof colors;
     /** Height of the Avatar circle */
@@ -20,25 +20,22 @@ interface AvatarProps {
     /** Width of the Avatar circle */
     width?: number;
     /** Image of Avatar */
-    image?:any;
+    image?:string;
 }
 
 export const AvatarWrapper = styled.View`
-${(avatarProps: AvatarProps) =>
-   avatarProps.height &&
-    `
+${(avatarProps: AvatarProps) => avatarProps.height
+    && `
     height:${avatarProps.height};
  `}
- ${(avatarProps: AvatarProps) =>
-   avatarProps.width &&
-    `
+ ${(avatarProps: AvatarProps) => avatarProps.width
+    && `
     width:${avatarProps.width};
  `}
     borderRadius:50;
     align-items:center;
-    ${(avatarProps: AvatarProps) =>
-      avatarProps.backgroundColor &&
-        `
+    ${(avatarProps: AvatarProps) => avatarProps.backgroundColor
+        && `
         backgroundColor:${avatarProps.backgroundColor};
      `}
     justify-content:center;
@@ -49,15 +46,13 @@ export const IconWrapper = styled.View`
     align-self:center;
 `;
 
-export const TextWrapper =styled.Text`
-${(avatarProps: AvatarProps) =>
-   avatarProps.height &&
-    `
+export const TextWrapper = styled.Text`
+${(avatarProps: AvatarProps) => avatarProps.height
+    && `
     height:${avatarProps.height};
  `}
- ${(avatarProps: AvatarProps) =>
-   avatarProps.width &&
-    `
+ ${(avatarProps: AvatarProps) => avatarProps.width
+    && `
     width:${avatarProps.width};
  `}
     align-self:center;
@@ -68,14 +63,12 @@ ${(avatarProps: AvatarProps) =>
 `;
 
 export const ImageWrapper = styled.ImageBackground`
-${(avatarProps: AvatarProps) =>
-   avatarProps.height &&
-    `
+${(avatarProps: AvatarProps) => avatarProps.height
+    && `
     height:${avatarProps.height};
  `}
- ${(avatarProps: AvatarProps) =>
-   avatarProps.width &&
-    `
+ ${(avatarProps: AvatarProps) => avatarProps.width
+    && `
     width:${avatarProps.width};
  `}
     flex:1;

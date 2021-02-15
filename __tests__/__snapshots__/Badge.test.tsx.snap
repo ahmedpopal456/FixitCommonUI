@@ -3,7 +3,6 @@
 exports[`matches background color snapshot 1`] = `
 <View
   background="accent"
-  color="primary"
   opacity={1}
   style={
     Array [
@@ -75,7 +74,6 @@ exports[`matches border color snapshot 1`] = `
 <View
   background="accent"
   border="red"
-  color="primary"
   opacity={1}
   style={
     Array [
@@ -146,7 +144,6 @@ exports[`matches border color snapshot 1`] = `
 exports[`matches default snapshot 1`] = `
 <View
   background="primary"
-  color="accent"
   opacity={1}
   style={
     Array [
@@ -218,7 +215,6 @@ exports[`matches opacity snapshot 1`] = `
 <View
   background="accent"
   border="red"
-  color="primary"
   opacity={0.3}
   style={
     Array [
@@ -289,7 +285,6 @@ exports[`matches opacity snapshot 1`] = `
 exports[`matches text color snapshot 1`] = `
 <View
   background="primary"
-  color="accent"
   opacity={1}
   style={
     Array [

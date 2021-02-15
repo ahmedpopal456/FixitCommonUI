@@ -1,9 +1,21 @@
 import { Platform } from 'react-native';
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 import { ButtonProps } from './ButtonModel';
 import colors from '../../../theme/colors';
 
+/** Helpers */
+const getContainerColor = (buttonProps: ButtonProps) => {
+  let color = colors[buttonProps.color!];
+
+  if (buttonProps.outline) {
+    color = colors.transparent;
+  } else if (buttonProps.disabled) {
+    color = colors.disabled;
+  }
+
+  return color;
+};
 
 /** Styled Components */
 export const ButtonContainer = styled.TouchableOpacity`
@@ -14,42 +26,25 @@ export const ButtonContainer = styled.TouchableOpacity`
   align-items: center;
   align-self: flex-start;
   padding: ${(buttonProps: ButtonProps) => buttonProps.padding}px;
-  ${(buttonProps: ButtonProps) =>
-        buttonProps.color != "transparent" &&
-        `
+  ${(buttonProps: ButtonProps) => buttonProps.color !== 'transparent'
+        && `
       border-color: ${buttonProps.disabled ? colors.disabled : colors[buttonProps.color!]};
       }
       border-width: 1px;
-      border-radius: ${buttonProps.shape === "square" ? '3px' : '100px'};
+      border-radius: ${buttonProps.shape === 'square' ? '3px' : '100px'};
     `}
-  ${(buttonProps: ButtonProps) =>
-    buttonProps.width &&`
+  ${(buttonProps: ButtonProps) => buttonProps.width && `
         width: ${buttonProps.width}px;
     `}
-  ${(buttonProps: ButtonProps) =>
-    Platform.OS === 'web' ?
-        buttonProps.block && `
+  ${(buttonProps: ButtonProps) => (Platform.OS === 'web'
+    ? buttonProps.block && `
         flex: 1;
-    `:
-        buttonProps.block && `
+    `
+    : buttonProps.block && `
         align-self: stretch;
-    `}    
+    `)}    
 `;
 
 export const IconWrapper = styled.View`
     padding: 8px;
 `;
-
-/** Helpers */
-const getContainerColor = (buttonProps: ButtonProps) => {
-    let color = colors[buttonProps.color!];
-
-    if (buttonProps.outline) {
-        color = colors.transparent;
-    } else if (buttonProps.disabled) {
-        color = colors.disabled;
-    }
-
-    return color;
-};
-

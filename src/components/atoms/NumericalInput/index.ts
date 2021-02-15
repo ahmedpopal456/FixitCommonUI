@@ -1,2 +1,3 @@
-import { NumericalInput } from "./NumericalInput";
+import { NumericalInput } from './NumericalInput';
+
 export { NumericalInput };

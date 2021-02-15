@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import colors from "../../../theme/colors";
+import colors from '../../../theme/colors';
 
-import { IconLibraries } from "./IconLibraries";
-import { IconProps } from "./IconModel";
+import { IconLibraries } from './IconLibraries';
+import { IconProps } from './IconModel';
 
 /** Building the Icon */
 export const Icon: React.FC<IconProps> = (iconProps: IconProps): JSX.Element => {
@@ -17,8 +17,8 @@ export const Icon: React.FC<IconProps> = (iconProps: IconProps): JSX.Element => 
 };
 
 Icon.defaultProps = {
-  library: "MaterialCommunityIcons",
-  color: "primary",
+  library: 'MaterialCommunityIcons',
+  color: 'primary',
   size: 24,
 };
 

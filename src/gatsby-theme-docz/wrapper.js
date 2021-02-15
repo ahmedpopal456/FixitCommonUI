@@ -1,3 +1,5 @@
+/* eslint-disable */
+// @ts-nocheck
 import React from 'react';
 import FontAwesome from 'react-native-vector-icons/Fonts/FontAwesome.ttf';
 import AntDesign from 'react-native-vector-icons/Fonts/AntDesign.ttf';
@@ -70,11 +72,12 @@ class Wrapper extends React.Component {
     const style = document.createElement('style');
 
     style.type = 'text/css';
+
     if (style.styleSheet) {
-        style.styleSheet.cssText = iconFontStyles;
-      } else {
-        style.appendChild(document.createTextNode(iconFontStyles));
-      }
+      style.styleSheet.cssText = iconFontStyles;
+    } else {
+      style.appendChild(document.createTextNode(iconFontStyles));
+    }
 
     document.head.appendChild(style);
 

@@ -1,7 +1,7 @@
-import React from "react";
-import { BadgeContainer } from "./style"
-import { BadgeProps } from "./BadgeModel"
-import { Label } from '../Typography'
+import React from 'react';
+import { BadgeContainer } from './style';
+import { BadgeProps } from './BadgeModel';
+import { Label } from '../Typography';
 
 /**
  * Describe the Component
@@ -9,26 +9,19 @@ import { Label } from '../Typography'
  * @returns A react native custom Badge component
  */
 export const Badge: React.FC<BadgeProps> = (badgeProps:BadgeProps): JSX.Element => {
+  const {
+    opacity, background, border, children,
+  } = badgeProps;
   return (
-    <BadgeContainer {...badgeProps}>
-        {renderChildren(badgeProps)}
+    <BadgeContainer opacity={opacity} background={background} border={border}>
+      <Label justification="center" color={badgeProps.color} fontWeight={400} fontSize={20}>{children}</Label>
     </BadgeContainer>
   );
 };
 
-const renderChildren = (badgeProps: BadgeProps) => {
-  return (
-    <>
-      {React.Children.map(badgeProps.children, (child: string) => {
-          return <Label justification="center" color={badgeProps.color} fontWeight={400} fontSize={20}>{child}</Label>;
-      })}
-    </>
-  );
-};
-
-/** Setting the defaults for the props*/
+/** Setting the defaults for the props */
 Badge.defaultProps = {
-  color:"accent",
-  background:"primary",
-  opacity:1
+  color: 'accent',
+  background: 'primary',
+  opacity: 1,
 };

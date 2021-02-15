@@ -1,9 +1,9 @@
 import 'react-native';
 import React from 'react';
+import renderer from 'react-test-renderer';
 import { Icon } from '../src/components/atoms/Icon';
 
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
 
 /** Testing Rendered Output (snapshot testing) */
 it('matches name snapshot', () => {
