@@ -1,0 +1,29 @@
+---
+name: NotificationBell
+menu: 2 - Molecules
+---
+import { Props, Playground } from "docz";
+import { NotificationBell } from "./NotificationBell.tsx";
+import { DoczContainer } from "../../../utils/DoczContainer.tsx"
+
+# NotificationBell
+The NotificationBell displays the notification count as a badge. It performs
+a user defined action when pressed. The `notifications` and `onPress` props are
+required.
+
+# Usage
+```tsx
+import { NotificationBell } from "fixit-common-ui";
+<NotificationBell notifications={0} onPress={() => {}}/>
+```
+
+## Props
+<Props of={NotificationBell}></Props>
+
+## Default
+<Playground>
+<DoczContainer>
+  <NotificationBell notifications={2} onPress={() => {}}/>
+  <NotificationBell notifications={0} onPress={() => {}}/>
+</DoczContainer>
+</Playground>

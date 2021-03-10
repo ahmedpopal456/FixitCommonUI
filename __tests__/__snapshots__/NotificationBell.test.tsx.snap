@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches no notifications snapshot 1`] = `
+<View
+  notifications={0}
+  onPress={[MockFunction]}
+  style={
+    Array [
+      Object {
+        "height": 80,
+        "width": 80,
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "#00000000",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "opacity": 1,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "paddingBottom": 8,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        library="Ionicons"
+        notifications={0}
+        style={
+          Array [
+            Object {
+              "color": "#33343E",
+              "fontSize": 45,
+            },
+            Array [
+              Object {},
+            ],
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`matches notifications snapshot 1`] = `
+<View
+  notifications={8}
+  onPress={[MockFunction]}
+  style={
+    Array [
+      Object {
+        "height": 80,
+        "width": 80,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+        },
+      ]
+    }
+  >
+    <Text
+      color="dark"
+      fontSize={13}
+      fontWeight={700}
+      justification="left"
+      padding={3}
+      style={
+        Array [
+          Object {
+            "color": "#1D1F2A",
+            "flexDirection": "row",
+            "fontFamily": "Raleway",
+            "fontSize": 13,
+            "fontWeight": "700",
+            "paddingBottom": 3,
+            "paddingLeft": 3,
+            "paddingRight": 3,
+            "paddingTop": 3,
+            "textAlign": "left",
+          },
+          Object {
+            "backgroundColor": "#FF0000",
+            "borderRadius": 20,
+            "color": "white",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "minHeight": 25,
+            "minWidth": 25,
+            "position": "absolute",
+            "right": 10,
+            "textAlign": "center",
+            "top": 10,
+          },
+        ]
+      }
+    >
+      8
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "backgroundColor": "#00000000",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 5,
+        "marginRight": 5,
+        "marginTop": 5,
+        "opacity": 1,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "paddingBottom": 8,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+            "paddingTop": 8,
+          },
+        ]
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        library="Ionicons"
+        notifications={8}
+        style={
+          Array [
+            Object {
+              "color": "#33343E",
+              "fontSize": 45,
+            },
+            Array [
+              Object {
+                "transform": Array [
+                  Object {
+                    "rotate": "-20deg",
+                  },
+                ],
+              },
+            ],
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;
