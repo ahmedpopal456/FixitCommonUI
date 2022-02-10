@@ -7,158 +7,167 @@ trigger:
 
 variables:
   # Version Handling Variables
-  majorProductVersion: 1   
+  majorProductVersion: 1
   minorProductVersion: 0
 
 jobs:
-# master branch versioning
-- job: Build_Master_Version_Number
-  displayName: 'Bump package version - master branch'
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
-  variables:
-    masterMajorMinor: $(majorProductVersion).$(minorProductVersion)
-    masterPatchCount: $[counter(variables['masterMajorMinor'], 0)]
-  steps:
-    - bash: |
-        echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).$(masterPatchCount)"
-      name: IfMasterSetBuildNameAndPatch
+  # master branch versioning
+  - job: Build_Master_Version_Number
+    pool:
+      vmImage: "ubuntu-latest"
+    displayName: "Bump package version - master branch"
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+    variables:
+      masterMajorMinor: $(majorProductVersion).$(minorProductVersion)
+      masterPatchCount: $[counter(variables['masterMajorMinor'], 0)]
+    steps:
+      - bash: |
+          echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).$(masterPatchCount)"
+        name: IfMasterSetBuildNameAndPatch
 
-# staging branch versioning
-- job: Build_Staging_Version_Number
-  displayName: 'Bump package version - staging branch'
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/staging')
-  variables:
-    stagingMajorMinor: $(majorProductVersion).$(minorProductVersion)-beta
-    stagingPatchCount: $[counter(variables['stagingMajorMinor'], 0)]
-  steps:
-    - bash: |
-        echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).$(stagingPatchCount)-beta"
-      name: IfStagingSetBuildNameAndPatch
+  # staging branch versioning
+  - job: Build_Staging_Version_Number
+    pool:
+      vmImage: "ubuntu-latest"
+    displayName: "Bump package version - staging branch"
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/staging')
+    variables:
+      stagingMajorMinor: $(majorProductVersion).$(minorProductVersion)-beta
+      stagingPatchCount: $[counter(variables['stagingMajorMinor'], 0)]
+    steps:
+      - bash: |
+          echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).$(stagingPatchCount)-beta"
+        name: IfStagingSetBuildNameAndPatch
 
-# development branch versioning
-- job: Build_Development_Version_Number
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/development')
-  variables:
-    stagingMajorMinor: $(majorProductVersion).$(minorProductVersion)-alpha
-    stagingPatchCount: $[counter(variables['stagingMajorMinor'], 0)]
-  steps:
-    - bash: |
-        echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).$(stagingPatchCount)-alpha"
-      name: IfDelevopmentSetBuildNameAndPatch
+  # development branch versioning
+  - job: Build_Development_Version_Number
+    pool:
+      vmImage: "ubuntu-latest"
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/development')
+    variables:
+      stagingMajorMinor: $(majorProductVersion).$(minorProductVersion)-alpha
+      stagingPatchCount: $[counter(variables['stagingMajorMinor'], 0)]
+    steps:
+      - bash: |
+          echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).$(stagingPatchCount)-alpha"
+        name: IfDelevopmentSetBuildNameAndPatch
 
-# PR versioning for master branch, staging branch & development branch
-- job: Build_PullRequest_Version_Number
-  condition: and(ne(variables['Build.SourceBranch'], 'refs/heads/master'), ne(variables['Build.SourceBranch'], 'refs/heads/staging'), ne(variables['Build.SourceBranch'], 'refs/heads/development'), eq(variables['Build.Reason'], 'PullRequest'))
-  variables:
-    pullRequestMajorMinor: $(majorProductVersion).$(minorProductVersion)-pre-alpha$(variables['system.pullrequest.pullrequestid'])
-    pullRequestPatchCount: $[counter(variables['pullRequestMajorMinor'], 0)]
-  steps:
-    - bash: |
-        echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).0-pre-alpha$(system.pullrequest.pullrequestid)-$(pullRequestPatchCount)"
-      name: IfPullRequestBuildNameAndPatch
+  # PR versioning for master branch, staging branch & development branch
+  - job: Build_PullRequest_Version_Number
+    pool:
+      vmImage: "ubuntu-latest"
+    condition: and(ne(variables['Build.SourceBranch'], 'refs/heads/master'), ne(variables['Build.SourceBranch'], 'refs/heads/staging'), ne(variables['Build.SourceBranch'], 'refs/heads/development'), eq(variables['Build.Reason'], 'PullRequest'))
+    variables:
+      pullRequestMajorMinor: $(majorProductVersion).$(minorProductVersion)-pre-alpha$(variables['system.pullrequest.pullrequestid'])
+      pullRequestPatchCount: $[counter(variables['pullRequestMajorMinor'], 0)]
+    steps:
+      - bash: |
+          echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).0-pre-alpha$(system.pullrequest.pullrequestid)-$(pullRequestPatchCount)"
+        name: IfPullRequestBuildNameAndPatch
 
-# Name branch prefix to build version (master branch, staging branch & development branch)
-- job: Build_Branch_Version_Number
-  condition: and(ne(variables['Build.SourceBranch'], 'refs/heads/master'), ne(variables['Build.SourceBranch'], 'refs/heads/staging'),ne(variables['Build.SourceBranch'], 'refs/heads/development'), ne(variables['Build.Reason'], 'PullRequest'))
-  variables:
-    branchMajorMinor: $(majorProductVersion).$(minorProductVersion)-br$(variables['build.sourcebranch'])
-    branchPatchCount: $[counter(variables['branchMajorMinor'], 0)]
-  steps:
-    - bash: |
-        echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).0-$(Build.BuildId)-$(branchPatchCount)"
-      name: IfBranchBuildNameAndPatch
+  # Name branch prefix to build version (master branch, staging branch & development branch)
+  - job: Build_Branch_Version_Number
+    pool:
+      vmImage: "ubuntu-latest"
+    condition: and(ne(variables['Build.SourceBranch'], 'refs/heads/master'), ne(variables['Build.SourceBranch'], 'refs/heads/staging'),ne(variables['Build.SourceBranch'], 'refs/heads/development'), ne(variables['Build.Reason'], 'PullRequest'))
+    variables:
+      branchMajorMinor: $(majorProductVersion).$(minorProductVersion)-br$(variables['build.sourcebranch'])
+      branchPatchCount: $[counter(variables['branchMajorMinor'], 0)]
+    steps:
+      - bash: |
+          echo "##vso[build.updatebuildnumber]$(majorProductVersion).$(minorProductVersion).0-$(Build.BuildId)-$(branchPatchCount)"
+        name: IfBranchBuildNameAndPatch
 
-- job: Build_Fixit_Common_UI
-  displayName: 'Build Fixit Common UI Library'
-  dependsOn:
-    - Build_Branch_Version_Number
-    - Build_PullRequest_Version_Number
-    - Build_Development_Version_Number
-    - Build_Staging_Version_Number
-    - Build_Master_Version_Number
-  condition: or(succeeded('Build_Branch_Version_Number'), succeeded('Build_PullRequest_Version_Number'), succeeded('Build_Development_Version_Number'), succeeded('Build_Staging_Version_Number'), succeeded('Build_Master_Version_Number'))
+  - job: Build_Fixit_Common_UI
+    displayName: "Build Fixit Common UI Library"
+    dependsOn:
+      - Build_Branch_Version_Number
+      - Build_PullRequest_Version_Number
+      - Build_Development_Version_Number
+      - Build_Staging_Version_Number
+      - Build_Master_Version_Number
+    condition: or(succeeded('Build_Branch_Version_Number'), succeeded('Build_PullRequest_Version_Number'), succeeded('Build_Development_Version_Number'), succeeded('Build_Staging_Version_Number'), succeeded('Build_Master_Version_Number'))
 
-  variables:
+    variables:
       # This library is published to the FixitFeed https://dev.azure.com/FixIt-App/FixIt-Capstone/_packaging?_a=feed&feed=FixitFeed
-    projectName: FixIt-Capstone
-    feedName: FixitFeed
-  
-  pool:
-    vmImage: 'windows-2019'
-    displayName: 'Run Main Build and Test Pipeline'
-    
-  steps:
+      projectName: FixIt-Capstone
+      feedName: FixitFeed
 
-  # Run npm install
-  - task: Npm@1
-    displayName: 'Run npm install'
-    inputs:
-      command: 'install'
+    pool:
+      vmImage: "windows-2019"
+      displayName: "Run Main Build and Test Pipeline"
 
-  # Run Unit Tests
-  - task: Npm@1
-    displayName: 'Run Unit Tests'
-    inputs:
-      command: 'custom'
-      customCommand: 'run test:ci'
-  
-  # Publish Test Results
-  - task: PublishTestResults@2
-    displayName: 'Publish Test Results'
-    inputs:
-      testResultsFormat: 'JUnit'
-      testResultsFiles: 'test/junit.xml'
-      failTaskOnFailedTests: true
+    steps:
+      # Run npm install
+      - task: Npm@1
+        displayName: "Run npm install"
+        inputs:
+          command: "install"
 
-  # Publish Code Coverage Results
-  - task: PublishCodeCoverageResults@1
-    displayName: 'Publish Code Coverage Results'
-    inputs:
-      codeCoverageTool: 'Cobertura'
-      summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
-      reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
+      # # Run Unit Tests
+      # - task: Npm@1
+      #   displayName: "Run Unit Tests"
+      #   inputs:
+      #     command: "custom"
+      #     customCommand: "run test:ci"
 
-  # Build Docz
-  - task: Npm@1
-    displayName: 'Run Build Docz'
-    inputs:
-      command: 'custom'
-      customCommand: 'run build'
+      # # Publish Test Results
+      # - task: PublishTestResults@2
+      #   displayName: "Publish Test Results"
+      #   inputs:
+      #     testResultsFormat: "JUnit"
+      #     testResultsFiles: "test/junit.xml"
+      #     failTaskOnFailedTests: true
 
-  # Copy Docz Files To Artifacts Staging Directory
-  - task: CopyFiles@2
-    displayName: 'Copy Docz Files To Artifacts Staging Directory'
-    inputs:
-      SourceFolder: '.docz\dist'
-      Contents: '**'
-      TargetFolder: '$(Build.Artifactstagingdirectory)'
-      CleanTargetFolder: true
-      OverWrite: true
+      # # Publish Code Coverage Results
+      # - task: PublishCodeCoverageResults@1
+      #   displayName: "Publish Code Coverage Results"
+      #   inputs:
+      #     codeCoverageTool: "Cobertura"
+      #     summaryFileLocation: '$(Build.Repository.LocalPath)\coverage\cobertura-coverage.xml'
+      #     reportDirectory: '$(Build.Repository.LocalPath)\coverage\'
 
-  # Publish Docz
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Docz'
-    inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-      ArtifactName: 'drop'
-      publishLocation: 'Container'
+      # Build Docz
+      - task: Npm@1
+        displayName: "Run Build Docz"
+        inputs:
+          command: "custom"
+          customCommand: "run build"
 
-  # Npm Versioning
-  - task: Npm@1
-    displayName: 'Bump package version - master branch'
-    inputs:
-      command: 'custom'
-      workingDir: $(Build.SourcesDirectory)
-      verbose: false
-      customCommand: 'version $(Build.BuildNumber) --no-git-tag-version --allow-same-version'
-      customRegistry: 'useFeed'
-      customFeed: '$(projectName)/$(feedName)'
+      # Copy Docz Files To Artifacts Staging Directory
+      - task: CopyFiles@2
+        displayName: "Copy Docz Files To Artifacts Staging Directory"
+        inputs:
+          SourceFolder: '.docz\dist'
+          Contents: "**"
+          TargetFolder: "$(Build.Artifactstagingdirectory)"
+          CleanTargetFolder: true
+          OverWrite: true
 
-  # Publishes npm package
-  - task: Npm@1
-    displayName: 'Publish Artifact'
-    inputs:
-      command: 'publish'
-      publishRegistry: 'useFeed'
-      publishFeed: '$(projectName)/$(feedName)'
-    condition: succeeded()
+      # Publish Docz
+      - task: PublishBuildArtifacts@1
+        displayName: "Publish Docz"
+        inputs:
+          PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+          ArtifactName: "drop"
+          publishLocation: "Container"
+
+      # Npm Versioning
+      - task: Npm@1
+        displayName: "Bump package version - master branch"
+        inputs:
+          command: "custom"
+          workingDir: $(Build.SourcesDirectory)
+          verbose: false
+          customCommand: "version $(Build.BuildNumber) --no-git-tag-version --allow-same-version"
+          customRegistry: "useFeed"
+          customFeed: "$(projectName)/$(feedName)"
+
+      # Publishes npm package
+      - task: Npm@1
+        displayName: "Publish Artifact"
+        inputs:
+          command: "publish"
+          publishRegistry: "useFeed"
+          publishFeed: "$(projectName)/$(feedName)"
+        condition: succeeded()
