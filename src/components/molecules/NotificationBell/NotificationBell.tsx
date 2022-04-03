@@ -28,8 +28,8 @@ export const NotificationBell: React.FC<NotificationBellProps> = (
       >
         <StyledIcon
           notifications={notificationbellProps.notifications}
-          library="Ionicons"
-          name="notifications"
+          library="FontAwesome5"
+          name="bell"
           size={45}
         />
       </Button>
